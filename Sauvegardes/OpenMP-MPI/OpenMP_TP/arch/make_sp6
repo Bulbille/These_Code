@@ -1,0 +1,14 @@
+############################ -*- Mode: Makefile -*- ###########################
+## make_sp6 --- 
+## 
+## Auteur          : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Créé le         : Wed Sep 20 10:44:51 2006
+## Dern. mod. par  : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Dern. mod. le   : Wed Dec 23 15:45:57 2009
+###############################################################################
+
+FC	    = xlf90_r
+FFLAGS	    = -O3
+LDFLAGS	    =
+FFLAGS_OMP  = -qsmp=omp
+LDFLAGS_OMP = -qsmp=omp

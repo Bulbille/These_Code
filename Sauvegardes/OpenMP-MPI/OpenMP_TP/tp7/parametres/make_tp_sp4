@@ -1,0 +1,13 @@
+############################ -*- Mode: Makefile -*- ###########################
+## make_tp_inc --- 
+## 
+## Auteur          : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Créé le         : Wed Sep 20 11:21:49 2006
+## Dern. mod. par  : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Dern. mod. le   : Thu Oct 23 18:03:23 2008
+###############################################################################
+
+CMD	 = principal
+SRC      = principal.F90 bi_cgstab.F90
+OBJ      = principal.o bi_cgstab.o
+FFLAGS  += -WF,-DVAL_LDA=1201,-DVAL_N=1200,-DVAL_M=24

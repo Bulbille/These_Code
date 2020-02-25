@@ -1,0 +1,131 @@
+zahir018 - Wed Feb  2 17:01:48 + make clean
+	rm -f poisson poisson.o gradient_conjugue.o c06haf.o core
+zahir018 - Wed Feb  2 17:01:48 + make mono
+	xlf_r -O5 -qipa -qnosave -qfree=f90 -qsuffix=f=f90 -c poisson.f90 gradient_conjugue.f90 c06haf.f90
+xlf_r:  
+poisson.f90:
+** poisson   === End of Compilation 1 ===
+1501-510  Compilation successful for file poisson.f90.
+gradient_conjugue.f90:
+** gradient_conjugue   === End of Compilation 1 ===
+1501-510  Compilation successful for file gradient_conjugue.f90.
+c06haf.f90:
+** c06haf   === End of Compilation 1 ===
+** jmfact   === End of Compilation 2 ===
+** jmtable   === End of Compilation 3 ===
+** jmscm1d   === End of Compilation 4 ===
+** jmccm1d   === End of Compilation 5 ===
+** jmccm1d2   === End of Compilation 6 ===
+** jmccm1d3   === End of Compilation 7 ===
+** jmccm1d4   === End of Compilation 8 ===
+** jmccm1d5   === End of Compilation 9 ===
+** jmcctranspcs   === End of Compilation 10 ===
+1501-510  Compilation successful for file c06haf.f90.
+	xlf_r -qipa -o poisson poisson.o gradient_conjugue.o c06haf.o
+xlf_r:  
+zahir018 - Wed Feb  2 17:01:48 + ./poisson
+
+
+   Elapsed time                  :        6.940 sec.
+   CPU user time                 :        6.950 sec.
+   Min. & Max. iteration numbers :     4   2501
+   Norm(|u - u_a|)               :    1.406E-18
+
+   Analytic solution :  1.05E-03  2.09E-03  3.14E-03 ...-3.14E-03 -2.09E-03 -1.05E-03
+   Computed solution :  1.05E-03  2.09E-03  3.14E-03 ...-3.14E-03 -2.09E-03 -1.05E-03
+
+
+zahir018 - Wed Feb  2 17:01:48 + make clean
+	rm -f poisson poisson.o gradient_conjugue.o c06haf.o core
+zahir018 - Wed Feb  2 17:01:48 + make para
+	xlf_r -O5 -qipa -qnosave -qfree=f90 -qsuffix=f=f90 -qsmp=omp -c poisson.f90 gradient_conjugue.f90 c06haf.f90
+xlf_r:  
+poisson.f90:
+** poisson   === End of Compilation 1 ===
+1501-510  Compilation successful for file poisson.f90.
+gradient_conjugue.f90:
+** gradient_conjugue   === End of Compilation 1 ===
+1501-510  Compilation successful for file gradient_conjugue.f90.
+c06haf.f90:
+** c06haf   === End of Compilation 1 ===
+** jmfact   === End of Compilation 2 ===
+** jmtable   === End of Compilation 3 ===
+** jmscm1d   === End of Compilation 4 ===
+** jmccm1d   === End of Compilation 5 ===
+** jmccm1d2   === End of Compilation 6 ===
+** jmccm1d3   === End of Compilation 7 ===
+** jmccm1d4   === End of Compilation 8 ===
+** jmccm1d5   === End of Compilation 9 ===
+** jmcctranspcs   === End of Compilation 10 ===
+1501-510  Compilation successful for file c06haf.f90.
+	xlf_r -qipa -qsmp=omp -o poisson poisson.o gradient_conjugue.o c06haf.o
+xlf_r:  
+zahir018 - Wed Feb  2 17:01:48 + export OMP_NUM_THREADS=2
+zahir018 - Wed Feb  2 17:01:48 + export OMP_SCHEDULE=STATIC
+zahir018 - Wed Feb  2 17:01:48 + ./poisson
+
+
+   Number of running tasks       :            2
+   Elapsed time                  :        4.810 sec.
+   CPU user time                 :        7.130 sec.
+   Min. & Max. iteration numbers :     4   2501
+   Norm(|u - u_a|)               :    1.406E-18
+
+   Analytic solution :  1.05E-03  2.09E-03  3.14E-03 ...-3.14E-03 -2.09E-03 -1.05E-03
+   Computed solution :  1.05E-03  2.09E-03  3.14E-03 ...-3.14E-03 -2.09E-03 -1.05E-03
+
+
+zahir018 - Wed Feb  2 17:01:48 + export OMP_NUM_THREADS=4
+zahir018 - Wed Feb  2 17:01:48 + export OMP_SCHEDULE=STATIC
+zahir018 - Wed Feb  2 17:01:48 + ./poisson
+
+
+   Number of running tasks       :            4
+   Elapsed time                  :        3.570 sec.
+   CPU user time                 :        7.130 sec.
+   Min. & Max. iteration numbers :     4   2501
+   Norm(|u - u_a|)               :    1.406E-18
+
+   Analytic solution :  1.05E-03  2.09E-03  3.14E-03 ...-3.14E-03 -2.09E-03 -1.05E-03
+   Computed solution :  1.05E-03  2.09E-03  3.14E-03 ...-3.14E-03 -2.09E-03 -1.05E-03
+
+
+zahir018 - Wed Feb  2 17:01:48 + export OMP_NUM_THREADS=6
+zahir018 - Wed Feb  2 17:01:48 + export OMP_SCHEDULE=STATIC
+zahir018 - Wed Feb  2 17:01:48 + ./poisson
+
+
+   Number of running tasks       :            6
+   Elapsed time                  :        3.060 sec.
+   CPU user time                 :        7.220 sec.
+   Min. & Max. iteration numbers :     4   2501
+   Norm(|u - u_a|)               :    1.406E-18
+
+   Analytic solution :  1.05E-03  2.09E-03  3.14E-03 ...-3.14E-03 -2.09E-03 -1.05E-03
+   Computed solution :  1.05E-03  2.09E-03  3.14E-03 ...-3.14E-03 -2.09E-03 -1.05E-03
+
+
+zahir018 - Wed Feb  2 17:01:48 + export OMP_NUM_THREADS=8
+zahir018 - Wed Feb  2 17:01:48 + export OMP_SCHEDULE=STATIC
+zahir018 - Wed Feb  2 17:01:48 + ./poisson
+
+
+   Number of running tasks       :            8
+   Elapsed time                  :        2.850 sec.
+   CPU user time                 :        7.670 sec.
+   Min. & Max. iteration numbers :     4   2501
+   Norm(|u - u_a|)               :    1.406E-18
+
+   Analytic solution :  1.05E-03  2.09E-03  3.14E-03 ...-3.14E-03 -2.09E-03 -1.05E-03
+   Computed solution :  1.05E-03  2.09E-03  3.14E-03 ...-3.14E-03 -2.09E-03 -1.05E-03
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  1.44   |
+|4 Th. |  1.94   |
+|6 Th. |  2.26   |
+|8 Th. |  2.43   |
+------------------
+

@@ -1,0 +1,103 @@
+
+
+   Min. & Max. iteration numbers :     3   2501
+   Norm(|u - u_a|)               :    1.537E-18
+
+ Analytic solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+ Computed solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+
+
+
+
+   Temps elapsed              :  1.764E+00 sec.
+   Temps CPU                  :  1.764E+00 sec.
+
+
+
+
+   Execution poisson en parallele avec  1 threads
+
+
+   Min. & Max. iteration numbers :     3   2501
+   Norm(|u - u_a|)               :    1.539E-18
+
+ Analytic solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+ Computed solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+
+
+
+
+   Temps elapsed              :  1.709E+00 sec.
+   Temps CPU                  :  1.707E+00 sec.
+
+
+
+
+   Execution poisson en parallele avec  2 threads
+
+
+   Min. & Max. iteration numbers :     3   2501
+   Norm(|u - u_a|)               :    1.539E-18
+
+ Analytic solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+ Computed solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+
+
+
+
+   Temps elapsed              :  9.354E-01 sec.
+   Temps CPU                  :  1.870E+00 sec.
+
+
+
+
+   Execution poisson en parallele avec  4 threads
+
+
+   Min. & Max. iteration numbers :     3   2501
+   Norm(|u - u_a|)               :    1.539E-18
+
+ Analytic solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+ Computed solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+
+
+
+
+   Temps elapsed              :  5.298E-01 sec.
+   Temps CPU                  :  2.117E+00 sec.
+
+
+
+
+   Execution poisson en parallele avec  6 threads
+
+
+   Min. & Max. iteration numbers :     3   2501
+   Norm(|u - u_a|)               :    1.539E-18
+
+ Analytic solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+ Computed solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+
+
+
+
+   Temps elapsed              :  3.965E-01 sec.
+   Temps CPU                  :  2.376E+00 sec.
+
+
+
+
+   Execution poisson en parallele avec  8 threads
+
+
+   Min. & Max. iteration numbers :     3   2501
+   Norm(|u - u_a|)               :    1.539E-18
+
+ Analytic solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+ Computed solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+
+
+
+
+   Temps elapsed              :  3.286E-01 sec.
+   Temps CPU                  :  2.624E+00 sec.

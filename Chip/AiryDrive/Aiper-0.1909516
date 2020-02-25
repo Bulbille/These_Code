@@ -1,0 +1,116 @@
+#############################
+User: pgersberg
+Date: Tue Dec 31 19:00:34 CET 2019
+Host: n020
+Directory: /gpfs/home/pgersberg/Chip/AiryDrive
+SLURM_JOBID: 1909516
+SLURM_SUBMIT_DIR: /gpfs/home/pgersberg/Chip/AiryDrive
+SLURM_JOB_NODELIST: n020
+SLURM_NAME: Aiper-0
+#############################
+(standard_in) 1: syntax error
+-t 1 -prefix /gpfs/home/pgersberg/Chip/AiryDrive/super -f 0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+real	0m0.224s
+user	0m0.023s
+sys	0m0.014s

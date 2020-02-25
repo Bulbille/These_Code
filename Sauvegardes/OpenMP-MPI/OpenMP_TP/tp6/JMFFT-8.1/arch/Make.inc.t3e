@@ -1,0 +1,17 @@
+############################ -*- Mode: Makefile -*- ###########################
+## Make.inc.T3E --- Makefile dependant de la plate-forme T3E-600 de CRAY
+## 
+## Auteur          : Jean-Marie Teuler <Jean-Marie.Teuler@idris.fr>
+## Créé le         : Fri Jul 30 12:48:12 1999
+## Dern. mod. par  : Jeremie Gaidamour (CNRS/IDRIS) <gaidamou@idris.fr>
+## Dern. mod. le   : Wed Jun 12 11:20:14 2013
+###############################################################################
+
+FC 	= f90
+FFLAGS 	= -dp -ffree -O3 -Oaggress
+LD	= f90
+LDFLAGS	=
+AR 	= ar
+ARFLAGS = rv
+RM      = rm
+RMFLAGS = -f

@@ -1,0 +1,15 @@
+############################ -*- Mode: Makefile -*- ###########################
+## make_prod_mat --- 
+## 
+## Auteur          : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Créé le         : Wed Sep 20 11:21:49 2006
+## Dern. mod. par  : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Dern. mod. le   : Thu Jan  7 16:58:57 2010
+###############################################################################
+
+CMD	= prod_mat
+SRC     = prod_mat.F90
+OBJ     = prod_mat.o
+# -qstrict pour empecher le deroulement des boucles
+FFLAGS += -qstrict -WF,-DVAL_M=1801,-DVAL_N=2401
+

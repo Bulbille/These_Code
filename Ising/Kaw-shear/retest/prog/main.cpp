@@ -1,0 +1,242 @@
+#include "init.h"
+#include "math.h"
+#include "dynamique.h"
+#include "time.h"
+clock_t cputime = clock();
+
+void parametres(int argc, char* argv[]);
+void ecriture(int grille[][L_Y], double mag_y[], double e_x[], double e_y[], double magnetisation, double e_int,double temps);
+
+
+std::default_random_engine generator;
+
+double BETA,H,w,F,ttc;
+int T_EQ = 1e1;
+int T_PHO = 1e3;
+string prefix = ".",algo;
+
+/****************** Main ******************/
+int main(int argc, char *argv[]){
+
+    int grille[L_X][L_Y];
+    int* liens = new int[NLiensMax*4];
+    double* acceptance_rate = new double[NLiensMax];
+    generator.seed(time(NULL));
+    parametres(argc,argv); 
+    generation(grille,liens);
+
+    /******* VARIABLES THERMO *********/
+    double mag=0, energie=0;
+    int t_prec = 0;
+    double* magy   = new double[L_Y];
+    double* ex     = new double[L_Y];
+    double* ey     = new double[L_Y];
+
+    double** magypar = new double*[L_Y];
+    double** expar   = new double*[L_Y];
+    double** eypar   = new double*[L_Y];
+
+    /********************************************/
+    /*******************************************/
+    double t, delta_t; // delta_t = 1 pour Glauber
+
+    /** Équilibration du système **/
+    for(t = 0; t<T_EQ ; t+= delta_t){
+        maj_liens(grille, liens, acceptance_rate,&delta_t);
+        int tirage = tirage_lien(acceptance_rate);
+        int x1 = liens[tirage*4+0],
+            y1 = liens[tirage*4+1],
+            x2 = liens[tirage*4+2],
+            y2 = liens[tirage*4+3];
+        grille[x1][y1] *= -1;
+        grille[x2][y2] *= -1;
+    }
+
+    for(int y=0;y<L_Y;y++){
+        magy[y]=0;
+        ex[y]=0;
+        ey[y]=0;
+        magypar[y]   = new double [2]; 
+        expar[y]     = new double [2]; 
+        eypar[y]     = new double [2]; 
+        for(int x=0;x<L_X;x++){
+            magypar[y][0] += grille[x][y]; 
+            expar[y][0]   -= grille[x][y]*grille[modulo(x+1, L_X)][y]; 
+            if(y>0)
+                eypar[y][0]   -= grille[x][y]*grille[x][y-1];
+            if(y<L_Y-1)
+                eypar[y][0]   -= grille[x][y]*grille[x][y+1]; 
+        }
+        magypar[y][1] = 0;
+        expar[y][1]   = 0;
+        eypar[y][1]   = 0;    
+    }
+
+    /** Vraie simulation **/
+    for(t = 0; true ; t+= delta_t){
+
+        /****** MONTE CARLO STEP ****/
+        /**** Kawasaki **/
+        maj_liens(grille, liens, acceptance_rate,&delta_t);
+
+        int tirage = tirage_lien(acceptance_rate);
+        int x1 = liens[tirage*4+0],
+            y1 = liens[tirage*4+1],
+            x2 = liens[tirage*4+2],
+            y2 = liens[tirage*4+3];
+        grille[x1][y1] *= -1;
+        grille[x2][y2] *= -1;
+        /****** CALCULS GRANDEURS THERMO **************
+        // Énergie verticale
+
+        if(y1>0)
+            eypar[y1][0] += 2*grille[x1][y1]*grille[x1][y1-1];
+        if(y1<L_Y-1)
+            eypar[y1][0] += 2*grille[x1][y1]*grille[x1][y1+1];
+        ey[y1]       += expar[y1][0] * (t-expar[y1][1]);
+        eypar[y1][1] = t;
+
+        if(y2>0)
+            eypar[y2][0] += 2*grille[x2][y2]*grille[x2][y2-1];
+        if(y2<L_Y-1)
+            eypar[y2][0] += 2*grille[x2][y2]*grille[x2][y2+1];
+        ey[y2]       += expar[y2][0] * (t-expar[y2][1]);
+        eypar[y2][1] = t;
+
+        // m'(y) = m(y) - 2*sigma(xy)
+
+        // Énergie horizontale
+        if(y1==y2){
+            int x = min(x1,x2);
+            expar[y1][0] += 2*grille[x][y1] * ( grille[modulo(x-1,L_X)][y1] - grille[modulo(x+2,L_X)][y1]);
+            ex[y1]        += expar[y1][0] * (t-expar[y1][1]);
+            expar[y1][1]  = t;
+        }
+        else{
+            expar[y1][0] += 2*grille[x1][y1]*( grille[modulo(x1+1, L_X)][y1]+ grille[modulo(x1-1, L_X)][y1]);
+            ex[y1]       += expar[y1][0] * (t-expar[y1][1]);
+            expar[y1][1] = t;
+
+            expar[y2][0] += 2*grille[x2][y2]*( grille[modulo(x2+1, L_X)][y2]+ grille[modulo(x2-1, L_X)][y2]);
+            ex[y2]       += expar[y2][0] * (t-expar[y2][1]);
+            expar[y2][1] = t;
+        }
+        //*/
+        // Énergie magnétique
+        if(y1!= y2){ //si sur la même ligne, la magnétisation ne change pas
+            magypar[y1][0] += 2*grille[x1][y1];
+            magy[y1]       += magypar[y1][0] * (t-magypar[y1][1]);
+            magypar[y1][1] = t;
+
+            magypar[y2][0] += 2*grille[x2][y2];
+            magy[y2]       += magypar[y2][0] * (t-magypar[y2][1]);
+            magypar[y2][1] = t;
+        }
+
+        if(static_cast<int>(t)%T_PHO == 0 and static_cast<int>(t) > t_prec){
+            t_prec = static_cast<int>(t);
+            cout << t << " " << delta_t << "\n";
+            for(int y=0;y<L_Y;y++){
+                magy[y]  += magypar[y][0]  * (t-magypar[y][1]);
+                magypar[y][1] = t;
+                /*
+                ex[y]    += expar[y][0]    * (t-expar[y][1]);  
+                expar[y][0] = 0;
+                expar[y][1] = t;
+
+                eypar[y][0] = 0;
+                ey[y]    += eypar[y][0]    * (t-eypar[y][1]);  
+                eypar[y][1] = t;
+                //*/
+            }
+            ecriture(grille,magy,ex,ey,mag,energie,t);
+        }
+
+    }
+    /**** Fin simulation MC ***/
+    return 0;
+}
+
+/************* ÉCRITURE DANS FICHIER **********/
+void ecriture(int grille[][L_Y], double mag_y[], double e_x[], double e_y[], double magnetisation, double e_int,double temps){
+    string str;
+    /******* ÉCRITURES GRANDEURS THERMO ****
+    str = prefix + "/thermo_kaw";
+    FILE* fenergie;
+    fenergie = fopen(str.c_str(),"a+");
+    flock(fileno(fenergie),LOCK_EX);
+    fprintf(fenergie,"%f %f %f %ld \n",ttc,magnetisation,e_int,temps);
+    fclose(fenergie);
+    //*/
+    str = algo;
+    ofstream result(str.c_str());
+    /* Magnetisation */ 
+    str = algo +  "-mag_y";
+    ofstream res_mag_y(str.c_str());
+    /**** ENERGIE DE BANDE **/
+    str = algo + "-energie";
+    ofstream energie_bande(str.c_str());
+
+    double normalisation =static_cast<double>(L_X)*temps;
+    for(int y=0; y<L_Y;y++){
+        res_mag_y <<  y << " " << mag_y[y]/normalisation << "\n";
+        energie_bande <<  y << " " << e_x[y]/normalisation << " " << e_y[y]/normalisation << "\n";
+        for(int x=0; x<L_X;x++)
+            result << x << " " << y << " " << grille[x][y] << "\n";
+    }
+    result.close();
+    res_mag_y.close();
+    energie_bande.close();
+}
+
+/******* LECTURE DES PARAMÈTRES DU BASH **********/
+void parametres(int argc, char* argv[]){
+    BETA=1./T_C;
+    if(argc > 1){ 
+        for(int i = 1; i<argc; ++i){
+            std::string arg = argv[i];
+            if(arg == "-t"){
+                if(isOnlyDouble(argv[i+1])){
+                    ttc = atof(argv[i+1]);
+                    BETA = 1/(ttc*T_C);
+                }
+                else{ cout << "Le paramètre temperature n'est pas un double"; abort();}
+            }
+            else if(arg == "-w"){
+                if(isOnlyDouble(argv[i+1]))
+                    w = atof(argv[i+1]);
+                else{ cout << "Le paramètre w0 n'est pas un double"; abort();}
+            }
+            else if(arg == "-f"){
+                if(isOnlyDouble(argv[i+1]))
+                    F = atof(argv[i+1]);
+                else{ cout << "Le paramètre F0 n'est pas un double"; abort();}
+            }
+            else if(arg == "-prefix")
+                prefix = argv[i+1];
+        }
+    }
+
+    if(system(("mkdir -p " + prefix).c_str())) {;} 
+    algo = prefix + "/";
+    {   
+        stringstream stream;
+        stream << fixed << setprecision(2) << ttc ;
+        algo += "kaw_T-" + stream.str();
+    }   
+    if(fabs(H) > 1e-6){
+        stringstream stream;
+        stream << fixed << setprecision(4) << H;
+        algo += "-h-" + stream.str();
+    }   
+    if(fabs(w) > 1e-6){
+        stringstream stream;
+        stream << fixed << setprecision(2) << w;
+        algo += "-w-" + stream.str();
+    }   
+    if(fabs(F) > 1e-6){
+        stringstream stream;
+        stream << fixed << setprecision(2) << F;
+        algo += "-f-" + stream.str();
+    }   
+}

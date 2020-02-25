@@ -1,0 +1,14 @@
+############################ -*- Mode: Makefile -*- ###########################
+## make_sx8 --- 
+## 
+## Auteur          : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Créé le         : Wed Sep 13 11:10:40 2006
+## Dern. mod. par  : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Dern. mod. le   : Mon Oct  8 17:39:42 2007
+###############################################################################
+
+FC	    = sxf90
+FFLAGS	    = 
+LDFLAGS	    =  
+FFLAGS_OMP  = -Popenmp
+LDFLAGS_OMP = -Popenmp

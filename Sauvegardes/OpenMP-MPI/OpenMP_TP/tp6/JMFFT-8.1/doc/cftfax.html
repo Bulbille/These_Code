@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+  <HEAD>
+    <title>CFFTMLT</title>
+  </HEAD>
+
+  <BODY  BGCOLOR="#fdf5e6">
+<PRE>
+<B>*** JMFFT 8.1 - émulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</B>
+
+<B>NOM</B>
+
+     CFFTMLT - Applique une Transformée de Fourier rapide (FFT)
+               complexe-complexe à un ensemble donné de vecteurs.
+
+<B>SYNTAXE</B>
+
+     CALL CFTFAX (n, ifax, trigs)
+
+     CALL CFFTMLT (ar, ai, work, trigs,	ifax, inc, jump, n, lot, isign)
+
+<B>IMPLEMENTATION</B>
+
+     Ces sous-programmes émulent les sous-programmes de même nom de la SCILIB de
+     CRAY. Tous les arguments réels ou complexes doivent être déclarés en
+     double précision.
+
+<B>DESCRIPTION</B>
+
+     CFFTMLT applique une FFT complexe-complexe a un ensemble donné de
+     vecteurs selon la formule suivante :
+
+				 n-1 
+     (ar(inc*k+1),ai(inc*k+1)) = Sum exp(isign*iota*2*pi*j*k/n) (ar(inc*j+1),ai(inc*j+1))
+				 j=0	  
+
+     pour k = 0,1,...,n-1
+
+     Ce calcul s'applique aux n vecteurs fournis en entrée.
+
+<B>ARGUMENTS</B>
+
+     ar	   Tableau du type REAL(KIND=8) de dimension n*lot.  (entrée/sortie)
+	   En entrée, il contient la partie réelle des données à transformer.
+	   En sortie, il contient la partie réelle transformée.
+
+     ai	   Tableau du type REAL(KIND=8) de dimension n*lot.  (entrée/sortie)
+	   En entrée, il contient la partie imaginaire des données à transformer.
+	   En sortie, il contient la partie imaginaire transformée.
+
+     work  Tableau du type REAL(KIND=8) de dimension 4*n*lot.
+           Espace de travail.
+
+     trigs Tableau du type REAL(KIND=8) de dimension 2*n. (entrée) Il doit
+           être initialisé afin de contenir la table des sinus et cosinus.  Le
+           sous-programme suivant permet d'initialiser les tableaux trigs et ifax à
+           la fois :
+
+		     CALL CFTFAX (n,ifax,trigs)
+
+     ifax  Tableau du type INTEGER de dimension 19.  (entrée)
+	   Il doit être initialisé grâce au sous-programme ci-dessous afin
+           de contenir une liste de facteurs de n.
+
+     inc   Scalaire du type INTEGER.  (entrée)
+	   Le pas entre deux élements d'un vecteur.
+
+     jump  Scalaire du type INTEGER.  (entrée) Le pas entre deux vecteurs
+           consécutifs.  inc et jump s'appliquent aussi bien à la partie réelle qu'à
+           la partie imaginaire.
+
+     n	   Scalaire du type INTEGER.  (entrée)
+	   Longueur de chaque vecteur à transformer. n >= 0.
+	   Toute valeur non valide de n conduit le sous-programme CFTFAX à retourner
+	   un code d'erreur ifax(1)=-99.
+
+     lot   Scalaire du type INTEGER.  (entrée)
+	   Le nombre de vecteurs à transformer.
+
+     isign Scalaire du type INTEGER.  (entrée)
+	   +1 --> transformée de Fourier
+	   -1 --> transformée de Fourier inverse
+
+<B>VOIR AUSSI</B>
+
+     CCFFTM, RFFTMLT
+</PRE>
+
+<!--#include virtual="/includes/fin.html" -->
+</BODY>
+</HTML>

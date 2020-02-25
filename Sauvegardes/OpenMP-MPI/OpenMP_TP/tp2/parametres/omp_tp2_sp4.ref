@@ -1,0 +1,86 @@
+zahir020 - Tue Jan 25 15:51:17 + make clean
+	rm -f jacobi jacobi.o core
+zahir020 - Tue Jan 25 15:51:17 + make mono
+	xlf_r -O3 -q64 -qstrict -qfree=f90 -qsuffix=f=f90 -c jacobi.f90
+xlf_r:  
+** jacobi   === End of Compilation 1 ===
+1501-510  Compilation successful for file jacobi.f90.
+	xlf_r -q64 -o jacobi jacobi.o
+xlf_r:  
+zahir020 - Tue Jan 25 15:51:17 + ./jacobi
+
+
+   Iterations          :  104
+   Norme               :  2.026E-16
+   Temps elapsed       :  2.990E+00 sec.
+   Temps CPU de calcul :  2.990E+00 sec.
+
+
+zahir020 - Tue Jan 25 15:51:17 + make clean
+	rm -f jacobi jacobi.o core
+zahir020 - Tue Jan 25 15:51:17 + make para
+	xlf_r -O3 -q64 -qstrict -qfree=f90 -qsuffix=f=f90 -qsmp=omp -c jacobi.f90
+xlf_r:  
+** jacobi   === End of Compilation 1 ===
+1501-510  Compilation successful for file jacobi.f90.
+	xlf_r -q64 -qsmp=omp -o jacobi jacobi.o
+xlf_r:  
+zahir020 - Tue Jan 25 15:51:17 + export OMP_NUM_THREADS=2
+zahir020 - Tue Jan 25 15:51:17 + export OMP_SCHEDULE=STATIC
+zahir020 - Tue Jan 25 15:51:17 + ./jacobi
+
+
+   Iterations          :  104
+   Norme               :  2.026E-16
+   Temps elapsed       :  1.380E+00 sec.
+   Temps CPU de calcul :  2.690E+00 sec.
+
+
+zahir020 - Tue Jan 25 15:51:17 + export OMP_NUM_THREADS=4
+zahir020 - Tue Jan 25 15:51:17 + export OMP_SCHEDULE=STATIC
+zahir020 - Tue Jan 25 15:51:17 + ./jacobi
+
+
+   Iterations          :  104
+   Norme               :  2.026E-16
+   Temps elapsed       :  6.900E-01 sec.
+   Temps CPU de calcul :  2.730E+00 sec.
+
+
+zahir020 - Tue Jan 25 15:51:17 + export OMP_NUM_THREADS=6
+zahir020 - Tue Jan 25 15:51:17 + export OMP_SCHEDULE=STATIC
+zahir020 - Tue Jan 25 15:51:17 + ./jacobi
+
+
+   Iterations          :  104
+   Norme               :  2.026E-16
+   Temps elapsed       :  5.200E-01 sec.
+   Temps CPU de calcul :  2.750E+00 sec.
+
+
+zahir020 - Tue Jan 25 15:51:17 + export OMP_NUM_THREADS=8
+zahir020 - Tue Jan 25 15:51:17 + export OMP_SCHEDULE=STATIC
+zahir020 - Tue Jan 25 15:51:17 + ./jacobi
+
+
+   Iterations          :  104
+   Norme               :  2.026E-16
+   Temps elapsed       :  3.500E-01 sec.
+   Temps CPU de calcul :  2.630E+00 sec.
+
+
+zahir020 - Tue Jan 25 15:51:17 + make clean
+	rm -f jacobi jacobi.o core
+
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  2.16   |
+|4 Th. |  4.33   |
+|6 Th. |  5.75   |
+|8 Th. |  8.54   |
+------------------
+
+

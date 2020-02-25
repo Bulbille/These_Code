@@ -1,0 +1,94 @@
+#!/bin/bash
+
+##################################################
+########### Compilation et prefixage #############
+##################################################
+shopt -s extglob #pour permettre de passer de 0.23500000 à 0.235
+#module load mpi/intel/2019.3.199
+module load mpi/intel/2018.5.274
+#module load mpi/mvapich2/2.3.1
+#module add openmpi/2.1.6
+LC_ALL="en_US.UTF-8"
+
+
+prefix=$(pwd)
+exec_prefix=$prefix/
+#data_prefix=/scratch/pgersberg/symmetrique
+data_prefix=$prefix/super
+debut_nom=${PWD##*/} ; debut_nom=${debut_nom:0:2}${data_prefix: -3}
+
+flags=" -g -O1 -Wall "
+flags=""
+flags=" -O3 -Wall "
+#flags="-pedantic -Wall -Wextra -Wold-style-cast -Woverloaded-virtual -Wfloat-equal -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wconversion -Wshadow -Weffc++ -Wredundant-decls -Wdouble-promotion -Winit-self -Wswitch-default -Wswitch-enum -Wundef -Wlogical-op -Winline -O0 -g"
+
+
+mkdir -p $data_prefix
+mpicc -std=c++11  $flags -c $exec_prefix/main.cpp -o $exec_prefix/main.o -lgsl -lm -lgslcblas -I ~/libeigen 
+if [ $? -ne 0 ] ; then exit 1 ; fi
+mpicc -std=c++11 $flags -o $data_prefix/stargate  $exec_prefix/main.o -lm -lstdc++  -I/usr/include -I ~/libeigen
+if [ $? -ne 0 ] ; then exit 1 ; fi
+rm $exec_prefix/main.o
+cp $exec_prefix/main.cpp $data_prefix
+
+
+##################################################
+######## Traitement des options ##################
+##################################################
+#tn,wn,fn : nombre de pas pour la température et les deux shear différents
+#tmin,tmax,autres : températures maximales et minimales
+tmin=1 ; tmax=$tmin; tn=1; 
+fmin=0 ; fmax=$fmin; fn=1; 
+mmin=0 ; mmax=$mmin; mn=1; 
+lmin=0 ; lmax=$lmin; ln=1; 
+
+while :; do
+    case $1 in
+        -tmin ) tmin=$2;;
+        -tmax ) tmax=$2;;
+        -tn ) tn=$2;;
+        -mmin ) mmin=$2;;
+        -mmax ) mmax=$2;;
+        -mn ) mn=$2;;
+        -fmin ) fmin=$2;;
+        -fmax ) fmax=$2;;
+        -fn ) fn=$2;;
+        -lmin ) lmin=$2;;
+        -lmax ) lmax=$2;;
+        -ln ) ln=$2;;
+        * ) break;;
+    esac
+    shift 2
+done
+
+##################################################
+######### Lancement des qsub #####################
+##################################################
+
+for ((t=1; t<= $tn; t++)); do
+    if [ $tn -eq 1 ] ; then temp=$tmin ;
+    else temp=$(printf "%.4f" $(echo "scale=4; ($tn*$tmin-$tmax)/($tn-1)+$t*($tmax-$tmin)/($tn-1)" | bc -l));
+    fi;
+    for ((m=1; m<= $mn; m++)); do
+        if [ $mn -eq 1 ] ; then n0=$mmin;
+        else m0=$(echo "scale=$m; 10^-$m " | bc -l);
+            echo $m0
+#        else h0=$(echo "scale=4; ($hn*$hmin-$hmax)/($hn-1)+$h*($hmax-$hmin)/($hn-1)" | bc -l);
+        fi;
+        for ((f=1; f<= $fn; f++)); do
+            if [ $fn -eq 1 ] ; then f0=$fmin;
+            else f0=$(echo "scale=2; ($fn*$fmin-$fmax)/($fn-1)+$f*($fmax-$fmin)/($fn-1)" | bc -l);
+            fi; 
+            for ((l=1; l<= $ln; l++)); do
+                if [ $ln -eq 1 ] ; then l0=$lmin;
+                else l0=$(echo "scale=0; ($ln*$lmin-$lmax)/($ln-1)+$l*($lmax-$lmin)/($ln-1)" | bc -l);
+                fi; 
+                options="temp=$temp,prefix=$data_prefix"
+                name=$debut_nom$h0"-"$f0
+                echo "T = $temp | F = $f0 | MU = $m0 | LY = $l0"
+                job=$(sbatch -o $name.%A --job-name="$name" --export=temp=$temp,prefix=$data_prefix,f=$f0,m=$m0,l=$l0 job )
+                echo $job 
+            done
+        done
+    done
+done

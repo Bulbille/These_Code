@@ -1,0 +1,83 @@
+#!/bin/bash
+
+##################################################
+########### Compilation et prefixage #############
+##################################################
+shopt -s extglob #pour permettre de passer de 0.23500000 à 0.235
+LC_ALL="en_US.UTF-8"
+
+
+prefix=$(pwd)
+exec_prefix=$prefix/prog
+data_prefix=/scratch/pgersberg/symmetrique
+data_prefix=$prefix/poster
+
+debut_nom=${PWD##*/} ; debut_nom=${debut_nom:0:2}${data_prefix: -2} 
+
+
+mkdir $data_prefix
+g++ -std=c++11 -o $data_prefix/stargate $exec_prefix/main.cpp  $exec_prefix/math.cpp $exec_prefix/dynamique.cpp -O2 -s
+if [ $? -ne 0 ] ; then exit 1 ; fi
+
+##################################################
+######## Traitement des options ##################
+##################################################
+#nbsimu : nombre de simulations d'un même nombre de paramèteres
+#tn,wn,fn : nombre de pas pour la température et les deux shear différents
+#tmin,tmax,autres : températures maximales et minimales
+nbsimu=1;
+tmin=1 ; tmax=$tmin; tn=1; 
+wmin=0 ; wmax=$wmin; wn=1; 
+fmin=0 ; fmax=$fmin; fn=1; 
+hmin=0 ; hmax=$hmin; hn=1; 
+
+while :; do
+        case $1 in
+                --tmin ) tmin=$2;;
+                --tmax ) tmax=$2;;
+                --tn ) tn=$2;;
+                --wmin ) wmin=$2;;
+                --wmax ) wmax=$2;;
+                --wn ) wn=$2;;
+                --fmin ) fmin=$2;;
+                --fmax ) fmax=$2;;
+                --fn ) fn=$2;;
+                --hmin ) hmin=$2;;
+                --hmax ) hmax=$2;;
+                --hn ) hn=$2;;
+                --nbsimu ) nbsimu=$2;;
+                * ) break;;
+        esac
+        shift 2
+done
+
+##################################################
+######### Lancement des qsub #####################
+##################################################
+
+for ((t=1; t<= $tn; t++)); do
+	if [ $tn -eq 1 ] ; then temp=$tmin ;
+	else temp=$(printf "%.3f" $(echo "scale=4; ($tn*$tmin-$tmax)/($tn-1)+$t*($tmax-$tmin)/($tn-1)" | bc -l));
+	fi;
+	for ((h=1; h<= $hn; h++)); do
+		if [ $hn -eq 1 ] ; then h0=$hmin;
+		else h0=$(echo "scale=2; ($hn*$hmin-$hmax)/($hn-1)+$h*($hmax-$hmin)/($hn-1)" | bc -l);
+		fi;
+		for ((f=1; f<= $fn; f++)); do
+			if [ $fn -eq 1 ] ; then f0=$fmin;
+			else f0=$(echo "scale=2; ($fn*$fmin-$fmax)/($fn-1)+$f*($fmax-$fmin)/($fn-1)" | bc -l);
+			fi;
+			for ((i=0; i< $nbsimu; i++)); do
+				options="temp=$temp,prefix=$data_prefix,data=$data_prefix"
+				name=$debut_nom"-"$temp"-"$h0"-"$i
+				if (( $(bc <<< "$hmin >=0") )); then options="$options"",h=$h0"  ; fi
+				if (( $(bc <<< "$fmin >=0") )); then options="$options"",f=$f0"  ; fi
+				if (( $(bc <<< "$nbsimu >= 1") )); then options="$options"",n_simu=$i"  ; fi
+				echo t=$temp,h=$h0,n=$i,f=$f0
+				echo $options
+				job=$(qsub -N $name -v $options job)
+				echo $job
+			done
+		done
+        done
+done

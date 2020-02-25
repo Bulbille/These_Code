@@ -1,0 +1,17 @@
+############################ -*- Mode: Makefile -*- ###########################
+## Make.inc.SX5 --- Makefile dependant de la plate-forme SX5 de NEC
+## 
+## Auteur          : Jalel Chergui <Jalel.Chergui@idris.fr>
+## Créé le         : Fri Jul 30 12:48:12 1999
+## Dern. mod. par  : Jeremie Gaidamour (CNRS/IDRIS) <gaidamou@idris.fr>
+## Dern. mod. le   : Wed Jun 12 11:20:14 2013
+###############################################################################
+
+FC	= sxf90
+AR	= sxar
+DEBUG	= -C debug -g
+OPT	= -C vopt 
+FFLAGS	= $(OPT) 
+ARFLAGS	= rv
+RM	= rm
+RMFLAGS = -f

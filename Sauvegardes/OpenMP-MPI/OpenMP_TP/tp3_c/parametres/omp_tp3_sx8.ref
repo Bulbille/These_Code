@@ -1,0 +1,68 @@
++ ./pi_mono.exe
+
+
+   | Pi_estime - Pi_calcule | :  3.109E-15
+   Temps elapsed              :  5.080E-01 sec.
+   Temps CPU de calcul        :  5.087E-01 sec.
+
+
++ export OMP_NUM_THREADS=1
++ export OMP_SCHEDULE=STATIC
++ ./pi_omp.exe
+
+
+   | Pi_estime - Pi_calcule | :  3.109E-15
+   Temps elapsed              :  5.080E-01 sec.
+   Temps CPU de calcul        :  5.087E-01 sec.
+
+
++ export OMP_NUM_THREADS=2
++ export OMP_SCHEDULE=STATIC
++ ./pi_omp.exe
+
+
+   | Pi_estime - Pi_calcule | :  4.885E-15
+   Temps elapsed              :  2.540E-01 sec.
+   Temps CPU de calcul        :  2.800E-01 sec.
+
+
++ export OMP_NUM_THREADS=4
++ export OMP_SCHEDULE=STATIC
++ ./pi_omp.exe
+
+
+   | Pi_estime - Pi_calcule | :  3.553E-15
+   Temps elapsed              :  1.270E-01 sec.
+   Temps CPU de calcul        :  1.273E-01 sec.
+
+
++ export OMP_NUM_THREADS=6
++ export OMP_SCHEDULE=STATIC
++ ./pi_omp.exe
+
+
+   | Pi_estime - Pi_calcule | :  2.220E-15
+   Temps elapsed              :  8.500E-02 sec.
+   Temps CPU de calcul        :  1.630E-01 sec.
+
+
++ export OMP_NUM_THREADS=8
++ export OMP_SCHEDULE=STATIC
++ ./pi_omp.exe
+
+
+   | Pi_estime - Pi_calcule | :  0.000E+00
+   Temps elapsed              :  6.400E-02 sec.
+   Temps CPU de calcul        :  1.833E-01 sec.
+
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  2.00   |
+|4 Th. |  4.00   |
+|6 Th. |  5.97   |
+|8 Th. |  7.94   |
+------------------
+

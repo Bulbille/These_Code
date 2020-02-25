@@ -1,0 +1,104 @@
+zahir019 - Thu Jan 27 15:32:38 + make clean
+	rm -f fft fft.o core
+zahir019 - Thu Jan 27 15:32:38 + make mono
+	xlf_r -qstrict -qfree=f90 -qsuffix=f=f90 -c fft.f90
+xlf_r:  
+** fft   === End of Compilation 1 ===
+1501-510  Compilation successful for file fft.f90.
+	xlf_r  -o fft fft.o -L../JMFFT-7.2 -ljmfft
+xlf_r:  
+zahir019 - Thu Jan 27 15:32:38 + ./fft
+  
+ ************************************************************
+ * Portable Fourier transforms by JMFFTLIB                  *
+ * Author : Jean-Marie Teuler, CNRS-IDRIS (teuler@idris.fr) *
+ ************************************************************
+  
+
+
+   Ecart FFT |Directe - Inverse| :  4.163E-22
+   Temps elapsed                 :  3.300E-01 sec.
+   Temps CPU de calcul           :  3.300E-01 sec.
+
+
+zahir019 - Thu Jan 27 15:32:38 + make clean
+	rm -f fft fft.o core
+zahir019 - Thu Jan 27 15:32:38 + make para
+	xlf_r -qstrict -qfree=f90 -qsuffix=f=f90 -qsmp=omp -c fft.f90
+xlf_r:  
+** fft   === End of Compilation 1 ===
+1501-510  Compilation successful for file fft.f90.
+	xlf_r  -qsmp=omp -o fft fft.o -L../JMFFT-7.2 -ljmfft
+xlf_r:  
+zahir019 - Thu Jan 27 15:32:38 + export OMP_NUM_THREADS=2
+zahir019 - Thu Jan 27 15:32:38 + export OMP_SCHEDULE=STATIC
+zahir019 - Thu Jan 27 15:32:38 + ./fft
+  
+ ************************************************************
+ * Portable Fourier transforms by JMFFTLIB                  *
+ * Author : Jean-Marie Teuler, CNRS-IDRIS (teuler@idris.fr) *
+ ************************************************************
+  
+
+
+   Ecart FFT |Directe - Inverse| :  4.510E-22
+   Temps elapsed                 :  1.600E-01 sec.
+   Temps CPU de calcul           :  2.900E-01 sec.
+
+
+zahir019 - Thu Jan 27 15:32:38 + export OMP_NUM_THREADS=4
+zahir019 - Thu Jan 27 15:32:38 + export OMP_SCHEDULE=STATIC
+zahir019 - Thu Jan 27 15:32:38 + ./fft
+  
+ ************************************************************
+ * Portable Fourier transforms by JMFFTLIB                  *
+ * Author : Jean-Marie Teuler, CNRS-IDRIS (teuler@idris.fr) *
+ ************************************************************
+  
+
+
+   Ecart FFT |Directe - Inverse| :  4.163E-22
+   Temps elapsed                 :  1.300E-01 sec.
+   Temps CPU de calcul           :  4.100E-01 sec.
+
+
+zahir019 - Thu Jan 27 15:32:38 + export OMP_NUM_THREADS=6
+zahir019 - Thu Jan 27 15:32:38 + export OMP_SCHEDULE=STATIC
+zahir019 - Thu Jan 27 15:32:38 + ./fft
+  
+ ************************************************************
+ * Portable Fourier transforms by JMFFTLIB                  *
+ * Author : Jean-Marie Teuler, CNRS-IDRIS (teuler@idris.fr) *
+ ************************************************************
+  
+
+
+   Ecart FFT |Directe - Inverse| :  4.163E-22
+   Temps elapsed                 :  1.200E-01 sec.
+   Temps CPU de calcul           :  6.500E-01 sec.
+
+
+zahir019 - Thu Jan 27 15:32:38 + export OMP_NUM_THREADS=8
+zahir019 - Thu Jan 27 15:32:38 + export OMP_SCHEDULE=STATIC
+zahir019 - Thu Jan 27 15:32:38 + ./fft
+  
+ ************************************************************
+ * Portable Fourier transforms by JMFFTLIB                  *
+ * Author : Jean-Marie Teuler, CNRS-IDRIS (teuler@idris.fr) *
+ ************************************************************
+  
+
+
+   Ecart FFT |Directe - Inverse| :  4.163E-22
+   Temps elapsed                 :  1.300E-01 sec.
+   Temps CPU de calcul           :  9.700E-01 sec.
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  2.06   |
+|4 Th. |  2.53   |
+|6 Th. |  2.75   |
+|8 Th. |  2.53   |
+------------------

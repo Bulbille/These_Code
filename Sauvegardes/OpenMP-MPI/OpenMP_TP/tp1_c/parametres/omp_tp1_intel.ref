@@ -1,0 +1,90 @@
+Compilation
+===========
+[ssos890@ada338: solution]$ gmake
+ifort -O3 -O2 -Wp,-DVAL_M=1801,-DVAL_N=2401  -c prod_mat.F90
+ifort: command line warning #10120: overriding '-O3' with '-O2'
+ifort -o prod_mat_mono.exe prod_mat.o 
+[ssos890@ada338: solution]$ gmake para
+ifort -O3 -O2 -Wp,-DVAL_M=1801,-DVAL_N=2401  -openmp -c prod_mat.F90
+ifort: command line warning #10120: overriding '-O3' with '-O2'
+ifort -o prod_mat_omp.exe prod_mat.o  -openmp 
+
+Execution
+=========
+++ cd /gpfs5r/workgpfs/idris/sos/ssos890/Ada/Test/OpenMP_tp/tp1/solution
+++ ./run.sh
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  5.774E+00 sec.
+   Temps CPU           :  5.772E+00 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+OMP: Warning #181: GOMP_CPU_AFFINITY: ignored because KMP_AFFINITY has been defined
+
+
+   Execution prod_mat en parallele avec  1 threads
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  5.802E+00 sec.
+   Temps CPU           :  5.802E+00 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+OMP: Warning #181: GOMP_CPU_AFFINITY: ignored because KMP_AFFINITY has been defined
+
+
+   Execution prod_mat en parallele avec  2 threads
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  3.215E+00 sec.
+   Temps CPU           :  6.429E+00 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+OMP: Warning #181: GOMP_CPU_AFFINITY: ignored because KMP_AFFINITY has been defined
+
+
+   Execution prod_mat en parallele avec  4 threads
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  1.506E+00 sec.
+   Temps CPU           :  6.028E+00 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+OMP: Warning #181: GOMP_CPU_AFFINITY: ignored because KMP_AFFINITY has been defined
+
+
+   Execution prod_mat en parallele avec  6 threads
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  1.177E+00 sec.
+   Temps CPU           :  7.061E+00 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+OMP: Warning #181: GOMP_CPU_AFFINITY: ignored because KMP_AFFINITY has been defined
+
+
+   Execution prod_mat en parallele avec  8 threads
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  9.348E-01 sec.
+   Temps CPU           :  7.472E+00 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. | 1.80    |
+|4 Th. | 3.83    |
+|6 Th. | 4.91    |
+|8 Th. | 6.18    |
+------------------

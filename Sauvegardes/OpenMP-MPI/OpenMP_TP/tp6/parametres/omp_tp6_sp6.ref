@@ -1,0 +1,121 @@
+Compilation
+===========
+
+vargas043 /solution/ gmake
+xlf90_r -O3 -c fft.F90
+** fft   === End of Compilation 1 ===
+1501-510  Compilation successful for file fft.F90.
+xlf90_r  -L../JMFFT-8.1/lib -ljmfft -o fft_mono.exe fft.o
+vargas043 /solution/ gmake para
+xlf90_r -O3 -qsmp=omp -c fft.F90
+** fft   === End of Compilation 1 ===
+1501-510  Compilation successful for file fft.F90.
+xlf90_r  -L../JMFFT-8.1/lib -ljmfft -qsmp=omp -o fft_omp.exe fft.o
+
+Execution
+=========
+
+vargas085 - Fri Jan  8 16:21:18 + cd /workgpfs/idris/sos/ssos890/P6IH/OpenMP_tp/tp5/solution
+vargas085 - Fri Jan  8 16:21:18 + ./run.sh
+
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+
+
+
+   Ecart FFT |Directe - Inverse| :  5.204E-23
+   Temps elapsed                 :  2.300E+00 sec.
+   Temps CPU                     :  2.300E+00 sec.
+
+
+
+
+   Execution fft en parallele avec  1 threads
+
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+
+
+
+   Ecart FFT |Directe - Inverse| :  5.204E-23
+   Temps elapsed                 :  2.290E+00 sec.
+   Temps CPU                     :  2.280E+00 sec.
+
+
+
+
+   Execution fft en parallele avec  2 threads
+
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+
+
+
+   Ecart FFT |Directe - Inverse| :  5.638E-23
+   Temps elapsed                 :  1.380E+00 sec.
+   Temps CPU                     :  1.920E+00 sec.
+
+
+
+
+   Execution fft en parallele avec  4 threads
+
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+
+
+
+   Ecart FFT |Directe - Inverse| :  5.204E-23
+   Temps elapsed                 :  6.400E-01 sec.
+   Temps CPU                     :  2.020E+00 sec.
+
+
+
+
+   Execution fft en parallele avec  6 threads
+
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+
+
+
+   Ecart FFT |Directe - Inverse| :  6.072E-23
+   Temps elapsed                 :  4.400E-01 sec.
+   Temps CPU                     :  2.070E+00 sec.
+
+
+
+
+   Execution fft en parallele avec  8 threads
+
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+
+
+
+   Ecart FFT |Directe - Inverse| :  5.638E-23
+   Temps elapsed                 :  3.600E-01 sec.
+   Temps CPU                     :  2.030E+00 sec.
+
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  1.67   |
+|4 Th. |  3.59   |
+|6 Th. |  5.23   |
+|8 Th. |  6.39   |
+------------------

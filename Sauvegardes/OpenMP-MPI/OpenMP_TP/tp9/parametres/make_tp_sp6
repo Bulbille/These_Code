@@ -1,0 +1,12 @@
+############################ -*- Mode: Makefile -*- ###########################
+## Auteur          : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Créé le         : Wed Sep 20 11:21:49 2006
+## Dern. mod. par  : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Dern. mod. le   : Wed Jan 13 15:52:18 2010
+###############################################################################
+
+CMD	= dependance
+SRC     = dependance.F90
+OBJ     = dependance.o
+FFLAGS += -O2 -WF,-DVAL_NX=16384,-DVAL_NY=8192
+

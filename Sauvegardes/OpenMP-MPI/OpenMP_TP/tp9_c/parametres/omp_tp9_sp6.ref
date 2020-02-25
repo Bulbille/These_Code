@@ -1,0 +1,91 @@
+Compilation
+===========
+
+vargas043 /solution/ gmake
+xlf90_r -O3 -O2 -WF,-DVAL_NX=16384,-DVAL_NY=8192 -c dependance.F90
+** dependance   === End of Compilation 1 ===
+1501-510  Compilation successful for file dependance.F90.
+xlf90_r  -o dependance_mono.exe dependance.o
+vargas043 /solution/ gmake para
+xlf90_r -O3 -O2 -WF,-DVAL_NX=16384,-DVAL_NY=8192 -qsmp=omp -c dependance.F90
+** dependance   === End of Compilation 1 ===
+1501-510  Compilation successful for file dependance.F90.
+xlf90_r  -qsmp=omp -o dependance_omp.exe dependance.o
+
+Execution
+=========
+
+vargas085 - Wed Jan 13 16:01:43 + cd /workgpfs/idris/sos/ssos890/P6IH/OpenMP_tp/tp8/solution
+vargas085 - Wed Jan 13 16:01:43 + ./run.sh
+
+
+   Valeurs de nx et ny :    16384    8192
+   Temps elapsed       :  2.080E+00 sec.
+   Temps CPU           :  2.080E+00 sec.
+   Norme (PB si /= 0)  :  0.000E+00
+
+
+
+
+   Execution dependance en parallele avec  1 threads
+
+
+   Valeurs de nx et ny :    16384    8192
+   Temps elapsed       :  2.070E+00 sec.
+   Temps CPU           :  2.060E+00 sec.
+   Norme (PB si /= 0)  :  0.000E+00
+
+
+
+
+   Execution dependance en parallele avec  2 threads
+
+
+   Valeurs de nx et ny :    16384    8192
+   Temps elapsed       :  1.050E+00 sec.
+   Temps CPU           :  2.090E+00 sec.
+   Norme (PB si /= 0)  :  0.000E+00
+
+
+
+
+   Execution dependance en parallele avec  4 threads
+
+
+   Valeurs de nx et ny :    16384    8192
+   Temps elapsed       :  5.300E-01 sec.
+   Temps CPU           :  2.110E+00 sec.
+   Norme (PB si /= 0)  :  0.000E+00
+
+
+
+
+   Execution dependance en parallele avec  6 threads
+
+
+   Valeurs de nx et ny :    16384    8192
+   Temps elapsed       :  3.600E-01 sec.
+   Temps CPU           :  2.130E+00 sec.
+   Norme (PB si /= 0)  :  0.000E+00
+
+
+
+
+   Execution dependance en parallele avec  8 threads
+
+
+   Valeurs de nx et ny :    16384    8192
+   Temps elapsed       :  2.700E-01 sec.
+   Temps CPU           :  2.120E+00 sec.
+   Norme (PB si /= 0)  :  0.000E+00
+
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  1.98   |
+|4 Th. |  3.92   |
+|6 Th. |  5.78   |
+|8 Th. |  7.70   |
+------------------

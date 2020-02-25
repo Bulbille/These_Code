@@ -1,0 +1,96 @@
+
+Compilation
+===========
+
+vargas043 /solution/ gmake
+xlf90_r -O3 -WF,-DVAL_N=30000000 -c pi.F90
+** pi   === End of Compilation 1 ===
+"pi.F90", 1500-036 (I) The NOSTRICT option (default at OPT(3)) has the potential to alter the semantics of a program.  Please refer to documentation on the STRICT/NOSTRICT option for more information.
+1501-510  Compilation successful for file pi.F90.
+xlf90_r  -o pi_mono.exe pi.o
+vargas043 /solution/ gmake para
+xlf90_r -O3 -WF,-DVAL_N=30000000 -qsmp=omp -c pi.F90
+** pi   === End of Compilation 1 ===
+"pi.F90", 1500-036 (I) The NOSTRICT option (default at OPT(3)) has the potential to alter the semantics of a program.  Please refer to documentation on the STRICT/NOSTRICT option for more information.
+1501-510  Compilation successful for file pi.F90.
+xlf90_r  -qsmp=omp -o pi_omp.exe pi.o
+
+Execution
+=========
+
+vargas087 - Fri Mar 18 13:47:35 + cd /workgpfs/idris/sos/ssos890/P6IH/Cours/OpenMP_tp/tp3/solut
+ion
+vargas087 - Fri Mar 18 13:47:35 + ./run.sh
+
+
+   Nombre d'intervalles       :   30000000
+   | Pi_estime - Pi_calcule | :  7.431E-13
+   Temps elapsed              :  1.133E+01 sec.
+   Temps CPU                  :  1.132E+01 sec.
+
+
+
+
+   Execution pi en parallele avec  1 threads
+
+
+   Nombre d'intervalles       :   30000000
+   | Pi_estime - Pi_calcule | :  7.431E-13
+   Temps elapsed              :  1.109E+01 sec.
+   Temps CPU                  :  1.108E+01 sec.
+
+
+
+
+   Execution pi en parallele avec  2 threads
+
+
+   Nombre d'intervalles       :   30000000
+   | Pi_estime - Pi_calcule | :  4.535E-13
+   Temps elapsed              :  5.560E+00 sec.
+   Temps CPU                  :  1.108E+01 sec.
+
+
+
+
+   Execution pi en parallele avec  4 threads
+
+
+   Nombre d'intervalles       :   30000000
+   | Pi_estime - Pi_calcule | :  1.793E-13
+   Temps elapsed              :  2.770E+00 sec.
+   Temps CPU                  :  1.105E+01 sec.
+
+
+
+
+   Execution pi en parallele avec  6 threads
+
+
+   Nombre d'intervalles       :   30000000
+   | Pi_estime - Pi_calcule | :  4.768E-14
+   Temps elapsed              :  1.860E+00 sec.
+   Temps CPU                  :  1.108E+01 sec.
+
+
+
+
+   Execution pi en parallele avec  8 threads
+
+
+   Nombre d'intervalles       :   30000000
+   | Pi_estime - Pi_calcule | :  3.775E-14
+   Temps elapsed              :  1.390E+00 sec.
+   Temps CPU                  :  1.103E+01 sec.
+
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  2.04   |
+|4 Th. |  4.09   |
+|6 Th. |  6.09   |
+|8 Th. |  8.15   |
+------------------
+

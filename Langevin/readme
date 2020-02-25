@@ -1,0 +1,9 @@
+Solution 1D interface via équation de Langevin
+s=sigma=tension surface
+
+H= s/2 * int h'² dy - B int |h| dy
+Langevin : dh_i/dt = -dH/dh_i + nu_i *sqrt(2T)
+
+Discrétisé ça donne :
+h_i(t+dt) ? h_i(t) + dt( s*(h_{i+1} - 2h_i + h_{i-1}) - B sign(h_i)) + sqrt(wT dt) * nu
+mu étant une loi gaussienne normalisee

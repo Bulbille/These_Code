@@ -1,0 +1,8 @@
+Préthermalisation avec Glauber afin d'avoir un état d'équilibre
+Diffusion de Kawasaki avec champ magnétique afin de confiner une phase
+Arrêt du champ magnétique, toujours en Kawasaki, afin d'étudier l'évaporation en gouttes
+
+Ajout de la longueur de corrélation
+
+Conditions aux bordes périodiques en x et en y
+Algorithme de Monte Carlo en temps continu

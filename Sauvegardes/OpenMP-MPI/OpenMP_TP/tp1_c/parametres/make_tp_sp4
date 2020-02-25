@@ -1,0 +1,14 @@
+############################ -*- Mode: Makefile -*- ###########################
+## make_prod_mat --- 
+## 
+## Auteur          : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Créé le         : Wed Sep 20 11:21:49 2006
+## Dern. mod. par  : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Dern. mod. le   : Mon Oct 23 15:49:09 2006
+###############################################################################
+
+CMD	= prod_mat
+SRC     = prod_mat.F90
+OBJ     = prod_mat.o
+FFLAGS += -WF,-DVAL_M=701,-DVAL_N=801
+

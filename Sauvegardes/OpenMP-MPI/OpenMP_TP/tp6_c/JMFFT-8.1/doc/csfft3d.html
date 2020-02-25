@@ -1,0 +1,277 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+  <HEAD>
+    <title>SCFFT3D</title>
+  </HEAD>
+
+  <BODY  BGCOLOR="#fdf5e6">
+<PRE>
+<B>*** JMFFT 8.1 - émulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</B>
+
+<B>NOM</B>
+
+     SCFFT3D, CSFFT3D -	Applique une transformée de Fourier rapide (FFT) à trois
+                        dimensions (3D) réelle-complexe ou complexe-réelle.
+
+<B>SYNTAXE</B>
+
+     CALL SCFFT3D (isign, n1, n2, n3, scale, x,	ldx1, ldx2, y, ldy1, ldy2,
+                   table, work, isys)
+
+     CALL CSFFT3D (isign, n1, n2, n3, scale, x,	ldx1, ldx2, y, ldy1, ldy2,
+                   table, work, isys)
+
+<B>IMPLEMENTATION</B>
+
+     Ces sous-programmes émulent les sous-programmes de même nom de la SCILIB de
+     CRAY. Tous les arguments réels ou complexes doivent être déclarés
+     en double précision.
+
+<B>DESCRIPTION</B>
+
+     SCFFT3D calcule la FFT 3D d'une matrice réelle X et enregistre le
+     résultat dans la matrice complexe Y.
+     CSFFT3D calcule la FFT 3D inverse correspondante.
+
+     Soient deux tabeaux X et Y dimensionnés de la façon suivante :
+
+	  REAL(KIND=8), DIMENSION(0:ldx1-1, 0:ldx2-1, 0:n3-1)    :: X
+	  COMPLEX(KIND=8), DIMENSION(0:ldy1-1, 0:ldy2-1, 0:n3-1) :: Y
+
+     SCFFT3D applique la formule suivante :
+
+    Y(k1,k2,k3)	=
+	    n1-1 n2-1 n3-1
+    scale * Sum	 Sum  Sum [X(j1,j2,j3)*w1**(j1*k1)*w2**(j2*k2)*w3**(j3*k3)]
+	    j1=0 j2=0 j3=0
+
+    pour k1 = 0, ..., n1/2,
+	 k2 = 0, ..., n2 - 1,
+	 k3 = 0, ..., n3 - 1,
+
+    où,
+	w1 = exp(isign*2*pi*i/n1),
+	w2 = exp(isign*2*pi*i/n2),
+	w3 = exp(isign*2*pi*i/n3),
+	i = + sqrt(-1)
+	pi = 3.14159...
+	isign =	+1 ou -1
+
+     En général, si une FFT est appliquée avec des valeurs particulières de
+     isign et scale, alors son inverse est calculée avec les valeurs -isign
+     et 1/(n1*n2*n3*scale).
+
+     En particulier, avec les valeurs isign = +1 et scale = 1.0, la FFT
+     inverse se calcule en prenant isign = -1 et scale = 1.0/(n1*n2*n3).
+
+     SCFFT3D calcule la transformée réelle-complexe dans la première dimension
+     suivie par celle complexe-complexe dans la deuxième dimension.
+
+     CSFFT3D effectue la FFT inverse correspondante à celle obtenue avec
+     SCFFT3D. Pour se faire, il calcule la transformée complexe-complexe dans
+     la seconde dimension suivie par celle complexe-réelle dans la première
+     dimension.
+
+<B>ARGUMENTS</B>
+
+     isign     Scalaire du type INTEGER. (entrée)
+	       Indique si la table des coefficients doit être initialisée
+	       ou s'il faut appliquer une FFT ou son inverse.
+
+	       Si isign = 0, le sous-programme initialise le tableau table et
+	       retourne sa valeur. Dans ce cas, seuls les arguments isign, n1, n2
+	       et table sont vérifés et utilisés.
+
+               Si isign = +1 ou -1, la FFT ou son inverse est appliquée.
+
+     n1	       Scalaire du type INTEGER. (entrée).
+	       Nombre de transformées dans la première dimension.
+
+	       Une restriction de JMFFT fait que n1 ou n2 ou n3 doit
+	       être un nombre pair.
+
+     n2        Scalaire du type INTEGER. (entrée).
+	       Nombre de transformées dans la deuxième dimension.
+
+	       Une restriction de JMFFT fait que n1 ou n2 ou n3 doit
+	       être un nombre pair.
+
+     n3        Scalaire du type INTEGER. (entrée).
+	       Nombre de transformées dans la troisième dimension.
+
+	       Une restriction de JMFFT fait que n1 ou n2 ou n3 doit
+	       être un nombre pair.
+
+     scale     Scalaire du type REAL(KIND=8). (entrée)
+	       Facteur d'échelle.  Chaque élément du vecteur y est multiplié par
+	       scale une fois la FFT effectuée ainsi qu'il est spécifié dans la
+	       formule ci-dessus.
+
+     x	       SCFFT3D:	 tableau du type REAL(KIND=8) de dimension
+                         (0:ldx1-1, 0:ldx2-1, 0:n3-1). (entrée)
+	       CSFFT3D:	 tableau du type COMPLEX(KIND=8) de dimension
+                         (0:ldx1-1, 0:ldx2-1, 0:n3-1). (entrée)
+                          Voir la <A HREF=#NOTES>note</A> ci-dessous.
+
+	       Tableau contenant les valeurs à transformer.
+
+     ldx1      Scalaire du type INTEGER. (entrée).
+	       Nombre d'éléments dans la première dimension du tableau x tel
+	       qu'il est déclaré dans l'unité appelante.
+
+	       SCFFT3D:	 ldx1 >= max(n1, 1).
+	       CSFFT3D:	 ldx1 >= max(n1/2 + 1, 1).
+
+     ldx2      Scalaire du type INTEGER. (entrée).
+	       Nombre d'éléments dans la deuxième dimension du tableau x tel
+	       qu'il est déclaré dans l'unité appelante. ldx2 >= max(n2, 1).
+
+     y	       SCFFT3D:	 tableau du type COMPLEX(KIND=8) de dimension
+               (0:ldy1-1, 0:ldy2-1, 0:n3-1). (entrée)
+	       CSFFT3D:	 tableau du type REAL(KIND=8) de dimension
+               (0:ldy1-1, 0:ldy2-1, 0:n3-1). (sortie)
+
+     ldy1      Scalaire du type INTEGER  (entrée).
+	       Nombre d'éléments déclaré dans la première dimension du tableau
+	       y tel qu'il est déclaré dans l'unité appelante.
+
+	       SCFFT3D:	 ldy1 >= max(n1/2 + 1, 1).
+	       CSFFT3D:	 ldy1 >= max(n1 + 2, 1).
+
+               La transformée complexe-réelle nécessite deux éléments
+               supplémentaires dans la première dimension (c'est pourquoi,
+               ldy1 >= n1 + 2 plutôt que ldy1 >= n1).  Ces éléments servent à
+               stocker certaines valeurs pendant une phase intermédiaire de
+               calcul. En sortie, ces éléments possèdent des valeurs
+               quelconques.
+
+     ldy2      Scalaire du type INTEGER. (entrée).
+	       Nombre d'éléments déclaré dans la deuxième dimension du tableau
+	       y. tel qu'il est déclaré dans l'unité appelante. ldy2 >= max(n2, 1).
+
+     table     Tableau du type REAL(KIND=8) de dimension 100 + 2*(n1 + n2 + n3).
+               (entrée ou sortie)
+
+	       Tableau contenant la table des coefficients et des fonctions
+	       trigonométriques.
+
+	       Si isign = 0, le sous-programme SCFFT3D ou CSFFT3D initialise
+	       table (table est en sortie seulement).
+
+	       Si isign = +1 ou -1, table est supposé être déja initialisé
+	       (table est en entrée seulement).
+
+     work      Tableau du type REAL(KIND=8) de dimension 512*max(n1, n2, n3)
+               Tableau de travail.
+
+               Note : Cette dimension peut être augmentée ou diminuée, à
+               condition d'en informer JMFFT en appelant le sous-programme
+               JMSETNWORK.
+
+     isys      Scalaire du type INTEGER. (entrée)
+	       Cet argument n'est pas utilisé. Il est conservé pour des raisons
+	       de compatibilité avec la SCILIB de CRAY.
+
+<B><A NAME="NOTES">NOTES</A></B>
+
+     Dans le cas de CSFFT3D, le tableau X est un tableau complexe qui
+     doit de plus être hermitien.
+
+     Dans la mesure où seulement une moitié du tableau est stockée
+     (la première dimension va de 0 à n1/2 inclus), cette condition se
+     traduit par le fait que le sous-tableau à deux dimensions x(0,:,:),
+     ainsi que le sous-tableau x(n1/2,:,:) si n1 est pair, doivent
+     être hermitiens.
+
+     Plus précisément
+     - x(i,j,k) doit être réel pour i = 0 et i = n1/2 (si n1 est pair),
+       j = 0 et j = n2/2 (si n2 est pair),
+       k = 0 et j = n3/2 (si n3 est pair),
+     - x(0,n2-j,n3-k) doit être le conjugué de x(0,j,k)
+       si n2-j est différent de j ou si n3-k est différent de k.
+     - si n1 est pair, x(n1/2,n2-j,n3-k) doit être le conjugué de x(n1/2,j,k)
+       si n2-j est différent de j ou si n3-k est différent de k.
+
+     En fait, CSFFT3D force automatiquement les conditions de
+     termes réels, en mettant à 0 la partie imaginaire des termes
+     concernés. Il n'y a donc pas à s'en préoccuper.
+
+     En revanche, CSFFT3D ne peut pas forcer les conditions de conjugaison
+     car si par exemple le tableau x est tel que x(0,n2-j,n3-k) n'est pas le
+     conjugué de x(0,j,k), CSFFT2D ne peut pas choisir entre ces deux termes :
+     faut-il forcer x(0,n2-j,n3-k) = conjg(x(0,j,k)) ou bien
+     x(0,j,k) = conjg(x(0,n2-j,n3-k)) ?
+     Donc c'est à l'utiliseur de s'assurer que son tableau d'entrée vérifie
+     bien ces conditions de conjugaison.
+
+<B>EXEMPLES</B>
+
+     <B>Exemple 1</B> : initialise le tableau TABLE dans le but d'appliquer
+     ultérieurement une FFT de dimension (128,128,129). Dans ce cas, seuls les
+     arguments ISIGN, N1, N2, N3 et TABLE sont utilisés.
+
+           INTEGER, PARAMETER                              :: N1=128, N2=128, N3=129
+	   REAL(KIND=8), DIMENSION(100 + 2*(N1 + N2 + N3)) :: TABLE
+	   CALL	SCFFT3D	(0, N1, N2, N3, 0.d0, DUMMY, 1, 1, DUMMY, 1, 1, &
+	                 TABLE, DUMMY, 0)
+
+     <B>Exemple 2</B> : X est un tableau réel de dimension (0:128, 0:128, 0:128).
+     Y est un tableau complexe de dimension(0:64, 0:128, 0:128). Nous
+     appliquons une FFT sur X et nous enregistrons le résultat dans Y. Le
+     tableau TABLE est supposé être initialisé.
+
+	   REAL(KIND=8), DIMENSION(0:128, 0:128, 0:128)       :: X
+	   COMPLEX(KIND=8), DIMENSION(0:64,  0:128, 0:128)    :: Y
+	   REAL(KIND=8), DIMENSION(100 + 2*(128 + 128 + 128)) :: TABLE
+	   REAL(KIND=8), DIMENSION(512*128)                   :: WORK
+	   ...
+	   CALL	SCFFT3D(0, 128,	128, 128, 1.d0, X, 129, 129, &
+	                Y, 65, 129, TABLE, WORK, 0)
+	   CALL	SCFFT3D(1, 128,	128, 128, 1.d0, X, 129, 129, &
+	                Y, 65, 129, TABLE, WORK, 0)
+
+     <B>Exemple 3</B> :	ici nous poursuivons l'exemple 2 en effectuant la FFT inverse
+     de Y et en enregistrant le résultat dans X.  Le facteur d'échelle est ici
+     égale à 1/(128*128*129). Nous supposons que le tableau TABLE ait été
+     initialisé auparavant.
+           
+	   CALL	CSFFT3D(-1, 128, 128, 128, 1.d0/(128.d0*128.d0*128.d0), Y, 65, &
+                        129, X, 129, 129, TABLE, WORK, 0)
+
+     <B>Exemple 4</B> : nous effectuons ici un calcul analogue à celui de l'exemple 2
+     en supposant toutefois que les indices des tableaux X et Y démarrent à 1
+     et non plus à 0.
+
+	   REAL(KIND=8), DIMENSION(129, 129, 129)             :: X
+	   COMPLEX(KIND=8), DIMENSION(65, 129, 129)           :: Y
+	   REAL(KIND=8), DIMENSION(100 + 2*(128 + 128 + 128)) :: TABLE
+	   REAL(KIND=8), DIMENSION(512*128)                   :: WORK
+	   ...
+	   CALL	SCFFT3D(0, 128,	128, 128, 1.d0, X, 129, 129, &
+	                Y, 65, 129, TABLE, WORK, 0)
+	   CALL	SCFFT3D(1, 128,	128, 128, 1.d0, X, 129, 129, &
+	                Y, 65, 129, TABLE, WORK, 0)
+
+     <B>Exemple 5</B> : calcul semblable à l'exemple 4 sauf qu'ici, pour une économie
+     de place mémoire, nous mettons en équivalence X et Y. Nous supposons que
+     le tableau TABLE ait été initialisé auparavant.
+
+	   REAL(KIND=8), DIMENSION(130, 129, 129)   :: X
+	   ...
+	   CALL	SCFFT3D(1, 128,	128, 129, 1.d0, X, 130, 129, &
+	                X, 65, 129, TABLE, WORK, 0)
+
+<B>VOIR AUSSI</B>
+
+     CCFFT, CCFFT2D, CCFFT3D, CCFFTM, SCFFT, SCFFT2D, SCFFTM, JMSETNWORK
+</PRE>
+
+<p>
+<hr size="1">
+<div align="center">
+<h6><b>&copy; CNRS - IDRIS</b></h6>
+</div>
+
+</BODY>
+</HTML>
+

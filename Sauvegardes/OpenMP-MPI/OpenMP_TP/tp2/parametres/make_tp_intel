@@ -1,0 +1,16 @@
+############################ -*- Mode: Makefile -*- ###########################
+## make_tp_inc --- 
+## 
+## Auteur          : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Créé le         : Wed Sep 20 11:21:49 2006
+## Dern. mod. par  : Jeremie Gaidamour (CNRS/IDRIS) <gaidamou@idris.fr>
+## Dern. mod. le   : Fri Aug 02 15:14:07 2013
+###############################################################################
+
+CMD	?= jacobi
+SRC     ?= jacobi.F90
+
+#FFLAGS += -Wp,-DVAL_N=1201,-DVAL_D=800
+FFLAGS  += -Wp,-DVAL_N=3201,-DVAL_D=2000
+CFLAGS  += -Wp,-DVAL_N=3201,-DVAL_D=2000
+

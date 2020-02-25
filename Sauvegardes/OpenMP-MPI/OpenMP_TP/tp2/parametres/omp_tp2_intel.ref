@@ -1,0 +1,99 @@
+Compilation
+===========
+
+[ssos890@ada338: solution]$ gmake mono
+ifort -O3 -Wp,-DVAL_N=3201,-DVAL_D=2000 -c jacobi.F90
+ifort -o jacobi_mono.exe jacobi.o 
+[ssos890@ada338: solution]$ gmake para
+ifort -O3 -Wp,-DVAL_N=3201,-DVAL_D=2000 -openmp -c jacobi.F90
+ifort -o jacobi_omp.exe jacobi.o  -openmp
+
+Execution
+=========
+[ssos890@ada338: solution]$ more omp_tp2.res 
+++ cd /gpfs5r/workgpfs/idris/sos/ssos890/Ada/Test/OpenMP_tp/tp2/solution
+++ ./run.sh
+
+
+   Taille du systeme   :  3201
+   Iterations          :  130
+   Norme               :  1.795E-16
+   Temps elapsed       :  3.063E+00 sec.
+   Temps CPU           :  3.063E+00 sec.
+
+
+OMP: Warning #181: GOMP_CPU_AFFINITY: ignored because KMP_AFFINITY has been defined
+
+
+   Execution jacobi en parallele avec  1 threads
+
+
+   Taille du systeme   :  3201
+   Iterations          :  130
+   Norme               :  1.795E-16
+   Temps elapsed       :  3.239E+00 sec.
+   Temps CPU           :  3.239E+00 sec.
+
+
+OMP: Warning #181: GOMP_CPU_AFFINITY: ignored because KMP_AFFINITY has been defined
+
+
+   Execution jacobi en parallele avec  2 threads
+
+
+   Taille du systeme   :  3201
+   Iterations          :  130
+   Norme               :  1.795E-16
+   Temps elapsed       :  1.690E+00 sec.
+   Temps CPU           :  3.379E+00 sec.
+
+
+OMP: Warning #181: GOMP_CPU_AFFINITY: ignored because KMP_AFFINITY has been defined
+
+
+   Execution jacobi en parallele avec  4 threads
+
+
+   Taille du systeme   :  3201
+   Iterations          :  130
+   Norme               :  1.795E-16
+   Temps elapsed       :  8.901E-01 sec.
+   Temps CPU           :  3.559E+00 sec.
+
+
+OMP: Warning #181: GOMP_CPU_AFFINITY: ignored because KMP_AFFINITY has been defined
+
+
+   Execution jacobi en parallele avec  6 threads
+
+
+   Taille du systeme   :  3201
+   Iterations          :  130
+   Norme               :  1.795E-16
+   Temps elapsed       :  6.315E-01 sec.
+   Temps CPU           :  3.785E+00 sec.
+
+
+OMP: Warning #181: GOMP_CPU_AFFINITY: ignored because KMP_AFFINITY has been defined
+
+
+   Execution jacobi en parallele avec  8 threads
+
+
+   Taille du systeme   :  3201
+   Iterations          :  130
+   Norme               :  1.795E-16
+   Temps elapsed       :  5.181E-01 sec.
+   Temps CPU           :  4.141E+00 sec.
+
+
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. | 1.81    |
+|4 Th. | 3.44    |
+|6 Th. | 4.85    |
+|8 Th. | 5.91    |
+------------------

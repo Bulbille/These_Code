@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+  <HEAD>
+    <title>RFFTMLT</title>
+  </HEAD>
+
+  <BODY  BGCOLOR="#fdf5e6">
+<PRE>
+<B>*** JMFFT 8.1 - émulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</B>
+
+<B>NOM</B>
+
+     RFFTMLT - Applique une Transformée de Fourier rapide (FFT)
+               complexe-réelle ou réelle-complexe à un ensemble donné de vecteurs.
+
+<B>SYNTAXE</B>
+
+     CALL FFTFAX(n, ifax, trigs)
+
+     CALL RFFTMLT (x, work, trigs, ifax, inc1x,	inc2x, n, lot, isign)
+
+<B>IMPLEMENTATION</B>
+
+     Ces sous-programmes émulent les sous-programmes de même nom de la SCILIB de
+     CRAY. Tous les arguments réels ou complexes doivent être déclarés en
+     double précision.
+
+<B>DESCRIPTION</B>
+
+     Quand isign=-1, RFFTMLT applique une FFT réelle-complexe à un ensemble
+     donné de vecteurs. Pour chacun des m vecteurs réels x(j,m) j = 0,1,...,n-1,
+     RFFTMLT calcule le vecteur complexe y(k,m) k = 0,1,...,n/2 tel que :
+
+				    n-1
+		       y(k,m) =	1/n Sum	 x(j,m)	(w(n)**(-j*k))
+				    j=0
+
+	  pour	    k =	0,1,...,n/2,
+	  où,    w(n) = exp((2*pi*i)/n).
+
+     Quand isign = +1, RFFTMLT applique une FFT complexe-réelle (FFT
+     inverse). pour chacun des m vecteur complexe y(k,m) k = 0,1,...,n/2,
+     RFFTMLT calcule le vecteur réel x(j,m) j = 0,1,...,n-1 tel que :
+
+		       n-1
+	     x(j,m) =  Sum  y(k,m) (w(n)**(j*k))
+		       k=0
+
+     pour       j = 0,1,...,n-1
+     où,     w(n) = exp((2*pi*i)/n)
+
+<B>ARGUMENTS</B>
+
+     x	   Tableau du type REAL(KIND=8) de dimension (0:n+1, lot). (entrée/sortie)
+           En entrée, il contient les éléments à transformer.
+	   En sortie, il contient les éléments transformés.
+	   La première dimension doit être au moins égale à n+2.
+           La transformée complexe hermitien -> réel (isign=1)
+           impose que la partie imaginaire du premier élément
+           et du dernier soient nuls en entrée : x(1,:)=x(n+1,:)=0.
+
+     work  Tableau du type REAL(KIND==8) de dimension 2*n*lot.
+	   Espace de travail.
+
+     trigs Tableau du type REAL(KIND==8) de dimension 2*n. (entrée)
+           Il contient la table des sinus et cosinus. Le sous-programme
+           suivant initialise les deux tableaux trigs et ifax à la fois :
+
+		CALL FFTFAX(n, ifax, trigs)
+
+     ifax  Tableau du type INTEGER de dimension 19.  (entrée)
+	   Il contient la liste des facteurs premiers de n.
+	   Il est initialisé à l'appel du sous-programme FFTFAX (voir ci-dessus).
+
+     inc1x Scalaire du type INTEGER.  (entrée)
+           Le pas de déplacement en nombre d'éléments réels dans chaque
+           vecteur à transformer.
+
+     inc2x Scalaire du type INTEGER.  (entrée)
+	   Le déplacement entre les premiers éléments de deux vecteurs consécutifs.
+
+     n	   Scalaire du type INTEGER. (entrée)
+	   Longueur de chaque vecteur à transformer. n >= 2.
+	   n doit être un nombre paire.
+
+	   Toute valeur non valide de n conduit le sous-programme FFTFAX à retourner
+	   un code d'erreur ifax(1)=-99.
+
+     lot   Scalaire du type INTEGER. (entrée)
+	   Le nombre de vecteurs à transformer.
+
+     isign Scalaire du type INTEGER. (entrée)
+	   -1 --> applique une FFT réelle-complexe.
+	   +1 --> applique une FFT complexe-réelle (FFT inverse).
+
+<B>EXEMPLES</B>
+
+     Le programme suivant montre les séquences d'appels à FFTFAX et RFFTMLT
+     pour calculer la FFT du tableau A :
+
+	  INTEGER, PARAMETER :: n = 16, lot = 2, inc = 1, jump = inc*(n+2)
+	  REAL(KIND=8), DIMENSION(jump, lot) :: a
+          REAL(KIND=8), DIMENSION(2*n)       :: trigs
+          REAL(KIND=8), DIMENSION(2*n*lot)   :: work
+	  INTEGER, DIMENSION(19)             :: ifax
+	  . . .
+	  CALL FFTFAX(n, ifax, trigs)
+          a(2,:)   = 0.
+          a(n+2,:) = 0.
+	  CALL RFFTMLT(a, work,	trigs, ifax, inc, jump,	n, lot,	1)
+	  . . .
+
+<B>VOIR AUSSI</B>
+
+     FFTFAX
+</PRE>
+
+<!--#include virtual="/includes/fin.html" -->
+</BODY>
+</HTML>

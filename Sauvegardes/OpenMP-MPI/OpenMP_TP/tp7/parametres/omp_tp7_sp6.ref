@@ -1,0 +1,101 @@
+Compilation
+===========
+
+vargas043 /solution/ gmake
+xlf90_r -O3 -WF,-DVAL_LDA=2401,-DVAL_N=2400,-DVAL_M=24 -c principal.F90 bi_cgstab.F90
+/tmpdir/inter/int.ssos890-008103033467510/F8336880ERi-ab:
+** principal   === End of Compilation 1 ===
+1501-510  Compilation successful for file principal.F90.
+/tmpdir/inter/int.ssos890-008103033467510/F8336880F6i-ad:
+** bi_cgstab   === End of Compilation 1 ===
+"bi_cgstab.F90", 1500-036 (I) The NOSTRICT option (default at OPT(3)) has the potential to alter the semantics of a program.  Please refer to documentation on the STRICT/NOSTRICT option for more information.
+1501-510  Compilation successful for file bi_cgstab.F90.
+xlf90_r  -o principal_mono.exe principal.o bi_cgstab.o
+
+vargas043 /solution/ gmake para
+xlf90_r -O3 -WF,-DVAL_LDA=2401,-DVAL_N=2400,-DVAL_M=24 -qsmp=omp -c principal.F90 bi_cgstab.F90
+/tmpdir/inter/int.ssos890-008103033467510/F8266940iSeHMb:
+** principal   === End of Compilation 1 ===
+1501-510  Compilation successful for file principal.F90.
+/tmpdir/inter/int.ssos890-008103033467510/F8266940jDeHMd:
+** bi_cgstab   === End of Compilation 1 ===
+"bi_cgstab.F90", 1500-036 (I) The NOSTRICT option (default at OPT(3)) has the potential to alter the semantics of a program.  Please refer to documentation on the STRICT/NOSTRICT option for more information.
+1501-510  Compilation successful for file bi_cgstab.F90.
+xlf90_r  -qsmp=omp -o principal_omp.exe principal.o bi_cgstab.o
+
+Execution
+=========
+
+vargas085 - Fri Jan  8 16:56:19 + cd /workgpfs/idris/sos/ssos890/P6IH/OpenMP_tp/tp6/solution
+vargas085 - Fri Jan  8 16:56:19 + ./run.sh
+
+
+   Nb iterations min. et max. :    8    9
+   Norme                      :  2.123E-15
+   Temps elapsed              :  3.720E+00 sec.
+   Temps CPU                  :  3.760E+00 sec.
+
+
+
+
+   Execution bi_cgstab en parallele avec  1 threads
+
+
+   Nb iterations min. et max. :    8    9
+   Norme                      :  2.123E-15
+   Temps elapsed              :  3.400E+00 sec.
+   Temps CPU                  :  3.440E+00 sec.
+
+
+
+
+   Execution bi_cgstab en parallele avec  2 threads
+
+
+   Nb iterations min. et max. :    8    9
+   Norme                      :  2.123E-15
+   Temps elapsed              :  1.890E+00 sec.
+   Temps CPU                  :  2.720E+00 sec.
+
+
+
+
+   Execution bi_cgstab en parallele avec  4 threads
+
+
+   Nb iterations min. et max. :    8    9
+   Norme                      :  2.123E-15
+   Temps elapsed              :  1.570E+00 sec.
+   Temps CPU                  :  4.420E+00 sec.
+
+
+
+
+   Execution bi_cgstab en parallele avec  6 threads
+
+
+   Nb iterations min. et max. :    8    9
+   Norme                      :  2.123E-15
+   Temps elapsed              :  1.120E+00 sec.
+   Temps CPU                  :  5.350E+00 sec.
+
+
+
+
+   Execution bi_cgstab en parallele avec  8 threads
+
+
+   Nb iterations min. et max. :    8    9
+   Norme                      :  2.123E-15
+   Temps elapsed              :  8.300E-01 sec.
+   Temps CPU                  :  5.590E+00 sec.
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  1.97   |
+|4 Th. |  2.37   |
+|6 Th. |  3.32   |
+|8 Th. |  4.48   |
+------------------

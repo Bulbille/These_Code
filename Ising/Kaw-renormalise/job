@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# directives PBS vont ici:
+
+# Your job name (displayed by the queue)
+#PBS -N kawsh
+
+# Specify the working directory
+#PBS -d .
+
+# walltime (hh:mm::ss)
+#PBS -l walltime=30:00:00
+
+# Specify the number of nodes(nodes=) and the number of cores per nodes(ppn=) to be used
+#PBS -l nodes=1:ppn=1
+
+# fin des directives PBS
+#############################
+
+# modules cleaning
+module purge
+module add torque
+module load gcc/5.1.0/
+
+# useful informations to print
+echo "#############################" 
+echo "User:" $USER
+echo "Date:" `date`
+echo "Host:" `hostname`
+echo "Directory:" `pwd`
+echo "PBS_JOBID:" $PBS_JOBID
+echo "PBS_O_WORKDIR:" $PBS_O_WORKDIR
+echo "PBS_NODEFILE: " `cat $PBS_NODEFILE | uniq`
+echo "#############################" 
+
+#############################
+
+# What you actually want to launch
+str=''
+echo ${prefix}
+if [ -z ${temp+x} ]; then echo ''; else str="$str --t ${temp}" ; fi
+if [ -z ${data+x} ]; then echo ''; else str="$str --prefix ${data}" ; fi
+if [ -z ${w0+x} ]; then echo ''; else str="$str --w0 ${w0}" ; fi
+if [ -z ${f0+x} ]; then echo ''; else str="$str --f0 ${f0}" ; fi
+if [ -z ${h+x} ]; then echo ''; else str="$str --h ${h}" ; fi
+if [ -z ${n_simu+x} ]; then echo ''; else str="$str --suffix -${n_simu}" ; fi
+
+${prefix}/stargate $str
+
+
+# all done

@@ -1,0 +1,20 @@
+############################ -*- Mode: Makefile -*- ###########################
+## make_tp_inc --- 
+## 
+## Auteur          : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Créé le         : Wed Sep 20 11:21:49 2006
+## Dern. mod. par  : Jeremie Gaidamour (CNRS/IDRIS) <gaidamou@idris.fr>
+## Dern. mod. le   : Fri Aug 02 15:14:07 2013
+###############################################################################
+
+CMD ?= reduction_tab
+SRC ?= reduction_tab.F90
+
+# COMMON blocks and local data with a total size larger than 2GB require -mcmodel=medium
+# Applications built with -mmodel=medium should also link against the shared runtime libraries 
+FFLAGS   += -mcmodel=medium 
+FLDFLAGS += -mcmodel=medium -shared-intel
+
+#FFLAGS += -Wp,-DVAL_NMOLEC=200,-DVAL_NMOL=2000,-DVAL_N=1000
+FFLAGS  += -Wp,-DVAL_NMOLEC=10000,-DVAL_NMOL=10000,-DVAL_N=10
+CFLAGS  += -Wp,-DVAL_NMOLEC=10000,-DVAL_NMOL=10000,-DVAL_N=10

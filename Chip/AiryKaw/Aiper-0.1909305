@@ -1,0 +1,16 @@
+#############################
+User: pgersberg
+Date: Tue Dec 31 18:20:15 CET 2019
+Host: n168
+Directory: /gpfs/home/pgersberg/Chip/AiryKaw
+SLURM_JOBID: 1909305
+SLURM_SUBMIT_DIR: /gpfs/home/pgersberg/Chip/AiryKaw
+SLURM_JOB_NODELIST: n[168-170]
+SLURM_NAME: Aiper-0
+#############################
+(standard_in) 1: syntax error
+-t 1.5000 -prefix /gpfs/home/pgersberg/Chip/AiryKaw/super -f 0
+
+real	182m37.281s
+user	0m0.025s
+sys	0m0.020s

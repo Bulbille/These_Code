@@ -1,0 +1,22 @@
+############################ -*- Mode: Makefile -*- ###########################
+## make_intel --- 
+## 
+## Auteur          : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Créé le         : Wed Sep 20 10:44:51 2006
+## Dern. mod. par  : Jeremie Gaidamour (CNRS/IDRIS) <gaidamou@idris.fr>
+## Dern. mod. le   : Fri Aug 02 15:14:07 2013
+###############################################################################
+
+FC	     = ifort
+FFLAGS	     = -O3
+CC           = icc
+CFLAGS       = -std=c99
+LDFLAGS	     =
+
+FFLAGS_MONO  = 
+CFLAGS_MONO  = -Wno-unknown-pragmas
+LDFLAGS_MONO =
+
+FFLAGS_OMP   = -openmp
+CFLAGS_OMP   = -openmp
+LDFLAGS_OMP  = -openmp

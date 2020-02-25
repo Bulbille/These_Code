@@ -1,0 +1,19 @@
+#############################
+User: pgersberg
+Date: Mon Sep 30 12:29:45 CEST 2019
+Host: n017
+Directory: /gpfs/home/pgersberg/Chip/SemiInf/autre
+SLURM_JOBID: 830855
+SLURM_SUBMIT_DIR: /gpfs/home/pgersberg/Chip/SemiInf/autre
+SLURM_JOB_NODELIST: n017
+SLURM_NAME: auout.01-0
+#############################
+-t 1 -prefix /gpfs/home/pgersberg/Chip/SemiInf/autre/prout -h .01
+Fin calcul temps 0 1.39847 
+Fin calcul temps 2 4.20323 
+Fin calcul temps 1 -37.5003 
+Fin calcul temps 3 -44.2893 
+
+real	0m53.014s
+user	0m0.022s
+sys	0m0.019s

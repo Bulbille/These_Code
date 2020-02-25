@@ -1,0 +1,55 @@
+
+
+   Temps elapsed       :  8.007E-01 sec.
+   Temps CPU           :  7.999E-01 sec.
+   Erreur relative     :  0.000E+00 
+
+
+
+
+   Execution reduction_tab en parallele avec  1 threads
+
+
+   Temps elapsed       :  7.830E-01 sec.
+   Temps CPU           :  7.819E-01 sec.
+   Erreur relative     :  0.000E+00 
+
+
+
+
+   Execution reduction_tab en parallele avec  2 threads
+
+
+   Temps elapsed       :  3.977E-01 sec.
+   Temps CPU           :  7.949E-01 sec.
+   Erreur relative     :  1.206E-14 
+
+
+
+
+   Execution reduction_tab en parallele avec  4 threads
+
+
+   Temps elapsed       :  2.048E-01 sec.
+   Temps CPU           :  8.189E-01 sec.
+   Erreur relative     :  1.177E-14 
+
+
+
+
+   Execution reduction_tab en parallele avec  6 threads
+
+
+   Temps elapsed       :  1.406E-01 sec.
+   Temps CPU           :  8.429E-01 sec.
+   Erreur relative     :  1.090E-14 
+
+
+
+
+   Execution reduction_tab en parallele avec  8 threads
+
+
+   Temps elapsed       :  1.055E-01 sec.
+   Temps CPU           :  8.419E-01 sec.
+   Erreur relative     :  1.148E-14 

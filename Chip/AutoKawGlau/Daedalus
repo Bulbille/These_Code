@@ -1,0 +1,85 @@
+#!/bin/bash
+
+##################################################
+########### Compilation et prefixage #############
+##################################################
+shopt -s extglob #pour permettre de passer de 0.23500000 à 0.235
+module load mpi/intel/2019.3.199
+LC_ALL="en_US.UTF-8"
+
+
+prefix=$(pwd)
+exec_prefix=$prefix/
+#data_prefix=/scratch/pgersberg/symmetrique
+data_prefix=$prefix/J1H0.005
+debut_nom=${PWD##*/} ; debut_nom=${debut_nom:0:2}${data_prefix: -2} 
+
+
+mkdir -p $data_prefix
+mpicc -std=c++11 -O3 -Wall -c $exec_prefix/main.cpp -o $exec_prefix/main.o
+if [ $? -ne 0 ] ; then exit 1 ; fi
+mpicc -std=c++11 -O3 -o $data_prefix/stargate  $exec_prefix/main.o -lm -lstdc++
+if [ $? -ne 0 ] ; then exit 1 ; fi
+rm $exec_prefix/main.o
+cp $exec_prefix/main.cpp $data_prefix
+
+
+##################################################
+######## Traitement des options ##################
+##################################################
+#tn,wn,fn : nombre de pas pour la température et les deux shear différents
+#tmin,tmax,autres : températures maximales et minimales
+tmin=1 ; tmax=$tmin; tn=1; 
+fmin=0 ; fmax=$fmin; fn=1; 
+hmin=0 ; hmax=$hmin; hn=1; 
+lmin=0 ; lmax=$lmin; ln=1; 
+
+while :; do
+    case $1 in
+        -tmin ) tmin=$2;;
+        -tmax ) tmax=$2;;
+        -tn ) tn=$2;;
+        -hmin ) hmin=$2;;
+        -hmax ) hmax=$2;;
+        -hn ) hn=$2;;
+        -fmin ) fmin=$2;;
+        -fmax ) fmax=$2;;
+        -fn ) fn=$2;;
+        -lmin ) lmin=$2;;
+        -lmax ) lmax=$2;;
+        -ln ) ln=$2;;
+        * ) break;;
+    esac
+    shift 2
+done
+
+##################################################
+######### Lancement des qsub #####################
+##################################################
+
+for ((t=1; t<= $tn; t++)); do
+    if [ $tn -eq 1 ] ; then temp=$tmin ;
+    else temp=$(printf "%.4f" $(echo "scale=4; ($tn*$tmin-$tmax)/($tn-1)+$t*($tmax-$tmin)/($tn-1)" | bc -l));
+    fi;
+    echo $temp
+    for ((h=1; h<= $hn; h++)); do
+        if [ $hn -eq 1 ] ; then h0=$hmin;
+        else h0=$(echo "scale=4; ($hn*$hmin-$hmax)/($hn-1)+$h*($hmax-$hmin)/($hn-1)" | bc -l);
+        fi;
+        for ((f=1; f<= $fn; f++)); do
+            if [ $fn -eq 1 ] ; then f0=$fmin;
+            else f0=$(echo "scale=2; ($fn*$fmin-$fmax)/($fn-1)+$f*($fmax-$fmin)/($fn-1)" | bc -l);
+            fi; 
+            for ((l=1; l<= $ln; l++)); do
+                if [ $ln -eq 1 ] ; then l0=$lmin;
+                else l0=$(echo "scale=0; ($ln*$lmin-$lmax)/($ln-1)+$l*($lmax-$lmin)/($ln-1)" | bc -l);
+                fi; 
+                options="temp=$temp,prefix=$data_prefix"
+                name=$debut_nom"-"$temp"-"$h0"-"$f0
+                echo "T = $temp | F = $f0 | H = $h0 | LY = $l0"
+                job=$(sbatch -o $name.%A --job-name="$name" --export=temp=$temp,prefix=$data_prefix,f=$f0,h=$h0,l=$l0 job )
+                echo $job 
+            done
+        done
+    done
+done

@@ -1,0 +1,73 @@
++ ./principal_mono.exe
+
+
+   Nb iterations min. et max. :    9   11
+   Norme                      :  2.192E-15
+   Temps elapsed              :  1.416E+01 sec.
+   Temps CPU de calcul        :  1.416E+01 sec.
+
+
++ export OMP_NUM_THREADS=1
++ export OMP_SCHEDULE=STATIC
++ ./principal_omp.exe
+
+
+   Nb iterations min. et max. :    9   11
+   Norme                      :  2.192E-15
+   Temps elapsed              :  1.416E+01 sec.
+   Temps CPU de calcul        :  1.416E+01 sec.
+
+
++ export OMP_NUM_THREADS=2
++ export OMP_SCHEDULE=STATIC
++ ./principal_omp.exe
+
+
+   Nb iterations min. et max. :    9   11
+   Norme                      :  2.192E-15
+   Temps elapsed              :  7.111E+00 sec.
+   Temps CPU de calcul        :  1.403E+01 sec.
+
+
++ export OMP_NUM_THREADS=4
++ export OMP_SCHEDULE=STATIC
++ ./principal_omp.exe
+
+
+   Nb iterations min. et max. :    9   11
+   Norme                      :  2.192E-15
+   Temps elapsed              :  3.566E+00 sec.
+   Temps CPU de calcul        :  1.265E+01 sec.
+
+
++ export OMP_NUM_THREADS=6
++ export OMP_SCHEDULE=STATIC
++ ./principal_omp.exe
+
+
+   Nb iterations min. et max. :    9   11
+   Norme                      :  2.192E-15
+   Temps elapsed              :  2.401E+00 sec.
+   Temps CPU de calcul        :  1.253E+01 sec.
+
+
++ export OMP_NUM_THREADS=8
++ export OMP_SCHEDULE=STATIC
++ ./principal_omp.exe
+
+
+   Nb iterations min. et max. :    9   11
+   Norme                      :  2.192E-15
+   Temps elapsed              :  1.922E+00 sec.
+   Temps CPU de calcul        :  1.128E+01 sec.
+
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  1.99   |
+|4 Th. |  3.98   |
+|6 Th. |  5.90   |
+|8 Th. |  7.37   |
+------------------

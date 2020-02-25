@@ -1,0 +1,67 @@
+
+
+   Taille systeme      :   8201
+   Iterations          :   11
+   Norme du residu     :  7.117E-17
+   Temps elapsed       :  3.269E+00 sec.
+   Temps CPU           :  3.266E+00 sec.
+
+
+
+
+   Execution cg en parallele avec  1 threads
+
+
+   Taille systeme      :   8201
+   Iterations          :   11
+   Norme du residu     :  7.117E-17
+   Temps elapsed       :  3.177E+00 sec.
+   Temps CPU           :  3.174E+00 sec.
+
+
+
+
+   Execution cg en parallele avec  2 threads
+
+
+   Taille systeme      :   8201
+   Iterations          :   11
+   Norme du residu     :  7.117E-17
+   Temps elapsed       :  1.631E+00 sec.
+   Temps CPU           :  3.259E+00 sec.
+
+
+
+
+   Execution cg en parallele avec  4 threads
+
+
+   Taille systeme      :   8201
+   Iterations          :   11
+   Norme du residu     :  7.117E-17
+   Temps elapsed       :  8.424E-01 sec.
+   Temps CPU           :  3.365E+00 sec.
+
+
+
+
+   Execution cg en parallele avec  6 threads
+
+
+   Taille systeme      :   8201
+   Iterations          :   11
+   Norme du residu     :  7.117E-17
+   Temps elapsed       :  5.803E-01 sec.
+   Temps CPU           :  3.479E+00 sec.
+
+
+
+
+   Execution cg en parallele avec  8 threads
+
+
+   Taille systeme      :   8201
+   Iterations          :   11
+   Norme du residu     :  7.117E-17
+   Temps elapsed       :  4.589E-01 sec.
+   Temps CPU           :  3.667E+00 sec.

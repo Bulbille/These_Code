@@ -1,0 +1,78 @@
+#!/bin/bash
+
+##################################################
+########### Compilation et prefixage #############
+##################################################
+shopt -s extglob #pour permettre de passer de 0.23500000 à 0.235
+LC_ALL="en_US.UTF-8"
+
+
+prefix=$(pwd)
+exec_prefix=$prefix/prog
+data_prefix=/scratch/pgersberg/symmetrique
+data_prefix=$prefix/faible-temp
+
+mkdir -p $data_prefix
+g++ -std=c++11 -Wall -I/usr/include/ -c $exec_prefix/main.cpp -o $exec_prefix/langevin.o
+if [ $? -ne 0 ] ; then exit 1 ; fi
+g++ -L/usr/local/lib/ $exec_prefix/langevin.o -lgsl -lgslcblas -lm -o $exec_prefix/langevin
+
+if [ $? -ne 0 ] ; then exit 1 ; fi
+cp -r $exec_prefix $data_prefix/prog
+rm $exec_prefix/*.o
+
+
+##################################################
+######## Traitement des options ##################
+##################################################
+#nbsimu : nombre de simulations d'un même nombre de paramèteres
+#tn,wn,fn : nombre de pas pour la température et les deux shear différents
+#tmin,tmax,autres : températures maximales et minimales
+nbsimu=1;
+tmin=1 ; tmax=$tmin; tn=1; 
+hmin=0 ; hmax=$hmin; hn=1; 
+gmin=0 ; gmax=$hmin; gn=1; 
+
+while :; do
+    case $1 in
+        -tmin ) tmin=$2;;
+        -tmax ) tmax=$2;;
+        -tn ) tn=$2;;
+        -hmin ) hmin=$2;;
+        -hmax ) hmax=$2;;
+        -hn ) hn=$2;;
+        -gmin ) gmin=$2;;
+        -gmax ) gmax=$2;;
+        -gn ) gn=$2;;
+        * ) break;;
+    esac
+    shift 2
+done
+
+##################################################
+######### Lancement des qsub #####################
+##################################################
+
+for ((t=1; t<= $tn; t++)); do
+    if [ $tn -eq 1 ] ; then temp=$tmin ;
+    else temp=$(printf "%.3f" $(echo "scale=3; ($tn*$tmin-$tmax)/($tn-1)+$t*($tmax-$tmin)/($tn-1)" | bc -l));
+    fi;
+    for ((h=1; h<= $hn; h++)); do
+        if [ $hn -eq 1 ] ; then h0=$hmin;
+        else h0=$(echo "scale=3; ($hn*$hmin-$hmax)/($hn-1)+$h*($hmax-$hmin)/($hn-1)" | bc -l);
+        fi;
+        for ((g=1; g<= $gn; g++)); do
+            if [ $gn -eq 1 ] ; then g0=$gmin;
+            else g0=$(echo "scale=3; ($gn*$gmin-$gmax)/($gn-1)+$g*($gmax-$gmin)/($gn-1)" | bc -l);
+            fi;
+            options="temp=$temp,prefix=$exec_prefix,data=$data_prefix"
+            name=$(echo ${PWD##*/} | cut -c1-3)$temp",h"$h0",g"$g0
+            if (( $(bc <<< "$hmin >=0") )); then options="$options"",h=$h0"  ; fi
+            if (( $(bc <<< "$gmin >=0") )); then options="$options"",g=$g0"  ; fi
+            echo t=$temp,h=$h0,g=$g0
+            job=$(qsub -N $name -v $options job)
+            echo $job
+        done
+    done
+done
+

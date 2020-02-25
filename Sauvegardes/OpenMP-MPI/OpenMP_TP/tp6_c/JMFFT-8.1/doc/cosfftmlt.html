@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html><head><title>RFFTMLT</title></head><body bgcolor="#fdf5e6">
+<pre><b>*** JMFFT 8.0 - émulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</b>
+
+<b>NOM</b>
+
+     COSFFTMLT - Applique une Transformée de Fourier rapide (FFT)
+                 en cosinus à un ensemble donné de vecteurs.
+
+<b>SYNTAXE</b>
+
+     CALL COSFFTFAX(n, ifax, trigs)
+
+     CALL COSFFTMLT(x, work, trigs, ifax, inc, jump, n, m)
+
+<b>IMPLEMENTATION</b>
+
+     Ces sous-programmes ne font pas partie de la SCILIB. Mais comme ils
+     sont fondés sur celle-ci, ils ont été intégrés à JMFFT.
+     Tous les arguments réels ou complexes doivent être déclarés en
+     double précision.
+
+<b>DESCRIPTION</b>
+
+     COSFFTMLT applique une FFT en cosinus à un ensemble
+     donné de vecteurs. Pour chacun des m vecteurs réels x(j,i),
+     j = 1 ... m et i = 0 ... n,
+     COSFFTMLT calcule le vecteur réel y(j,i) tel que :
+
+                           n-1
+     y(j,i) = 1/2 x(j,0) + Sum  x(j,k) cos(k*i*pi/n) + 1/2 (-1**i) x(j,n)
+                           k=1
+
+     pour j = 1 ... m et i = 0 ... n.     
+
+<b>ARGUMENTS</b>
+
+     x     Tableau du type REAL(KIND=8) de dimension (n+2,m). (entrée/sortie)
+           En entrée, il contient les éléments à transformer.
+           En sortie, il contient les éléments transformés.
+           La première dimension doit être au moins égale à n+2.
+
+           En fait, grâce à l'emploi des arguments inc et jump, le tableau
+           x peut être dimensionné de façon différente.
+
+     work  Tableau du type REAL(KIND==8) de dimension 2*m*n + m*(n+3).
+           Espace de travail.
+
+     trigs Tableau du type REAL(KIND==8) de dimension 4*n. (entrée)
+           Il contient la table des sinus et cosinus.
+           L'appel suivant initialise les deux tableaux
+           trigs et ifax à la fois :
+
+                CALL COSFFTFAX(n, ifax, trigs)
+
+           <b>Note :</b> Les tableaux ifax et trigs ainsi obtenus peuvent
+           être également utilisés, sans besoin de les réinitialiser,
+           dans les sous-programmes CFFTMLT, RFFTMLT et aussi SINFFTMLT
+           (bien entendu avec la même valeur de n).
+
+     ifax  Tableau du type INTEGER de dimension 19.  (entrée)
+           Il contient la liste des facteurs premiers de n.
+
+           Il est généré lors de l'appel à SINFFTFAX (voir ci-dessus)
+
+     inc   Scalaire du type INTEGER.  (entrée)
+           Le pas de déplacement en nombre d'éléments réels dans chaque
+           vecteur à transformer.
+
+     jump  Scalaire du type INTEGER.  (entrée)
+           Le déplacement entre les premiers éléments de deux vecteurs
+           consécutifs.
+
+     n     Scalaire du type INTEGER. (entrée)
+           Longueur de chaque vecteur à transformer. n &gt;= 2.
+           n doit être un nombre pair.
+
+     m     Scalaire du type INTEGER. (entrée)
+           Le nombre de vecteurs à transformer.
+
+<b>EXEMPLES</b>
+
+     Le programme suivant montre les séquences d'appels à COSFFTFAX et COSFFTMLT
+     pour calculer la FFT en cosinus du tableau A :
+
+          INTEGER, PARAMETER                    :: n = 16, m = 2
+          INTEGER                               :: inc = m, jump = 1
+          REAL(KIND=8), DIMENSION(m, n+2)       :: a
+          REAL(KIND=8), DIMENSION(4*n)          :: trigs
+          REAL(KIND=8), DIMENSION(2*m*n+m*(n+3) :: work
+          INTEGER, DIMENSION(19)                :: ifax
+          . . .
+          CALL COSFFTFAX(n, ifax, trigs)
+          CALL COSFFTMLT(a, work, trigs, ifax, inc, jump, n, m)
+          . . .
+
+<b>NOTES</b>
+
+     La transformée en cosinus est sa propre inverse, au facteur multiplicatif
+     n/2 près.
+
+</pre>
+
+<p>
+</p><hr size="1">
+<div align="center">
+<h6><b>© CNRS - IDRIS</b></h6>
+</div>
+
+</body></html>

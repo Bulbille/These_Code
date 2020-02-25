@@ -1,0 +1,98 @@
+Compilation
+===========
+
+vargas043 /solution/ gmake
+xlf90_r -O3 -WF,-DVAL_N=1201,-DVAL_D=800 -c jacobi.F90
+** jacobi   === End of Compilation 1 ===
+"jacobi.F90", 1500-036 (I) The NOSTRICT option (default at OPT(3)) has the potential to alter the semantics of a program.  Please refer to documentation on the STRICT/NOSTRICT option for more information.
+1501-510  Compilation successful for file jacobi.F90.
+xlf90_r  -o jacobi_mono.exe jacobi.o
+vargas043 /solution/ gmake para
+xlf90_r -O3 -WF,-DVAL_N=1201,-DVAL_D=800 -qsmp=omp -c jacobi.F90
+** jacobi   === End of Compilation 1 ===
+"jacobi.F90", 1500-036 (I) The NOSTRICT option (default at OPT(3)) has the potential to alter the semantics of a program.  Please refer to documentation on the STRICT/NOSTRICT option for more information.
+1501-510  Compilation successful for file jacobi.F90.
+xlf90_r  -qsmp=omp -o jacobi_omp.exe jacobi.o
+
+Execution
+=========
+
+vargas085 - Fri Jan  8 10:43:46 + cd /workgpfs/idris/sos/ssos890/P6IH/OpenMP_tp/tp2/solution
+vargas085 - Fri Jan  8 10:43:46 + ./run.sh
+
+
+   Taille du systeme   :  1201
+   Iterations          :  104
+   Norme               :  2.026E-16
+   Temps elapsed       :  1.830E+00 sec.
+   Temps CPU           :  2.000E+00 sec.
+
+
+
+
+   Execution jacobi en parallele avec  1 threads
+
+
+   Taille du systeme   :  1201
+   Iterations          :  104
+   Norme               :  2.026E-16
+   Temps elapsed       :  1.820E+00 sec.
+   Temps CPU           :  1.830E+00 sec.
+
+
+
+
+   Execution jacobi en parallele avec  2 threads
+
+
+   Taille du systeme   :  1201
+   Iterations          :  104
+   Norme               :  2.026E-16
+   Temps elapsed       :  9.500E-01 sec.
+   Temps CPU           :  1.890E+00 sec.
+
+
+
+
+   Execution jacobi en parallele avec  4 threads
+
+
+   Taille du systeme   :  1201
+   Iterations          :  104
+   Norme               :  2.026E-16
+   Temps elapsed       :  4.600E-01 sec.
+   Temps CPU           :  1.820E+00 sec.
+
+
+
+
+   Execution jacobi en parallele avec  6 threads
+
+
+   Taille du systeme   :  1201
+   Iterations          :  104
+   Norme               :  2.026E-16
+   Temps elapsed       :  3.100E-01 sec.
+   Temps CPU           :  1.780E+00 sec.
+
+
+
+
+   Execution jacobi en parallele avec  8 threads
+
+
+   Taille du systeme   :  1201
+   Iterations          :  104
+   Norme               :  2.026E-16
+   Temps elapsed       :  2.400E-01 sec.
+   Temps CPU           :  1.890E+00 sec.
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  1.93   |
+|4 Th. |  3.98   |
+|6 Th. |  5.90   |
+|8 Th. |  7.63   |
+------------------

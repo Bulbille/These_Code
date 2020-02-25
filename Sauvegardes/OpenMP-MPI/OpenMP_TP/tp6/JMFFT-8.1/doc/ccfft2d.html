@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+  <HEAD>
+    <title>CCFFT2D</title>
+  </HEAD>
+
+  <BODY  BGCOLOR="#fdf5e6">
+<PRE>
+<B>*** JMFFT 8.1 - émulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</B>
+
+<B>NOM</B>
+
+     CCFFT2D - Applique une transformée de Fourier rapide (FFT) à deux
+               dimensions (2D) complexe-complexe.
+
+<B>SYNTAXE</B>
+
+     CALL CCFFT2D (isign, n1, n2, scale, x, ldx, y, ldy, table,	work, isys)
+
+<B>IMPLEMENTATION</B>
+
+     Ce sous-programme émule le sous-programme de même nom de la SCILIB de
+     CRAY. Tous les arguments réels ou complexes doivent être déclarés
+     en double précision.
+
+<B>DESCRIPTION</B>
+
+     CCFFT2D calcule la FFT du tableau complexe X et retourne le résultat dans
+     le tableau complexe Y.
+
+     Soient deux tabeaux X et Y dimensionnés de la façon suivante :
+
+	  COMPLEX(KIND=8), DIMENSION(0:n1-1, 0:n2-1) :: X
+	  COMPLEX(KIND=8), DIMENSION(0:n1-1, 0:n2-1) :: Y
+
+     CCFFT2D calcule la formule suivante :
+
+			    n2-1  n1-1
+	Y(k1, k2) = scale * Sum	  Sum [	X(j1, j2)*w1**(j1*k1)*w2**(j2*k2) ]
+			    j2=0  j1=0
+
+	pour k1 = 0, ..., n1-1
+	     k2 = 0, ..., n2-1
+
+	où,
+	    w1 = exp(isign*2*pi*i/n1)
+	    w2 = exp(isign*2*pi*i/n2)
+	    i =	+ sqrt(-1)
+	    pi = 3.14159...,
+	    isign = +1 ou -1
+
+     En général, si une FFT est appliquée avec des valeurs particulières de
+     isign et scale, alors son inverse est calculée avec les valeurs -isign
+     et 1/(n1*n2*scale).
+
+     En particulier, avec les valeurs isign = +1 et scale = 1.0, la FFT
+     inverse se calcule en prenant isign = -1 et scale = 1/(n1*n2).
+
+<B>ARGUMENTS</B>
+
+     isign   Scalaire du type INTEGER. (entrée)
+	     Indique si la table des coefficients doit être initialisée ou s'il faut
+	     appliquer une FFT ou son inverse.
+
+	     Si isign = 0, le sous-programme initialise le tableau table et
+	     retourne sa valeur. Dans ce cas, seuls les arguments isign, n1, n2
+	     et table sont vérifés et utilisés.
+
+             Si isign = +1 ou -1, la FFT ou son inverse est appliquée.
+
+     n1	     Scalaire du type INTEGER. (entrée).
+	     Nombre de transformée dans la première dimension.
+
+     n2	     Scalaire du type INTEGER. (entrée).
+	     Nombre de transformée dans la deuxième dimension.
+
+     scale   Scalaire du type REAL(KIND=8). (entrée)
+	     Facteur d'échelle.  Chaque élément du vecteur y est multiplié par
+	     scale une fois la FFT effectuée ainsi qu'il est spécifié dans la
+	     formule ci-dessus.
+
+     x	     Tableau du type COMPLEX(KIND=8) de dimension (0:ldx-1, 0:n2-1). (entrée)
+	     Tableau contenant la valeurs des éléments à transformer.
+
+     ldx     Scalaire du type INTEGER. (entrée).
+	     Nombre de lignes du tableau x tel qu'il est déclaré dans le
+	     programme appelant. ldx >= max(n1, 1).
+
+     y	     Tableau du type COMPLEX(KIND=8) de dimension (0:ldy-1, 0:n2-1). (sortie)
+	     Tableau contenant en sortie les valeurs transformées. On peut 
+             ré-utiliser le tableau d'entrée x. Dans ce cas, ldx = ldy.
+
+     ldy     Scalaire du type INTEGER. (entrée).
+	     Nombre de lignes dans le tableau y tel qu'il a été déclaré dans
+	     le programme appelant. ldx >= max(n1, 1).
+
+     table   Tableau du type REAL(KIND=8) de dimension 100 + 2*(n1 + n2).
+             (entrée ou sortie)
+	     Tableau contenant la table des coefficients et des fonctions
+	     trigonométriques.
+
+	     Si isign = 0, le sous-programme initialise table (table est en
+	     sortie seulement).
+
+	     Si isign = +1 ou -1, table est supposé être déja initialisé
+	     (table est en entrée seulement).
+
+     work    Tableau du type REAL(KIND=8) de dimension 512*max(n1, n2).
+	     Tableau de travail.
+
+             Note : Cette dimension peut être augmentée ou diminuée, à
+             condition d'en informer JMFFT en appelant le sous-programme
+             JMSETNWORK.
+
+     isys    Scalaire du type INTEGER. (entrée)
+	     Cet argument n'est pas utilisé. Il est conservé pour des raisons
+	     de compatibilité avec la SCILIB de CRAY.
+
+<B>EXEMPLES</B>
+
+     <B>Exemple 1</B> : initialise le tableau TABLE dans le but d'appliquer
+     ultérieurement une FFT de dimensions (128,256). Dans ce cas, seuls les
+     arguments ISIGN, N1, N2 et TABLE sont utilisés.
+
+            INTEGER, PARAMETER                         :: N1=128, N2=256
+	    REAL(KIND=8), DIMENSION(100 + 2*(N1 + N2)) :: TABLE
+	    CALL CCFFT2D (0, N1, N2, 0.d0, DUMMY, 1, DUMMY, 1, TABLE, DUMMY, 0)
+
+     <B>Exemple 2</B> : X et Y sont des tableaux déclarés du type complexe et de
+     dimensions (0:128,0:255). Nous appliquons une FFT sur les 128 premiers
+     éléments de chaque colonne. Le tableau TABLE est supposé être initialisé.
+
+	   COMPLEX(KIND=8), DIMENSION(0:128, 0:255)     :: X
+	   COMPLEX(KIND=8), DIMENSION(0:128, 0:255)     :: Y
+	   REAL(KIND=8), DIMENSION(100 + 2*(128 + 256)) :: TABLE
+	   REAL(KIND=8), DIMENSION(512*256)             :: WORK
+	   ...
+	   CALL	CCFFT2D(0, 128,	256, 1.d0, X, 129, Y, 129, TABLE, WORK, 0)
+	   CALL	CCFFT2D(1, 128,	256, 1.d0, X, 129, Y, 129, TABLE, WORK, 0)
+
+     <B>Exemple 3</B> : ici nous poursuivons l'exemple 2 en affectuant la FFT inverse
+     de Y et en enregistrant le résultat dans X.  Le facteur d'échelle est ici
+     égale à 1/(128*256).  Nous supposons que le tableau TABLE ait été
+     initialisé auparavant.
+
+	   CALL	CCFFT2D(-1, 128, 256, 1.d0/(128.d0*256.d0), Y, 129, X, 129, TABLE, WORK, 0)
+
+     <B>Exemple 4</B> : nous effectuons ici un calcul analogue à celui de l'exemple 2
+     en supposant toutefois que les indices des tableaux X et Y démarrent à 1
+     et non plus à 0.
+
+	   COMPLEX(KIND=8), DIMENSION(129, 256) :: X
+           COMPLEX(KIND=8), DIMENSION(129, 256) :: Y
+	   ...
+	   CALL	CCFFT2D(0, 128,	256, 1.d0, X, 129, Y, 129, TABLE, WORK, 0)
+	   CALL	CCFFT2D(1, 128,	256, 1.d0, X, 129, Y, 129, TABLE, WORK, 0)
+
+     <B>Exemple 5</B> : calcul semblable à l'exemple 4 sauf qu'ici nous utilisons X à
+     la fois en entrée et en sortie. Nous supposons que le tableau TABLE ait
+     été initialisé auparavant.
+
+	   COMPLEX(KIND=8), DIMENSION(129, 256) :: X
+	   ...
+	   CALL	CCFFT2D(1, 128,	256, 1.d0, X, 129, X, 129, TABLE, WORK, 0)
+
+<B>VOIR AUSSI</B>
+    
+     CCFFT, CCFFT3D, CCFFTM, SCFFT, SCFFT2D, SCFFT3D, SCFFTM, JMSETNWORK
+</PRE>
+
+<!--#include virtual="/includes/fin.html" -->
+</BODY>
+</HTML>

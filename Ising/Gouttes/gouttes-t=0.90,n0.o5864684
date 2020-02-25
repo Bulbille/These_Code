@@ -1,0 +1,13 @@
+#############################
+User: pgersberg
+Date: Thu May 4 19:20:25 CEST 2017
+Host: node029
+Directory: /home/pgersberg/Gouttes
+PBS_JOBID: 5864684.master.cm.cluster
+PBS_O_WORKDIR: /home/pgersberg/Gouttes
+PBS_NODEFILE:  node029.cm.cluster
+#############################
+/home/pgersberg/Gouttes/prog
+
+
+

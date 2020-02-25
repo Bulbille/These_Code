@@ -1,0 +1,4 @@
+first: default
+
+solutions: default
+	(CMD=cg_opt OBJ=cg_opt.o make default)

@@ -1,0 +1,17 @@
+############################ -*- Mode: Makefile -*- ###########################
+## make_gfortran --- 
+## 
+## Auteur          : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Créé le         : Wed Sep 20 10:44:51 2006
+## Dern. mod. par  : Jeremie Gaidamour (CNRS/IDRIS) <gaidamou@idris.fr>
+## Dern. mod. le   : Wed Jun 12 15:21:30 2013
+###############################################################################
+
+FC	    = gfortran
+FFLAGS	    = -O3
+CC          = gcc
+CFLAGS      = -std=c99 
+LDFLAGS	    =
+FFLAGS_OMP  = -fopenmp
+CFLAGS_OMP  = -fopenmp
+LDFLAGS_OMP = -fopenmp

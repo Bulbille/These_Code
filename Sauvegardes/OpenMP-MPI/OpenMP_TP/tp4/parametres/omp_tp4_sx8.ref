@@ -1,0 +1,73 @@
++ ./cg_mono.exe
+
+
+   Iterations          :   10
+   Norme du residu     :  1.345E-15
+   Temps elapsed       :  9.300E-02 sec.
+   Temps CPU de calcul :  9.364E-02 sec.
+
+
++ export OMP_NUM_THREADS=1
++ export OMP_SCHEDULE=STATIC
++ ./cg_omp.exe
+
+
+   Iterations          :   10
+   Norme du residu     :  1.345E-15
+   Temps elapsed       :  1.450E-01 sec.
+   Temps CPU de calcul :  1.453E-01 sec.
+
+
++ export OMP_NUM_THREADS=2
++ export OMP_SCHEDULE=STATIC
++ ./cg_omp.exe
+
+
+   Iterations          :   10
+   Norme du residu     :  1.345E-15
+   Temps elapsed       :  7.400E-02 sec.
+   Temps CPU de calcul :  7.362E-02 sec.
+
+
++ export OMP_NUM_THREADS=4
++ export OMP_SCHEDULE=STATIC
++ ./cg_omp.exe
+
+
+   Iterations          :   10
+   Norme du residu     :  1.345E-15
+   Temps elapsed       :  3.800E-02 sec.
+   Temps CPU de calcul :  3.762E-02 sec.
+
+
++ export OMP_NUM_THREADS=6
++ export OMP_SCHEDULE=STATIC
++ ./cg_omp.exe
+
+
+   Iterations          :   10
+   Norme du residu     :  1.345E-15
+   Temps elapsed       :  2.600E-02 sec.
+   Temps CPU de calcul :  2.576E-02 sec.
+
+
++ export OMP_NUM_THREADS=8
++ export OMP_SCHEDULE=STATIC
++ ./cg_omp.exe
+
+
+   Iterations          :   10
+   Norme du residu     :  1.345E-15
+   Temps elapsed       :  2.000E-02 sec.
+   Temps CPU de calcul :  3.699E-02 sec.
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  1.25   |
+|4 Th. |  2.45   |
+|6 Th. |  3.57   |
+|8 Th. |  4.65   |
+------------------
+

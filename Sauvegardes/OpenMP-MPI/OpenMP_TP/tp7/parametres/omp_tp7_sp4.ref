@@ -1,0 +1,88 @@
+zahir018 - Fri Jan 28 16:36:08 + make clean
+	rm -f principal principal.o bi_cgstab.o core
+zahir018 - Fri Jan 28 16:36:08 + make mono
+	xlf_r -O3 -q64 -qstrict -qfree=f90 -qsuffix=f=f90 -c principal.f90 bi_cgstab.f90
+xlf_r:  
+principal.f90:
+** principal   === End of Compilation 1 ===
+1501-510  Compilation successful for file principal.f90.
+bi_cgstab.f90:
+** bi_cgstab   === End of Compilation 1 ===
+1501-510  Compilation successful for file bi_cgstab.f90.
+	xlf_r -q64 -o principal principal.o bi_cgstab.o
+xlf_r:  
+zahir018 - Fri Jan 28 16:36:08 + ./principal
+
+
+   Nb iterations min. et max. :    7    7
+   Norme                      :  1.222E-15
+   Temps elapsed              :  1.050E+00 sec.
+   Temps CPU de calcul        :  1.050E+00 sec.
+
+
+zahir018 - Fri Jan 28 16:36:08 + make clean
+	rm -f principal principal.o bi_cgstab.o core
+zahir018 - Fri Jan 28 16:36:08 + make para
+	xlf_r -O3 -q64 -qstrict -qfree=f90 -qsuffix=f=f90 -qsmp=omp -c principal.f90 bi_cgstab.f90
+xlf_r:  
+principal.f90:
+** principal   === End of Compilation 1 ===
+1501-510  Compilation successful for file principal.f90.
+bi_cgstab.f90:
+** bi_cgstab   === End of Compilation 1 ===
+1501-510  Compilation successful for file bi_cgstab.f90.
+	xlf_r -q64 -qsmp=omp -o principal principal.o bi_cgstab.o
+xlf_r:  
+zahir018 - Fri Jan 28 16:36:08 + export OMP_NUM_THREADS=2
+zahir018 - Fri Jan 28 16:36:08 + export OMP_SCHEDULE=STATIC
+zahir018 - Fri Jan 28 16:36:08 + ./principal
+
+
+   Nb iterations min. et max. :    7    7
+   Norme                      :  1.222E-15
+   Temps elapsed              :  6.000E-01 sec.
+   Temps CPU de calcul        :  1.200E+00 sec.
+
+
+zahir018 - Fri Jan 28 16:36:08 + export OMP_NUM_THREADS=4
+zahir018 - Fri Jan 28 16:36:08 + export OMP_SCHEDULE=STATIC
+zahir018 - Fri Jan 28 16:36:08 + ./principal
+
+
+   Nb iterations min. et max. :    7    7
+   Norme                      :  1.222E-15
+   Temps elapsed              :  3.000E-01 sec.
+   Temps CPU de calcul        :  1.200E+00 sec.
+
+
+zahir018 - Fri Jan 28 16:36:08 + export OMP_NUM_THREADS=6
+zahir018 - Fri Jan 28 16:36:08 + export OMP_SCHEDULE=STATIC
+zahir018 - Fri Jan 28 16:36:08 + ./principal
+
+
+   Nb iterations min. et max. :    7    7
+   Norme                      :  1.222E-15
+   Temps elapsed              :  2.200E-01 sec.
+   Temps CPU de calcul        :  1.320E+00 sec.
+
+
+zahir018 - Fri Jan 28 16:36:08 + export OMP_NUM_THREADS=8
+zahir018 - Fri Jan 28 16:36:08 + export OMP_SCHEDULE=STATIC
+zahir018 - Fri Jan 28 16:36:08 + ./principal
+
+
+   Nb iterations min. et max. :    7    7
+   Norme                      :  1.222E-15
+   Temps elapsed              :  2.000E-01 sec.
+   Temps CPU de calcul        :  1.540E+00 sec.
+
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  1.75   |
+|4 Th. |  3.50   |
+|6 Th. |  4.77   |
+|8 Th. |  5.25   |
+------------------

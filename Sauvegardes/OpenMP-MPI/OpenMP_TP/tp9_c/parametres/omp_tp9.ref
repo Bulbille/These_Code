@@ -1,0 +1,61 @@
+
+
+   Valeurs de nx et ny :    16384    8192
+   Temps elapsed       :  1.302E+00 sec.
+   Temps CPU           :  1.301E+00 sec.
+   Norme (PB si /= 0)  :  0.000E+00
+
+
+
+
+   Execution dependance en parallele avec  1 threads
+
+
+   Valeurs de nx et ny :    16384    8192
+   Temps elapsed       :  1.304E+00 sec.
+   Temps CPU           :  1.303E+00 sec.
+   Norme (PB si /= 0)  :  0.000E+00
+
+
+
+
+   Execution dependance en parallele avec  2 threads
+
+
+   Valeurs de nx et ny :    16384    8192
+   Temps elapsed       :  6.538E-01 sec.
+   Temps CPU           :  1.307E+00 sec.
+   Norme (PB si /= 0)  :  0.000E+00
+
+
+
+
+   Execution dependance en parallele avec  4 threads
+
+
+   Valeurs de nx et ny :    16384    8192
+   Temps elapsed       :  3.288E-01 sec.
+   Temps CPU           :  1.314E+00 sec.
+   Norme (PB si /= 0)  :  0.000E+00
+
+
+
+
+   Execution dependance en parallele avec  6 threads
+
+
+   Valeurs de nx et ny :    16384    8192
+   Temps elapsed       :  2.203E-01 sec.
+   Temps CPU           :  1.320E+00 sec.
+   Norme (PB si /= 0)  :  0.000E+00
+
+
+
+
+   Execution dependance en parallele avec  8 threads
+
+
+   Valeurs de nx et ny :    16384    8192
+   Temps elapsed       :  1.653E-01 sec.
+   Temps CPU           :  1.322E+00 sec.
+   Norme (PB si /= 0)  :  0.000E+00

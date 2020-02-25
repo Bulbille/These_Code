@@ -1,0 +1,181 @@
+Compilation
+===========
+
+vargas043 /solution/ gmake
+xlf90_r -O3 -WF,-DVAL_N=4201 -c cg.F90
+** gradient_conjugue   === End of Compilation 1 ===
+"cg.F90", 1500-036 (I) The NOSTRICT option (default at OPT(3)) has the potential to alter the semantics of a program.  Please refer to documentation on the STRICT/NOSTRICT option for more information.
+1501-510  Compilation successful for file cg.F90.
+xlf90_r  -o cg_mono.exe cg.o
+vargas043 /solution/ gmake para
+xlf90_r -O3 -WF,-DVAL_N=4201 -qsmp=omp -c cg.F90
+** gradient_conjugue   === End of Compilation 1 ===
+"cg.F90", 1500-036 (I) The NOSTRICT option (default at OPT(3)) has the potential to alter the semantics of a program.  Please refer to documentation on the STRICT/NOSTRICT option for more information.
+1501-510  Compilation successful for file cg.F90.
+xlf90_r  -qsmp=omp -o cg_omp.exe cg.o
+
+Execution version non optimisee
+===============================
+
+vargas086 - Fri Jan  8 15:53:52 + cd /workgpfs/idris/sos/ssos890/P6IH/OpenMP_tp/tp4/solution
+vargas086 - Fri Jan  8 15:53:52 + ./run.sh
+
+
+   Taille systeme      :   4201
+   Iterations          :   10
+   Norme du residu     :  3.166E-16
+   Temps elapsed       :  2.540E+00 sec.
+   Temps CPU           :  2.540E+00 sec.
+
+
+
+
+   Execution cg en parallele avec  1 threads
+
+
+   Taille systeme      :   4201
+   Iterations          :   10
+   Norme du residu     :  3.166E-16
+   Temps elapsed       :  2.850E+00 sec.
+   Temps CPU           :  2.850E+00 sec.
+
+
+
+
+   Execution cg en parallele avec  2 threads
+
+
+   Taille systeme      :   4201
+   Iterations          :   10
+   Norme du residu     :  3.167E-16
+   Temps elapsed       :  1.590E+00 sec.
+   Temps CPU           :  3.150E+00 sec.
+
+
+
+
+   Execution cg en parallele avec  4 threads
+
+
+   Taille systeme      :   4201
+   Iterations          :   10
+   Norme du residu     :  3.166E-16
+   Temps elapsed       :  9.500E-01 sec.
+   Temps CPU           :  3.790E+00 sec.
+
+
+
+
+   Execution cg en parallele avec  6 threads
+
+
+   Taille systeme      :   4201
+   Iterations          :   10
+   Norme du residu     :  3.166E-16
+   Temps elapsed       :  7.300E-01 sec.
+   Temps CPU           :  4.410E+00 sec.
+
+
+
+
+   Execution cg en parallele avec  8 threads
+
+
+   Taille systeme      :   4201
+   Iterations          :   10
+   Norme du residu     :  3.166E-16
+   Temps elapsed       :  6.300E-01 sec.
+   Temps CPU           :  5.000E+00 sec.
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  1.52   |
+|4 Th. |  2.54   |
+|6 Th. |  3.30   |
+|8 Th. |  3.83   |
+------------------
+
+Execution version optimisee
+===========================
+
+vargas085 - Fri Jan  8 16:07:12 + cd /workgpfs/idris/sos/ssos890/P6IH/OpenMP_tp/tp4/solution
+vargas085 - Fri Jan  8 16:07:12 + ./run.sh
+
+
+   Taille systeme      :   4201
+   Iterations          :   10
+   Norme du residu     :  3.166E-16
+   Temps elapsed       :  2.430E+00 sec.
+   Temps CPU           :  2.430E+00 sec.
+
+
+
+
+   Execution cg en parallele avec  1 threads
+
+
+   Taille systeme      :   4201
+   Iterations          :   10
+   Norme du residu     :  3.166E-16
+   Temps elapsed       :  2.640E+00 sec.
+   Temps CPU           :  2.630E+00 sec.
+
+
+
+
+   Execution cg en parallele avec  2 threads
+
+
+   Taille systeme      :   4201
+   Iterations          :   10
+   Norme du residu     :  3.167E-16
+   Temps elapsed       :  1.390E+00 sec.
+   Temps CPU           :  2.770E+00 sec.
+
+
+
+
+   Execution cg en parallele avec  4 threads
+
+
+   Taille systeme      :   4201
+   Iterations          :   10
+   Norme du residu     :  3.166E-16
+   Temps elapsed       :  7.300E-01 sec.
+   Temps CPU           :  2.890E+00 sec.
+
+
+
+
+   Execution cg en parallele avec  6 threads
+
+
+   Taille systeme      :   4201
+   Iterations          :   10
+   Norme du residu     :  3.166E-16
+   Temps elapsed       :  5.000E-01 sec.
+   Temps CPU           :  2.950E+00 sec.
+
+
+
+
+   Execution cg en parallele avec  8 threads
+
+
+   Taille systeme      :   4201
+   Iterations          :   10
+   Norme du residu     :  3.166E-16
+   Temps elapsed       :  3.800E-01 sec.
+   Temps CPU           :  2.980E+00 sec.
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  1.73   |
+|4 Th. |  3.30   |
+|6 Th. |  4.82   |
+|8 Th. |  6.34   |
+------------------

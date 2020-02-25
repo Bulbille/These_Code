@@ -1,0 +1,4 @@
+CMD    ?= hello_world
+SRC    ?= hello_world.F90
+FFLAGS +=
+CFLAGS +=

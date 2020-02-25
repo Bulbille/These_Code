@@ -1,0 +1,26 @@
+#!/bin/bash
+
+##################################################
+########### Compilation et prefixage #############
+##################################################
+shopt -s extglob #pour permettre de passer de 0.23500000 à 0.235
+LC_ALL="en_US.UTF-8"
+
+
+prefix=$(pwd)
+exec_prefix=$prefix/
+#data_prefix=/scratch/pgersberg/symmetrique
+data_prefix=$prefix/drive
+debut_nom=${PWD##*/} ; debut_nom=${debut_nom:0:2}${data_prefix: -3}
+
+flags=""
+flags=" -g -O1 -Wall "
+flags=" -O3 -Wall "
+#flags="-pedantic -Wall -Wextra -Wold-style-cast -Woverloaded-virtual -Wfloat-equal -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wconversion -Wshadow -Weffc++ -Wredundant-decls -Wdouble-promotion -Winit-self -Wswitch-default -Wswitch-enum -Wundef -Wlogical-op -Winline -O0 -g"
+
+
+mkdir -p $data_prefix
+mpic++ -std=c++11  $flags -c $exec_prefix/main.cpp -o $exec_prefix/main.o 
+mpic++ -std=c++11 $flags -o $data_prefix/stargate  $exec_prefix/main.o 
+rm $exec_prefix/main.o
+cp $exec_prefix/main.cpp $data_prefix

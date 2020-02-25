@@ -1,0 +1,11 @@
+# Use the Fortran driver with -nofor-main to link mixed Fortran/C applications
+ifneq (,$(findstring .F90,$(SRC)))
+        LINKER  = ${FC}
+	LDFLAGS += -nofor-main
+endif
+
+first: default
+
+solutions: default
+	(CMD=principal_f      SRC="principal_f.c bi_cgstab_f.F90"      make default)
+	(CMD=principal_f_blas SRC="principal_f.c bi_cgstab_blas_f.F90" make default)

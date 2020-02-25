@@ -1,0 +1,61 @@
+
+
+   Nb iterations min. et max. :    8    8
+   Norme                      :  9.835E-16
+   Temps elapsed              :  1.921E+00 sec.
+   Temps CPU                  :  1.919E+00 sec.
+
+
+
+
+   Execution bi_cgstab en parallele avec  1 threads
+
+
+   Nb iterations min. et max. :    8    8
+   Norme                      :  9.835E-16
+   Temps elapsed              :  1.907E+00 sec.
+   Temps CPU                  :  1.902E+00 sec.
+
+
+
+
+   Execution bi_cgstab en parallele avec  2 threads
+
+
+   Nb iterations min. et max. :    8    8
+   Norme                      :  9.835E-16
+   Temps elapsed              :  1.018E+00 sec.
+   Temps CPU                  :  2.033E+00 sec.
+
+
+
+
+   Execution bi_cgstab en parallele avec  4 threads
+
+
+   Nb iterations min. et max. :    8    8
+   Norme                      :  9.835E-16
+   Temps elapsed              :  5.435E-01 sec.
+   Temps CPU                  :  2.174E+00 sec.
+
+
+
+
+   Execution bi_cgstab en parallele avec  6 threads
+
+
+   Nb iterations min. et max. :    8    8
+   Norme                      :  9.835E-16
+   Temps elapsed              :  3.778E-01 sec.
+   Temps CPU                  :  2.258E+00 sec.
+
+
+
+
+   Execution bi_cgstab en parallele avec  8 threads
+
+
+   Nb iterations min. et max. :    8    8
+   Norme                      :  9.835E-16
+   Temps elapsed              :  3.005E-01 sec.
+   Temps CPU                  :  2.395E+00 sec.

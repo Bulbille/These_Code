@@ -1,0 +1,14 @@
+############################ -*- Mode: Makefile -*- ###########################
+## make_tp_inc --- 
+## 
+## Auteur          : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Créé le         : Wed Sep 20 11:21:49 2006
+## Dern. mod. par  : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Dern. mod. le   : Mon Oct 23 16:01:23 2006
+###############################################################################
+
+CMD	= cg
+SRC     = cg.F90
+OBJ     = cg.o
+FFLAGS += -DVAL_N=7001
+

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+##################################################
+########### Compilation et prefixage #############
+##################################################
+shopt -s extglob #pour permettre de passer de 0.23500000 à 0.235
+module unload gcc/stable
+module load gcc/5.1.0
+module load intel/compiler intel-mpi 
+LC_ALL="en_US.UTF-8"
+
+prefix=$(pwd)
+exec_prefix=$prefix/ 
+data_prefix=$prefix/test
+mkdir -p $data_prefix
+
+mpicc -std=c++11 -Wall -I/usr/include/ -c $exec_prefix/main.cpp -o $exec_prefix/main.o 
+mpicc -std=c++11 -L/usr/local/lib64/ -o $data_prefix/stargate  $exec_prefix/main.o -lgsl -lgslcblas -lm -lstdc++
+ 
+rm $exec_prefix/*.o

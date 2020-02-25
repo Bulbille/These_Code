@@ -1,0 +1,40 @@
+############################ -*- Mode: Makefile -*- ###########################
+# make_ada --- Pour la machine ADA de l'IDRIS 
+#	       (Compilateurs Intel et LoadLeveler IBM)
+###############################################################################
+
+# Compilateurs
+CF95            = mpiifort
+CC              = mpiicc
+
+# Options de compilation et d'édition de liens
+CFLAGS_TP1      = 
+LDFLAGS_TP1     =
+CFLAGS_TP2      = 
+LDFLAGS_TP2     =
+CFLAGS_TP3      = 
+LDFLAGS_TP3     =
+CFLAGS_TP4      = 
+LDFLAGS_TP4     =
+CFLAGS_TP5      = 
+LDFLAGS_TP5     =
+CFLAGS_TP6      = 
+LDFLAGS_TP6     =
+CFLAGS_TP7      = 
+LDFLAGS_TP7     =
+LDCFLAGS        = -lX11
+CFLAGS_TP8      = 
+LDFLAGS_TP8     =
+
+# Exécutions
+MPIEXEC_TP1     = MP_PROCS=4 poe
+MPIEXEC_TP2     = MP_PROCS=2 poe
+MPIEXEC_TP3     = MP_PROCS=6 poe
+MPIEXEC_TP4     = MP_PROCS=2 poe
+MPIEXEC_TP5     = MP_PROCS=4 poe
+MPIEXEC_TP6     = MP_PROCS=8 poe
+EXEC_TP7_VERIF     =
+MPIEXEC_TP7        = MP_PROCS=4 poe
+MPIEXEC_TP7_CREAT  = MP_PROCS=1 poe
+MPIEXEC_TP8        = MP_PROCS=4 poe
+EXEC_TP8_VERIF     = 

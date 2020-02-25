@@ -1,0 +1,61 @@
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  5.896E+00 sec.
+   Temps CPU           :  5.890E+00 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+
+
+   Execution prod_mat en parallele avec  1 threads
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  5.656E+00 sec.
+   Temps CPU           :  5.650E+00 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+
+
+   Execution prod_mat en parallele avec  2 threads
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  3.069E+00 sec.
+   Temps CPU           :  6.127E+00 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+
+
+   Execution prod_mat en parallele avec  4 threads
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  1.548E+00 sec.
+   Temps CPU           :  6.186E+00 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+
+
+   Execution prod_mat en parallele avec  6 threads
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  1.114E+00 sec.
+   Temps CPU           :  6.679E+00 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+
+
+   Execution prod_mat en parallele avec  8 threads
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  8.838E-01 sec.
+   Temps CPU           :  7.063E+00 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09

@@ -1,0 +1,15 @@
+#############################
+User: pgersberg
+Date: Tue Apr 23 17:41:23 CEST 2019
+Host: n033
+Directory: /gpfs/home/pgersberg/bench/randomnumbers
+SLURM_JOBID: 33105
+SLURM_SUBMIT_DIR: /gpfs/home/pgersberg/bench/randomnumbers
+SLURM_JOB_NODELIST: n033
+SLURM_NAME: rack-1-0-0
+#############################
+-t 1 -prefix /gpfs/home/pgersberg/bench/randomnumbers/clock
+Default_random : 9
+minstd : 9
+ranlux : 20
+knuth : 33

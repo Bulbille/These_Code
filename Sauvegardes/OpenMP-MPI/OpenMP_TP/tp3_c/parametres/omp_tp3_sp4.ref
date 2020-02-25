@@ -1,0 +1,80 @@
+zahir020 - Tue Jan 25 16:10:46 + make clean
+	rm -f pi pi.o core
+zahir020 - Tue Jan 25 16:10:46 + make mono
+	xlf_r -O3 -q64 -qstrict -qfree=f90 -qsuffix=f=f90 -c pi.f90
+xlf_r:  
+** pi   === End of Compilation 1 ===
+1501-510  Compilation successful for file pi.f90.
+	xlf_r -q64 -o pi pi.o
+xlf_r:  
+zahir020 - Tue Jan 25 16:10:46 + ./pi
+
+
+   | Pi_estime - Pi_calcule | :  7.430E-13
+   Temps elapsed              :  4.300E-01 sec.
+   Temps CPU de calcul        :  4.300E-01 sec.
+
+
+zahir020 - Tue Jan 25 16:10:46 + make clean
+	rm -f pi pi.o core
+zahir020 - Tue Jan 25 16:10:46 + make para
+	xlf_r -O3 -q64 -qstrict -qfree=f90 -qsuffix=f=f90 -qsmp=omp -c pi.f90
+xlf_r:  
+** pi   === End of Compilation 1 ===
+1501-510  Compilation successful for file pi.f90.
+	xlf_r -q64 -qsmp=omp -o pi pi.o
+xlf_r:  
+zahir020 - Tue Jan 25 16:10:46 + export OMP_NUM_THREADS=2
+zahir020 - Tue Jan 25 16:10:46 + export OMP_SCHEDULE=STATIC
+zahir020 - Tue Jan 25 16:10:46 + ./pi
+
+
+   | Pi_estime - Pi_calcule | :  4.534E-13
+   Temps elapsed              :  2.100E-01 sec.
+   Temps CPU de calcul        :  4.300E-01 sec.
+
+
+zahir020 - Tue Jan 25 16:10:46 + export OMP_NUM_THREADS=4
+zahir020 - Tue Jan 25 16:10:46 + export OMP_SCHEDULE=STATIC
+zahir020 - Tue Jan 25 16:10:46 + ./pi
+
+
+   | Pi_estime - Pi_calcule | :  1.794E-13
+   Temps elapsed              :  1.100E-01 sec.
+   Temps CPU de calcul        :  4.300E-01 sec.
+
+
+zahir020 - Tue Jan 25 16:10:46 + export OMP_NUM_THREADS=6
+zahir020 - Tue Jan 25 16:10:46 + export OMP_SCHEDULE=STATIC
+zahir020 - Tue Jan 25 16:10:46 + ./pi
+
+
+   | Pi_estime - Pi_calcule | :  4.752E-14
+   Temps elapsed              :  7.000E-02 sec.
+   Temps CPU de calcul        :  4.500E-01 sec.
+
+
+zahir020 - Tue Jan 25 16:10:46 + export OMP_NUM_THREADS=8
+zahir020 - Tue Jan 25 16:10:46 + export OMP_SCHEDULE=STATIC
+zahir020 - Tue Jan 25 16:10:46 + ./pi
+
+
+   | Pi_estime - Pi_calcule | :  3.775E-14
+   Temps elapsed              :  5.000E-02 sec.
+   Temps CPU de calcul        :  4.400E-01 sec.
+
+
+zahir020 - Tue Jan 25 16:10:46 + make clean
+	rm -f pi pi.o core
+
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  2.05   |
+|4 Th. |  3.90   |
+|6 Th. |  6.14   |
+|8 Th. |  8.60   |
+------------------
+

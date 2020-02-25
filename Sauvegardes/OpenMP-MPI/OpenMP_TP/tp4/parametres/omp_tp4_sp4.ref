@@ -1,0 +1,84 @@
+zahir020 - Thu Jan 27 14:12:24 + make clean
+	rm -f cg cg.o core
+zahir020 - Thu Jan 27 14:12:24 + make mono
+	xlf_r -O3 -q64 -qstrict -qfree=f90 -qsuffix=f=f90 -c cg.f90
+xlf_r:  
+** gradient_conjugue   === End of Compilation 1 ===
+1501-510  Compilation successful for file cg.f90.
+	xlf_r -q64 -o cg cg.o
+xlf_r:  
+zahir020 - Thu Jan 27 14:12:24 + ./cg
+
+
+   Iterations          :    8
+   Norme du residu     :  1.188E-15
+   Temps elapsed       :  2.300E-01 sec.
+   Temps CPU de calcul :  2.300E-01 sec.
+
+
+zahir020 - Thu Jan 27 14:12:24 + make clean
+	rm -f cg cg.o core
+zahir020 - Thu Jan 27 14:12:24 + make para
+	xlf_r -O3 -q64 -qstrict -qfree=f90 -qsuffix=f=f90 -qsmp=omp -c cg.f90
+xlf_r:  
+** gradient_conjugue   === End of Compilation 1 ===
+1501-510  Compilation successful for file cg.f90.
+	xlf_r -q64 -qsmp=omp -o cg cg.o
+xlf_r:  
+zahir020 - Thu Jan 27 14:12:24 + export OMP_NUM_THREADS=2
+zahir020 - Thu Jan 27 14:12:24 + export OMP_SCHEDULE=STATIC
+zahir020 - Thu Jan 27 14:12:24 + ./cg
+
+
+   Iterations          :    8
+   Norme du residu     :  7.787E-16
+   Temps elapsed       :  1.000E-01 sec.
+   Temps CPU de calcul :  2.100E-01 sec.
+
+
+zahir020 - Thu Jan 27 14:12:24 + export OMP_NUM_THREADS=4
+zahir020 - Thu Jan 27 14:12:24 + export OMP_SCHEDULE=STATIC
+zahir020 - Thu Jan 27 14:12:24 + ./cg
+
+
+   Iterations          :    8
+   Norme du residu     :  7.980E-16
+   Temps elapsed       :  6.000E-02 sec.
+   Temps CPU de calcul :  2.400E-01 sec.
+
+
+zahir020 - Thu Jan 27 14:12:24 + export OMP_NUM_THREADS=6
+zahir020 - Thu Jan 27 14:12:24 + export OMP_SCHEDULE=STATIC
+zahir020 - Thu Jan 27 14:12:24 + ./cg
+
+
+   Iterations          :    8
+   Norme du residu     :  8.581E-16
+   Temps elapsed       :  4.000E-02 sec.
+   Temps CPU de calcul :  2.300E-01 sec.
+
+
+zahir020 - Thu Jan 27 14:12:24 + export OMP_NUM_THREADS=8
+zahir020 - Thu Jan 27 14:12:24 + export OMP_SCHEDULE=STATIC
+zahir020 - Thu Jan 27 14:12:24 + ./cg
+
+
+   Iterations          :    8
+   Norme du residu     :  7.980E-16
+   Temps elapsed       :  3.000E-02 sec.
+   Temps CPU de calcul :  2.300E-01 sec.
+
+
+zahir020 - Thu Jan 27 14:12:24 + make clean
+	rm -f cg cg.o core
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  2.30   |
+|4 Th. |  3.83   |
+|6 Th. |  5.75   |
+|8 Th. |  7.67   |
+------------------
+

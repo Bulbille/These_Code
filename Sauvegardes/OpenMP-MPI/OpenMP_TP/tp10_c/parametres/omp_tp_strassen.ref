@@ -1,0 +1,50 @@
+
+
+   Erreur                     :  1.806E-12
+   Temps elapsed              :  4.982E+00 sec.
+   Temps CPU                  :  4.978E+00 sec.
+
+
+
+   Execution strassen en parallele avec  1 threads
+
+
+   Erreur                     :  1.806E-12
+   Temps elapsed              :  5.288E+00 sec.
+   Temps CPU                  :  5.283E+00 sec.
+
+
+
+   Execution strassen en parallele avec  2 threads
+
+
+   Erreur                     :  1.806E-12
+   Temps elapsed              :  2.683E+00 sec.
+   Temps CPU                  :  5.361E+00 sec.
+
+
+
+   Execution strassen en parallele avec  4 threads
+
+
+   Erreur                     :  1.806E-12
+   Temps elapsed              :  1.390E+00 sec.
+   Temps CPU                  :  5.556E+00 sec.
+
+
+
+   Execution strassen en parallele avec  6 threads
+
+
+   Erreur                     :  1.806E-12
+   Temps elapsed              :  9.821E-01 sec.
+   Temps CPU                  :  5.887E+00 sec.
+
+
+
+   Execution strassen en parallele avec  8 threads
+
+
+   Erreur                     :  1.806E-12
+   Temps elapsed              :  7.679E-01 sec.
+   Temps CPU                  :  6.133E+00 sec.

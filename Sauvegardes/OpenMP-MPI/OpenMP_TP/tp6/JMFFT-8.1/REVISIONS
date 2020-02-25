@@ -1,0 +1,23 @@
+Révision de la bibliothèque JMFFT en Fortran :
+
+-- 1. 16/09/1998 Modification : Mise a jour des performances.
+-- 2. 21/09/1998 Modification : Introduction de JMSETNWORK.
+-- 3.  7/01/1999 Modification : Performances en base 3.
+-- 4.  1/07/1999 Modification : Base quelconque.
+-- 5.  1/07/1999 Modification : Traitement d'erreurs.
+-- 6. 30/10/1999 Modification : Documentation HTML.
+-- 7. 19/06/2000 Modification : - Initialisation de variables.
+                                - Corrections bogues et doc. HTML.
+                                - Révision des sous-programmes
+                                  internes : jmcsm1dx, jmscm1dx.
+                                - Ajout des sous-programmes : jmgetsetstop,
+                                  jmgetstop, jmsetstop.
+                                - Version C de JMFFT.
+-- 8. 13/05/2004 Ajout        : - FFT en cosinus et en sinus.
+                                - Make.inc.INTEL dans répertoire arch.
+                 Modification : FFT réel-complexe et complexe-réel.
+
+-- 9. 07/07/2005 Corrections  : - FFT en cosinus et en sinus.
+                                - Programmes de tests associés à ces sous-programmes.
+
+Version actuelle : 8.1

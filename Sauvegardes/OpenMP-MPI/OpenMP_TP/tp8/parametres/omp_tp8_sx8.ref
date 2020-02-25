@@ -1,0 +1,96 @@
++ ./poisson_mono.exe
+
+
+   Elapsed time                  :        0.797 sec.
+   CPU time                      :        0.796 sec.
+   Min. & Max. iteration numbers :     4   2501
+   Norm(|u - u_a|)               :    1.402E-18
+
+ Analytic solution :  1.05E-03  2.09E-03  3.14E-03 ... -3.14E-03 -2.09E-03 -1.05E-03
+ Computed solution :  1.05E-03  2.09E-03  3.14E-03 ... -3.14E-03 -2.09E-03 -1.05E-03
+
+
++ export OMP_NUM_THREADS=1
++ export OMP_SCHEDULE=STATIC
++ ./poisson_omp.exe
+
+
+   Number of running tasks       :            1
+   Elapsed time                  :        0.858 sec.
+   CPU time                      :        0.858 sec.
+   Min. & Max. iteration numbers :     4   2501
+   Norm(|u - u_a|)               :    1.406E-18
+
+ Analytic solution :  1.05E-03  2.09E-03  3.14E-03 ... -3.14E-03 -2.09E-03 -1.05E-03
+ Computed solution :  1.05E-03  2.09E-03  3.14E-03 ... -3.14E-03 -2.09E-03 -1.05E-03
+
+
++ export OMP_NUM_THREADS=2
++ export OMP_SCHEDULE=STATIC
++ ./poisson_omp.exe
+
+
+   Number of running tasks       :            2
+   Elapsed time                  :        0.545 sec.
+   CPU time                      :        0.870 sec.
+   Min. & Max. iteration numbers :     4   2501
+   Norm(|u - u_a|)               :    1.406E-18
+
+ Analytic solution :  1.05E-03  2.09E-03  3.14E-03 ... -3.14E-03 -2.09E-03 -1.05E-03
+ Computed solution :  1.05E-03  2.09E-03  3.14E-03 ... -3.14E-03 -2.09E-03 -1.05E-03
+
+
++ export OMP_NUM_THREADS=4
++ export OMP_SCHEDULE=STATIC
++ ./poisson_omp.exe
+
+
+   Number of running tasks       :            4
+   Elapsed time                  :        0.378 sec.
+   CPU time                      :        1.051 sec.
+   Min. & Max. iteration numbers :     4   2501
+   Norm(|u - u_a|)               :    1.406E-18
+
+ Analytic solution :  1.05E-03  2.09E-03  3.14E-03 ... -3.14E-03 -2.09E-03 -1.05E-03
+ Computed solution :  1.05E-03  2.09E-03  3.14E-03 ... -3.14E-03 -2.09E-03 -1.05E-03
+
+
++ export OMP_NUM_THREADS=6
++ export OMP_SCHEDULE=STATIC
++ ./poisson_omp.exe
+
+
+   Number of running tasks       :            6
+   Elapsed time                  :        0.317 sec.
+   CPU time                      :        1.275 sec.
+   Min. & Max. iteration numbers :     4   2501
+   Norm(|u - u_a|)               :    1.406E-18
+
+ Analytic solution :  1.05E-03  2.09E-03  3.14E-03 ... -3.14E-03 -2.09E-03 -1.05E-03
+ Computed solution :  1.05E-03  2.09E-03  3.14E-03 ... -3.14E-03 -2.09E-03 -1.05E-03
+
+
++ export OMP_NUM_THREADS=8
++ export OMP_SCHEDULE=STATIC
++ ./poisson_omp.exe
+
+
+   Number of running tasks       :            8
+   Elapsed time                  :        0.284 sec.
+   CPU time                      :        1.533 sec.
+   Min. & Max. iteration numbers :     4   2501
+   Norm(|u - u_a|)               :    1.406E-18
+
+ Analytic solution :  1.05E-03  2.09E-03  3.14E-03 ... -3.14E-03 -2.09E-03 -1.05E-03
+ Computed solution :  1.05E-03  2.09E-03  3.14E-03 ... -3.14E-03 -2.09E-03 -1.05E-03
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  1.46   |
+|4 Th. |  2.10   |
+|6 Th. |  2.51   |
+|8 Th. |  2.80   |
+------------------
+

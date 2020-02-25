@@ -1,0 +1,14 @@
+############################ -*- Mode: Makefile -*- ###########################
+## make_tp_inc --- 
+## 
+## Auteur          : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Créé le         : Wed Sep 20 11:21:49 2006
+## Dern. mod. par  : Jeremie Gaidamour (CNRS/IDRIS) <gaidamou@idris.fr>
+## Dern. mod. le   : Fri Aug 02 15:14:07 2013
+###############################################################################
+
+CMD	?= principal
+SRC     ?= principal.c bi_cgstab.c
+CFLAGS  += -Wp,-DVAL_LDA=2401,-DVAL_N=2400,-DVAL_M=24
+
+include ../parametres/make_solutions_inc

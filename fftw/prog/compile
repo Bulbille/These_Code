@@ -1,0 +1,21 @@
+#!/bin/bash
+exec_prefix="."
+mkdir -p test
+data_prefix="test"
+#flags="-o2 -s"
+while :; do 
+	case $1 in
+	#	-d ) flags="-pedantic -Wall -Wextra -Wold-style-cast -Woverloaded-virtual -Wfloat-equal -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align -Wconversion -Wshadow -Weffc++ -Wredundant-decls -Wdouble-promotion -Winit-self -Wswitch-default -Wswitch-enum -Wundef -Wlogical-op -Winline -O0" ;;
+		-d ) flags="-pedantic -Wall -Wextra -Wold-style-cast -Woverloaded-virtual -Wfloat-equal -Wwrite-strings -Wpointer-arith -Wcast-qual -Wcast-align  -Wshadow -Weffc++ -Wredundant-decls -Wdouble-promotion -Winit-self -Wswitch-default -Wswitch-enum -Wundef -Wlogical-op -Winline -g";;
+		-g ) flags="-gdwarf-3" ;;
+		* ) break ;;
+	esac
+	shift 1
+done
+
+g++ -std=c++11 -Wall -I/usr/include/ -c $exec_prefix/fftw.cpp -o $exec_prefix/fftw.o $flags
+g++ -std=c++11 -L/usr/local/lib64/ -o $data_prefix/stargate  $exec_prefix/fftw.o -lgsl -lgslcblas -lm $flags
+rm $exec_prefix/*.o
+
+
+

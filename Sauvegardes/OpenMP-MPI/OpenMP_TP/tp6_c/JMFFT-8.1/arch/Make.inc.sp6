@@ -1,0 +1,17 @@
+############################ -*- Mode: Makefile -*- ###########################
+## Make.inc.RS6K --- Makefile dependant de la plate-forme RS6000 d'IBM
+## 
+## Auteur          : Jean-Marie Teuler <Jean-Marie.Teuler@idris.fr>
+## Créé le         : Fri Jul 30 12:48:12 1999
+## Dern. mod. par  : Jalel Chergui (CNRS/IDRIS) <Jalel.Chergui@idris.fr>
+## Dern. mod. le   : Thu May 13 14:48:32 2004
+###############################################################################
+
+FC	= xlf_r
+FFLAGS	= -qrealsize=8 -qfree=f90 -qsuffix=f=f90 -O3
+LD	= xlf_r
+LDFLAGS	=
+AR	= ar
+ARFLAGS = rv
+RM      = rm
+RMFLAGS = -f

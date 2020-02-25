@@ -1,0 +1,6 @@
+integer			::LX,LY,LZ,N,binnb,Nboot,nT
+double precision	::Tmin,Tmax,J
+
+common/V1/LX,LY,LZ,N,binnb,Nboot,nT
+common/V2/Tmin,Tmax,J
+

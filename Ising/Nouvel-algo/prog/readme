@@ -1,0 +1,58 @@
+Diffusion de Kawasaki, sans préthermalisation
+Conditons aux bords fixes en y, périodiques en x
+Algorithme de Monte Carlo en temps continu v2 améliorée
+
+Calcul de l'interface
+
+++++++ Explication de l'algorithme ++++++
+
+Système carré en deux dimensions de taille TAILLE_X*TAILLE_Y
+
+Chaque point du réseau (spin) subit une interaction avec ses plus proches voisins (réseau carré) définie par la fonction exchange() [dynamique.cpp].
+
+Une thermalisation est effectuée [main.cpp 54->64] avant d'effectuer la vraie simulation. Chaque étape de Monte Carlo est composée de plusieurs fois une même étape d'échange entre deux spins tirage_lien() [dynamique.cpp] et ensuite une mise à jour du système. 
+
+Une étape de Monte Carlo correspond à une unité de temps. À chaque étape, on augmente le pas de temps de dt. 
+
+Les deux spins à échanger sont choisis aléatoirement selon une probabilité proportionnelle à leur énergie (liens_ppv[x][4]) via tirage_lien() [dynamique.cpp]. 
+
+++++ Implémentation de l'algorithme +++++
+
+** Génération du système **
+
+Dans generation() [dynamique.cpp] , on définit d'abbord le système initial du réseau.
+
+Ensuite, on définit chaque lien existant dans le réseau (la topologie), avec liens_ppv[id_lien]=[x1,y1,x2,y2,energie]. Les conditions aux bords sont périodiques en x et fixes en y.
+
+Ensuite, pour chaque point du réseau on lui associe ses plus proches voisins, c'est-à-dire les liens auquel il appartient via ppv[x1][y1]=[lien_droite,lien_gauche,lien_bas,lien_haut]. Si un lien n'existe pas (style y==0, y'a pas de lien vers le bas), la valeur associée n'est pas l'id du lien mais -1. 
+
+** Tirage du lien **
+
+Les liens sont tirés aléatoirement pondéré par leur énergie (liens_ppv[x][4]). Un sous-tableau est généré contenant les sommes cumulées, et un nombre aléatoire entre 0 et max(tab) est prit. Une recherche dichotomique est effectuée pour obtenir l'id du lien choisi.
+
+** Mise à jour **
+
+Une fois le lien tiré, on échange les deux spins (multiplication par -1).
+
+Ensuite, on met à jour les énergies sur les liens qui ont pu être modifiés (les plus proches voisins des deux spins qui ont été tirés). 
+
++++++++++ Lancer le programme +++++++++++
+
+Une fois le programme bash ./compile lancé (options -d pour le debug), lancer le programme ./stargate.
+Options possibles :
+--t : donne la température du système
+--h : donne la valeur du champ magnétique
+--prefix : préfixe pour les fichiers à écrire (basiquement le chemin du dossier)
+--suffix : autres données, comme le numéro de la simulation
+
++++++++++++ Données exportées +++++++++++
+
+On calcule (à améliorer via müller & münster 2004) l'histogramme des distributions de l'interface, les fonctions de corrélation, les profils de magnétisation, les profils d'énergie ; le tout pondéré par le poids de l'étape de MC. 
+Le tout est écrit via la fonction ecriture() [main.cpp].
+
++++++++++ Visualisation des données ++++
+
+Utiliser affichage.py sur un fichier nommé "kaw_ttc_xxx" pour voir la dernière configuration.
+Utiliser 2_correl.py pour avoir les profils de magnétisaiton, de longueurs de corrélation, d'énergie. Avoir les longueurs de corrélation en fonction des températures et des champs magnétiques pour différentes méthodes. 
+
+++++++ 

@@ -1,0 +1,13 @@
+-I/gpfs/home/pgersberg/libeigen
+-I/gpfs/home/pgersberg/libeigen/buikd_dir
+-I/usr/include
+-I/usr/include/QtOpenGL
+-I/usr/include/QtGui
+-I/usr/include/QtCore
+-I/usr/include
+-DQT_OPENGL_LIB
+-DQT_GUI_LIB
+-DQT_CORE_LIB
+-o
+/gpfs/home/pgersberg/libeigen/buikd_dir/demos/opengl/quaternion_demo.moc
+/gpfs/home/pgersberg/libeigen/demos/opengl/quaternion_demo.h

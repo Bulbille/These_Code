@@ -1,0 +1,11 @@
+#############################
+User: pgersberg
+Date: Thu Oct 3 11:40:37 CEST 2019
+Host: n037
+Directory: /gpfs/home/pgersberg/Chip/CorrelSOS
+SLURM_JOBID: 881196
+SLURM_SUBMIT_DIR: /gpfs/home/pgersberg/Chip/CorrelSOS
+SLURM_JOB_NODELIST: n037
+SLURM_NAME: Court0-0
+#############################
+-t 1 -prefix /gpfs/home/pgersberg/Chip/CorrelSOS/court

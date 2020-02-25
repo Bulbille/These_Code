@@ -1,0 +1,7 @@
+-I/gpfs/home/pgersberg/libeigen
+-I/gpfs/home/pgersberg/libeigen/buikd_dir
+-I/usr/include
+-DNDEBUG
+-o
+/gpfs/home/pgersberg/libeigen/buikd_dir/demos/mandelbrot/mandelbrot.moc
+/gpfs/home/pgersberg/libeigen/demos/mandelbrot/mandelbrot.h

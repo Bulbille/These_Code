@@ -1,0 +1,18 @@
+############################ -*- Mode: Makefile -*- ###########################
+## make_prod_mat --- 
+## 
+## Auteur          : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Créé le         : Wed Sep 20 11:21:49 2006
+## Dern. mod. par  : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Dern. mod. le   : Thu Jan  7 16:58:57 2010
+###############################################################################
+
+CMD	     = prod_mat
+SRC          = prod_mat.F90
+OBJ          = prod_mat.o
+FFLAGS      += -DVAL_M=1801 -DVAL_N=2401 
+
+# Be careful, at run, you may have to set :
+# export GOMP_STACKSIZE=10000 
+# value is given in kilobyte 
+

@@ -1,0 +1,17 @@
+############################ -*- Mode: Makefile -*- ###########################
+## Make.inc.C90 --- Makefile dependant de la plate-forme C90 de CRAY
+## 
+## Auteur          : Jean-Marie Teuler <Jean-Marie.Teuler@idris.fr>
+## Créé le         : Fri Jul 30 12:48:12 1999
+## Dern. mod. par  : Jalel Chergui (CNRS/IDRIS) <Jalel.Chergui@idris.fr>
+## Dern. mod. le   : Thu May 13 14:48:42 2004
+###############################################################################
+
+FC 	= f90
+FFLAGS 	= -dp -ffree -Ovector3,scalar3,unroll3,inline4,pipeline2
+LD	= f90
+LDFLAGS	=
+AR 	= ar
+ARFLAGS = rv
+RM      = rm
+RMFLAGS = -f

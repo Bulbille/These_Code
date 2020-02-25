@@ -1,0 +1,15 @@
+#############################
+User: pgersberg
+Date: Fri Sep 13 17:21:41 CEST 2019
+Host: n263
+Directory: /gpfs/home/pgersberg/Chip/SemiInf/distribution
+SLURM_JOBID: 796787
+SLURM_SUBMIT_DIR: /gpfs/home/pgersberg/Chip/SemiInf/distribution
+SLURM_JOB_NODELIST: n263
+SLURM_NAME: diong0-0
+#############################
+-t 1 -prefix /gpfs/home/pgersberg/Chip/SemiInf/distribution/long
+
+real	7m7.349s
+user	0m0.021s
+sys	0m0.017s

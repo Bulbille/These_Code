@@ -1,0 +1,11 @@
+#############################
+User: pgersberg
+Date: Tue Apr 17 13:50:53 CEST 2018
+Host: node232
+Directory: /home/pgersberg/fftw
+PBS_JOBID: 7417344.master.cm.cluster
+PBS_O_WORKDIR: /home/pgersberg/fftw
+PBS_NODEFILE:  node232.cm.cluster
+#############################
+
+-t 7.750 -prefix /home/pgersberg/fftw/correl -h 0.2 -f 0

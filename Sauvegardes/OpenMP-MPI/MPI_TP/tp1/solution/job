@@ -1,0 +1,36 @@
+#!/bin/sh
+
+#PBS -l nodes=1:ppn=6
+#PBS -l walltime=00:00:10
+#PBS -N OPENMPI
+#PBS -d . 
+
+module purge
+module add torque  
+module load gcc/5.1.0/
+module add openmpi/gcc 
+NUMPROC=`cat $PBS_NODEFILE | wc -l`
+prefix=$(pwd) 
+
+# useful informations to print
+echo "#############################" 
+echo "User:" $USER
+echo "Date:" `date`
+echo "Host:" `hostname`
+echo "Directory:" `pwd`
+echo "PBS_JOBID:" $PBS_JOBID
+echo "PBS_O_WORKDIR:" $PBS_O_WORKDIR
+echo "PBS_NODEFILE: " $NUMPROC
+echo "#############################" 
+
+mpic++ $prefix/pair_impair.c -o $prefix/stargate
+
+myapp=$prefix/stargate
+
+# pour éviter certains warnings:
+export IPATH_NO_CPUAFFINITY=1
+
+mpirun -np $NUMPROC $myapp 
+
+
+rm $prefix/stargate

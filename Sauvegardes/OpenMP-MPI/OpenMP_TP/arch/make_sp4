@@ -1,0 +1,14 @@
+############################ -*- Mode: Makefile -*- ###########################
+## make_sp4 --- 
+## 
+## Auteur          : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Créé le         : Wed Sep 20 10:44:51 2006
+## Dern. mod. par  : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Dern. mod. le   : Mon Oct 23 14:47:52 2006
+###############################################################################
+
+FC	    = xlf_r
+FFLAGS	    = -O3 -q64 -qstrict -qfree=f90 -qsuffix=f=f90
+LDFLAGS	    = -q64
+FFLAGS_OMP  = -qsmp=omp
+LDFLAGS_OMP = -qsmp=omp

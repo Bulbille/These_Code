@@ -1,0 +1,70 @@
++ ./jacobi_mono.exe
+
+
+   Iterations          :  292
+   Norme               :  2.096E-16
+   Temps elapsed       :  6.173E+00 sec.
+   Temps CPU de calcul :  6.173E+00 sec.
+
++ export OMP_NUM_THREADS=1
++ export OMP_SCHEDULE=STATIC
++ ./jacobi_omp.exe
+
+
+   Iterations          :  292
+   Norme               :  2.096E-16
+   Temps elapsed       :  6.226E+00 sec.
+   Temps CPU de calcul :  6.226E+00 sec.
+
++ export OMP_NUM_THREADS=2
++ export OMP_SCHEDULE=STATIC
++ ./jacobi_omp.exe
+
+
+   Iterations          :  292
+   Norme               :  2.096E-16
+   Temps elapsed       :  3.157E+00 sec.
+   Temps CPU de calcul :  5.441E+00 sec.
+
++ export OMP_NUM_THREADS=4
++ export OMP_SCHEDULE=STATIC
++ ./jacobi_omp.exe
+
+
+   Iterations          :  292
+   Norme               :  2.096E-16
+   Temps elapsed       :  1.617E+00 sec.
+   Temps CPU de calcul :  5.796E+00 sec.
+
+
++ export OMP_NUM_THREADS=6
++ export OMP_SCHEDULE=STATIC
++ ./jacobi_omp.exe
+
+
+   Iterations          :  292
+   Norme               :  2.096E-16
+   Temps elapsed       :  1.102E+00 sec.
+   Temps CPU de calcul :  3.065E+00 sec.
+
++ export OMP_NUM_THREADS=8
++ export OMP_SCHEDULE=STATIC
++ ./jacobi_omp.exe
+
+
+   Iterations          :  292
+   Norme               :  2.096E-16
+   Temps elapsed       :  8.990E-01 sec.
+   Temps CPU de calcul :  5.422E+00 sec.
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  1.95   |
+|4 Th. |  3.80   |
+|6 Th. |  5.60   |
+|8 Th. |  6.85   |
+------------------
+
+

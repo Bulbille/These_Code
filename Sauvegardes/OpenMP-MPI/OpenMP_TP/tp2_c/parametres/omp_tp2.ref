@@ -1,0 +1,56 @@
+
+   Taille du systeme   :  3201
+   Iterations          :  130
+   Norme               :  1.795E-16
+   Temps elapsed       :  3.076E+00 sec.
+   Temps CPU           :  3.074E+00 sec.
+
+
+   Execution jacobi en parallele avec  1 threads
+
+
+   Taille du systeme   :  3201
+   Iterations          :  130
+   Norme               :  1.795E-16
+   Temps elapsed       :  3.194E+00 sec.
+   Temps CPU           :  3.191E+00 sec.
+
+
+   Execution jacobi en parallele avec  2 threads
+
+
+   Taille du systeme   :  3201
+   Iterations          :  130
+   Norme               :  1.795E-16
+   Temps elapsed       :  1.670E+00 sec.
+   Temps CPU           :  3.335E+00 sec.
+
+
+   Execution jacobi en parallele avec  4 threads
+
+
+   Taille du systeme   :  3201
+   Iterations          :  130
+   Norme               :  1.795E-16
+   Temps elapsed       :  8.718E-01 sec.
+   Temps CPU           :  3.486E+00 sec.
+
+
+   Execution jacobi en parallele avec  6 threads
+
+
+   Taille du systeme   :  3201
+   Iterations          :  130
+   Norme               :  1.795E-16
+   Temps elapsed       :  6.176E-01 sec.
+   Temps CPU           :  3.705E+00 sec.
+
+
+   Execution jacobi en parallele avec  8 threads
+
+
+   Taille du systeme   :  3201
+   Iterations          :  130
+   Norme               :  1.795E-16
+   Temps elapsed       :  5.070E-01 sec.
+   Temps CPU           :  4.055E+00 sec.

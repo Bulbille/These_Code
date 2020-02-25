@@ -1,0 +1,7 @@
+first: default
+
+solutions: default
+	(CMD=pi2    OBJ=pi2.o    make default)
+	(CMD=pi2opt OBJ=pi2opt.o make default)
+	(CMD=pi3    OBJ=pi3.o    make default)
+	(CMD=pi3opt OBJ=pi3opt.o make default)

@@ -1,0 +1,26 @@
+#############################
+User: pgersberg
+Date: Mon Dec 16 18:44:22 CET 2019
+Host: n021
+Directory: /gpfs/home/pgersberg/POP/Mix-distrib
+SLURM_JOBID: 1889897
+SLURM_SUBMIT_DIR: /gpfs/home/pgersberg/POP/Mix-distrib
+SLURM_JOB_NODELIST: n[021-022]
+SLURM_NAME: Mi0.3-.50
+#############################
+(standard_in) 1: syntax error
+-t 1 -prefix /gpfs/home/pgersberg/POP/Mix-distrib/drive0.3 -f .50
+1
+5
+6
+0
+3
+2
+8
+4
+9
+7
+
+real	99m36.445s
+user	0m0.021s
+sys	0m0.023s

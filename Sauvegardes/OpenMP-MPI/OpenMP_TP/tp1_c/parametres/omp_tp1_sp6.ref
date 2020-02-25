@@ -1,0 +1,181 @@
+Compilation
+===========
+vargas043 /solution/ gmake
+xlf90_r -O3 -qstrict -WF,-DVAL_M=1801,-DVAL_N=2401 -c prod_mat.F90
+** prod_mat   === End of Compilation 1 ===
+1501-510  Compilation successful for file prod_mat.F90.
+xlf90_r  -o prod_mat_mono.exe prod_mat.o
+vargas043 /solution/ gmake para
+xlf90_r -O3 -qstrict -WF,-DVAL_M=1801,-DVAL_N=2401 -qsmp=omp -c prod_mat.F90
+** prod_mat   === End of Compilation 1 ===
+1501-510  Compilation successful for file prod_mat.F90.
+xlf90_r  -qsmp=omp -o prod_mat_omp.exe prod_mat.o
+
+Execution
+=========
+
+vargas087 - Fri Mar 18 13:03:03 + cd /workgpfs/idris/sos/ssos890/P6IH/Cours/OpenMP_tp/tp1/solut
+ion
+vargas087 - Fri Mar 18 13:03:03 + ./run.sh
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  7.360E+00 sec.
+   Temps CPU           :  7.350E+00 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+
+
+   Execution prod_mat en parallele avec  1 threads
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  7.350E+00 sec.
+   Temps CPU           :  7.340E+00 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+
+
+   Execution prod_mat en parallele avec  2 threads
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  3.720E+00 sec.
+   Temps CPU           :  7.410E+00 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+
+
+   Execution prod_mat en parallele avec  4 threads
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  1.930E+00 sec.
+   Temps CPU           :  7.670E+00 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+
+
+   Execution prod_mat en parallele avec  6 threads
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  1.330E+00 sec.
+   Temps CPU           :  7.930E+00 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+
+
+   Execution prod_mat en parallele avec  8 threads
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  1.050E+00 sec.
+   Temps CPU           :  8.310E+00 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. | 1.98    |
+|4 Th. | 3.81    |
+|6 Th. | 5.53    |
+|8 Th. | 7.01    |
+------------------
+
+
+Compilation
+===========
+vargas043 /solution/ gmake
+xlf90_r -O3 -qstrict -WF,-DVAL_M=1801,-DVAL_N=2401 -c prod_mat.F90
+** prod_mat   === End of Compilation 1 ===
+1501-510  Compilation successful for file prod_mat.F90.
+xlf90_r  -o prod_mat_mono.exe prod_mat.o
+vargas043 /solution/ gmake para
+xlf90_r -O3 -qstrict -WF,-DVAL_M=1801,-DVAL_N=2401 -qsmp=omp -c prod_mat.F90
+** prod_mat   === End of Compilation 1 ===
+1501-510  Compilation successful for file prod_mat.F90.
+xlf90_r  -qsmp=omp -o prod_mat_omp.exe prod_mat.o
+
+Execution
+=========
+
+vargas086 - Thu Jan  7 17:18:52 + cd /workgpfs/idris/sos/ssos890/P6IH/OpenMP_tp/tp1/solution
+vargas086 - Thu Jan  7 17:18:52 + ./run.sh
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  1.358E+01 sec.
+   Temps CPU           :  1.356E+01 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+
+
+   Execution prod_mat en parallele avec  1 threads
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  1.266E+01 sec.
+   Temps CPU           :  1.263E+01 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+
+
+   Execution prod_mat en parallele avec  2 threads
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  7.020E+00 sec.
+   Temps CPU           :  1.401E+01 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+
+
+   Execution prod_mat en parallele avec  4 threads
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  3.950E+00 sec.
+   Temps CPU           :  1.577E+01 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+
+
+   Execution prod_mat en parallele avec  6 threads
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  2.900E+00 sec.
+   Temps CPU           :  1.735E+01 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+
+
+   Execution prod_mat en parallele avec  8 threads
+
+
+   Valeurs de m et n   :  1801 2401
+   Temps elapsed       :  1.770E+00 sec.
+   Temps CPU           :  1.411E+01 sec.
+   Resultat partiel    :  4.617E+09  4.617E+09  ... -3.154E+09 -3.163E+09
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  1.93   |
+|4 Th. |  3.44   |
+|6 Th. |  4.68   |
+|8 Th. |  7.67   |
+------------------

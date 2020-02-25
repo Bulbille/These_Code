@@ -1,0 +1,9 @@
+Diffusion de Kawasaki, sans préthermalisation
+Champ magnétique au milieu
+Conditions aux bords périodiques en x et fixes en y
+Algorithme de Monte Carlo en temps continu
+
+
+Pour plotter sur gnuplot les courbes de correl_y :
+plot 'correl_y/kaw_ttc_1.-0-correl_y' u (int($1)==40?$2:0/0):3
+plot for [i=0:6] 'correl_y/kaw_ttc_1.-0-correl_y' u (int($1)==10*i?$2:0/0):3 w l title "x=".(10*i).""           

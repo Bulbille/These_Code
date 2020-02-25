@@ -1,0 +1,13 @@
+############################ -*- Mode: Makefile -*- ###########################
+## make_tp_inc --- 
+## 
+## Auteur          : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Créé le         : Wed Sep 20 11:21:49 2006
+## Dern. mod. par  : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Dern. mod. le   : Mon Oct  8 17:37:59 2007
+###############################################################################
+
+CMD	 = fft
+SRC     =  fft.F90 
+OBJ      = fft.o 
+LDFLAGS += -L../JMFFT-8.1/lib -ljmfft

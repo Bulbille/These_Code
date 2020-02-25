@@ -1,0 +1,13 @@
+#############################
+User: pgersberg
+Date: Fri Mar 8 14:38:17 CET 2019
+Host: node243
+Directory: /home/pgersberg/Chip/IntMagKawMPI
+PBS_JOBID: 8047850.master.cm.cluster
+PBS_O_WORKDIR: /home/pgersberg/Chip/IntMagKawMPI
+PBS_NODEFILE:  node243.cm.cluster
+#############################
+/cm/local/apps/torque/current/spool/mom_priv/jobs/8047850.master.cm.cluster.SC: line 41: [: too many arguments
+
+
+

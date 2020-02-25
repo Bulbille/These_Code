@@ -1,0 +1,61 @@
++ ./prod_mat_mono.exe
+
+
+   Temps elapsed       :  2.469E+01 sec.
+   Temps CPU de calcul :  2.469E+01 sec.
+   Resultat partiel    :  2.136E+10  2.136E+10  ... -1.746E+11 -1.747E+11
+
++ export OMP_NUM_THREADS=1
++ export OMP_SCHEDULE=STATIC
++ ./prod_mat_omp.exe
+
+
+   Temps elapsed       :  2.514E+01 sec.
+   Temps CPU de calcul :  2.513E+01 sec.
+   Resultat partiel    :  2.136E+10  2.136E+10  ... -1.746E+11 -1.747E+11
+
++ export OMP_NUM_THREADS=2
++ export OMP_SCHEDULE=STATIC
++ ./prod_mat_omp.exe
+
+
+   Temps elapsed       :  1.260E+01 sec.
+   Temps CPU de calcul :  2.455E+01 sec.
+   Resultat partiel    :  2.136E+10  2.136E+10  ... -1.746E+11 -1.747E+11
+
++ export OMP_NUM_THREADS=4
++ export OMP_SCHEDULE=STATIC
++ ./prod_mat_omp.exe
+
+
+   Temps elapsed       :  6.320E+00 sec.
+   Temps CPU de calcul :  2.438E+01 sec.
+   Resultat partiel    :  2.136E+10  2.136E+10  ... -1.746E+11 -1.747E+11
+
++ export OMP_NUM_THREADS=6
++ export OMP_SCHEDULE=STATIC
++ ./prod_mat_omp.exe
+
+
+   Temps elapsed       :  4.283E+00 sec.
+   Temps CPU de calcul :  2.463E+01 sec.
+   Resultat partiel    :  2.136E+10  2.136E+10  ... -1.746E+11 -1.747E+11
+
++ export OMP_NUM_THREADS=8
++ export OMP_SCHEDULE=STATIC
++ ./prod_mat_omp.exe
+
+
+   Temps elapsed       :  3.398E+00 sec.
+   Temps CPU de calcul :  2.686E+01 sec.
+   Resultat partiel    :  2.136E+10  2.136E+10  ... -1.746E+11 -1.747E+11
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  1.95   |
+|4 Th. |  3.90   |
+|6 Th. |  5.76   |
+|8 Th. |  7.26   |
+------------------

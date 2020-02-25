@@ -1,0 +1,141 @@
+Compilation
+===========
+
+vargas043 /solution/ gmake
+xlf90_r -O3 -c poisson.F90 gradient_conjugue.F90 c06haf.F90
+/tmpdir/inter/int.ssos890-008103033467510/F8856536QLe47b:
+** poisson   === End of Compilation 1 ===
+"poisson.F90", 1500-036 (I) The NOSTRICT option (default at OPT(3)) has the potential to alter the semantics of a program.  Please refer to documentation on the STRICT/NOSTRICT option for more information.
+1501-510  Compilation successful for file poisson.F90.
+/tmpdir/inter/int.ssos890-008103033467510/F8856536Sne47d:
+** gradient_conjugue   === End of Compilation 1 ===
+"gradient_conjugue.F90", 1500-036 (I) The NOSTRICT option (default at OPT(3)) has the potential to alter the semantics of a program.  Please refer to documentation on the STRICT/NOSTRICT option for more information.
+1501-510  Compilation successful for file gradient_conjugue.F90.
+/tmpdir/inter/int.ssos890-008103033467510/F8856536S-e47f:
+** c06haf   === End of Compilation 1 ===
+** jmfact   === End of Compilation 2 ===
+** jmtable   === End of Compilation 3 ===
+** jmscm1d   === End of Compilation 4 ===
+** jmccm1d   === End of Compilation 5 ===
+** jmccm1d2   === End of Compilation 6 ===
+** jmccm1d3   === End of Compilation 7 ===
+** jmccm1d4   === End of Compilation 8 ===
+** jmccm1d5   === End of Compilation 9 ===
+** jmcctranspcs   === End of Compilation 10 ===
+"c06haf.F90", 1500-036 (I) The NOSTRICT option (default at OPT(3)) has the potential to alter the semantics of a program.  Please refer to documentation on the STRICT/NOSTRICT option for more information.
+"c06haf.F90", 1500-036 (I) The NOSTRICT option (default at OPT(3)) has the potential to alter the semantics of a program.  Please refer to documentation on the STRICT/NOSTRICT option for more information.
+"c06haf.F90", 1500-036 (I) The NOSTRICT option (default at OPT(3)) has the potential to alter the semantics of a program.  Please refer to documentation on the STRICT/NOSTRICT option for more information.
+1501-510  Compilation successful for file c06haf.F90.
+xlf90_r  -o poisson_mono.exe poisson.o gradient_conjugue.o c06haf.o
+vargas043 /solution/ gmake para
+xlf90_r -O3 -qsmp=omp -c poisson.F90 gradient_conjugue.F90 c06haf.F90
+/tmpdir/inter/int.ssos890-008103033467510/F8700664c2Ip7b:
+** poisson   === End of Compilation 1 ===
+"poisson.F90", 1500-036 (I) The NOSTRICT option (default at OPT(3)) has the potential to alter the semantics of a program.  Please refer to documentation on the STRICT/NOSTRICT option for more information.
+1501-510  Compilation successful for file poisson.F90.
+/tmpdir/inter/int.ssos890-008103033467510/F8700664dXIp7d:
+** gradient_conjugue   === End of Compilation 1 ===
+"gradient_conjugue.F90", 1500-036 (I) The NOSTRICT option (default at OPT(3)) has the potential to alter the semantics of a program.  Please refer to documentation on the STRICT/NOSTRICT option for more information.
+1501-510  Compilation successful for file gradient_conjugue.F90.
+/tmpdir/inter/int.ssos890-008103033467510/F8700664eLIp7f:
+** c06haf   === End of Compilation 1 ===
+** jmfact   === End of Compilation 2 ===
+** jmtable   === End of Compilation 3 ===
+** jmscm1d   === End of Compilation 4 ===
+** jmccm1d   === End of Compilation 5 ===
+** jmccm1d2   === End of Compilation 6 ===
+** jmccm1d3   === End of Compilation 7 ===
+** jmccm1d4   === End of Compilation 8 ===
+** jmccm1d5   === End of Compilation 9 ===
+** jmcctranspcs   === End of Compilation 10 ===
+"c06haf.F90", 1500-036 (I) The NOSTRICT option (default at OPT(3)) has the potential to alter the semantics of a program.  Please refer to documentation on the STRICT/NOSTRICT option for more information.
+"c06haf.F90", 1500-036 (I) The NOSTRICT option (default at OPT(3)) has the potential to alter the semantics of a program.  Please refer to documentation on the STRICT/NOSTRICT option for more information.
+"c06haf.F90", 1500-036 (I) The NOSTRICT option (default at OPT(3)) has the potential to alter the semantics of a program.  Please refer to documentation on the STRICT/NOSTRICT option for more information.
+1501-510  Compilation successful for file c06haf.F90.
+xlf90_r  -qsmp=omp -o poisson_omp.exe poisson.o gradient_conjugue.o c06haf.o
+
+Execution
+=========
+
+vargas085 - Fri Jan  8 17:13:09 + cd /workgpfs/idris/sos/ssos890/P6IH/OpenMP_tp/tp7/solution
+vargas085 - Fri Jan  8 17:13:09 + ./run.sh
+
+
+   Elapsed time                  :        2.770 sec.
+   CPU time                      :        2.760 sec.
+   Min. & Max. iteration numbers :     3   2501
+   Norm(|u - u_a|)               :    1.540E-18
+
+ Analytic solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+ Computed solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+
+
+
+
+   Number of running threads     :            1
+   Elapsed time                  :        2.780 sec.
+   CPU time                      :        2.770 sec.
+   Min. & Max. iteration numbers :     3   2501
+   Norm(|u - u_a|)               :    1.542E-18
+
+ Analytic solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+ Computed solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+
+
+
+
+   Number of running threads     :            2
+   Elapsed time                  :        1.850 sec.
+   CPU time                      :        2.820 sec.
+   Min. & Max. iteration numbers :     3   2501
+   Norm(|u - u_a|)               :    1.542E-18
+
+ Analytic solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+ Computed solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+
+
+
+
+   Number of running threads     :            4
+   Elapsed time                  :        1.360 sec.
+   CPU time                      :        2.880 sec.
+   Min. & Max. iteration numbers :     3   2501
+   Norm(|u - u_a|)               :    1.542E-18
+
+ Analytic solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+ Computed solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+
+
+
+
+   Number of running threads     :            6
+   Elapsed time                  :        1.200 sec.
+   CPU time                      :        2.930 sec.
+   Min. & Max. iteration numbers :     3   2501
+   Norm(|u - u_a|)               :    1.542E-18
+
+ Analytic solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+ Computed solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+
+
+
+
+   Number of running threads     :            8
+   Elapsed time                  :        1.150 sec.
+   CPU time                      :        3.180 sec.
+   Min. & Max. iteration numbers :     3   2501
+   Norm(|u - u_a|)               :    1.542E-18
+
+ Analytic solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+ Computed solution :  7.85E-04  1.57E-03  2.36E-03 ... -2.36E-03 -1.57E-03 -7.85E-04
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  1.50   |
+|4 Th. |  2.04   |
+|6 Th. |  2.31   |
+|8 Th. |  2.41   |
+------------------
+

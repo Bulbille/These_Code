@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+  <HEAD>
+    <title>JMSETNWORK</title>
+  </HEAD>
+
+  <BODY  BGCOLOR="#fdf5e6">
+<PRE>
+<B>*** JMFFT 8.1 - émulation des FFTs de la SciLib de CRAY - (c) CNRS/IDRIS ***</B>
+
+<B>NOM</B>
+
+     JMSETNWORK - Permet d'informer les sous-programmes 2D et 3D de JMFFT
+     de la quantité d'espace de travail dont ils peuvent disposer
+
+<B>SYNTAXE</B>
+
+     CALL JMSETNWORK(nwork)
+
+<B>IMPLEMENTATION</B>
+
+     Il s'agit d'un sous-programme de service de JMFFT.
+
+<B>DESCRIPTION</B>
+
+     Dans la SCILIB, les sous-programmes 2D et 3D sont un peu particuliers
+     vis-à-vis de la taille du tableau de travail WORK. Alors que tous
+     les autres sous-programmes exigent que le tableau WORK ait une dimension
+     suffisante pour le traitement en une seule passe, les sous-programmes
+     2D et 3D demandent seulement que le tableau WORK ait une dimension
+     suffisante pour le traitement en éventuellement plusieurs passes
+     de 128 transformées de Fourier. Ceci est plus économique en mémoire et
+     préserve les performances puisque la vectorisation se fait sur ce nombre
+     de transformées et que 128 est une valeur optimale pour la longueur des
+     vecteurs sur C90.
+
+     Sur d'autres architectures ce choix peut être loin de la valeur
+     optimale des longueurs de vecteurs, et il est donc intéressant de
+     pouvoir augmenter cette longueur en fournissant un tableau de
+     travail de dimension plus grande.
+
+     Malheureusement, même si on surdimensionne ce tableau, il n'existe
+     pas dans la SciLib de mécanisme pour permettre à l'utilisateur de
+     signaler qu'il a choisi une valeur différente de la valeur imposée
+     par la procédure.
+
+     C'est précisément le rôle de JMSETNWORK. Si on a surdimensionné le
+     tableau WORK, et si on a fourni à JMFFT la valeur de la dimension
+     déclarée via l'appel à JMSETNWORK, JMFFT utilisera l'intégralité
+     du tableau de travail, ce qui pourra permettre d'améliorer les
+     performances vectorielles.
+
+     Sachant que la valeur standard de la SciLib correspond à une
+     longueur de vectorisation de 128, il est donc facile d'en déduire
+     la dimension idéale du tableau WORK. Si par exemple sur la machine
+     utilisée la longueur optimale des vecteurs est de 1024, soit 8 fois
+     plus grand que sur C90, il suffira de multiplier par 8 la dimension
+     requise par la SciLib pour atteindre cette longueur de vectorisation
+     idéale.
+
+<B>ARGUMENTS</B>
+
+     nwork Variable ou constante de type INTEGER
+           En entrée, il contient la valeur à fournir.
+	   Non modifié en sortie.
+
+<B>EXEMPLES</B>
+
+           INTEGER, PARAMETER              :: M = 1024, N = 1024
+           COMPLEX, DIMENSION(0:N-1,0:M-1) :: X
+           REAL, DIMENSION(100+2*(N+M))    :: TABLE
+           ! Note : WORK est 8 fois plus gros que necessaire
+           REAL, DIMENSION(4096*MAX(N,M))  :: WORK
+           INTEGER :: ISYS
+           INTEGER :: I, J
+           ! ... (preparation de x)
+           CALL JMSETNWORK(4096*MAX(N,M))
+           CALL CCFFT2D(0,N,M,1.D0,X,N,X,N,TABLE,WORK,ISYS)
+           CALL CCFFT2D(1,N,M,1.D0,X,N,X,N,TABLE,WORK,ISYS)
+           ! ... (suite du programme)
+
+<B>VOIR AUSSI</B>
+
+     CCFFT2D, CCFFT3D, CSFFT2D, CSFFT3D, SCFFT2D, SCFFT3D
+</PRE>
+
+<!--#include virtual="/includes/fin.html" -->
+</BODY>
+</HTML>

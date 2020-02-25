@@ -1,0 +1,80 @@
+zahir020 - Tue Jan 25 15:07:54 + make clean
+	rm -f prod_mat prod_mat.o core
+zahir020 - Tue Jan 25 15:07:54 + make mono
+	xlf_r -O3 -q64 -qstrict -qfree=f90 -qsuffix=f=f90 -c prod_mat.f90
+xlf_r:  
+** prod_mat   === End of Compilation 1 ===
+1501-510  Compilation successful for file prod_mat.f90.
+	xlf_r -q64 -o prod_mat prod_mat.o
+xlf_r:  
+zahir020 - Tue Jan 25 15:07:54 + ./prod_mat
+
+
+   Temps elapsed             :  1.050E+00 sec.
+   Temps CPU de calcul       :  1.050E+00 sec.
+   Resultat partiel          :  1.716E+08  1.716E+08  ... -2.197E+08 -2.209E+08
+
+
+zahir020 - Tue Jan 25 15:07:54 + make clean
+	rm -f prod_mat prod_mat.o core
+zahir020 - Tue Jan 25 15:07:54 + make para
+	xlf_r -O3 -q64 -qstrict -qfree=f90 -qsuffix=f=f90 -qsmp=omp -c prod_mat.f90
+xlf_r:  
+** prod_mat   === End of Compilation 1 ===
+1501-510  Compilation successful for file prod_mat.f90.
+	xlf_r -q64 -qsmp=omp -o prod_mat prod_mat.o
+xlf_r:  
+zahir020 - Tue Jan 25 15:07:54 + export OMP_NUM_THREADS=2
+zahir020 - Tue Jan 25 15:07:54 + export OMP_SCHEDULE=STATIC
+zahir020 - Tue Jan 25 15:07:54 + ./prod_mat
+
+
+   Temps elapsed             :  6.200E-01 sec.
+   Temps CPU de calcul       :  1.240E+00 sec.
+   Resultat partiel          :  1.716E+08  1.716E+08  ... -2.197E+08 -2.209E+08
+
+
+zahir020 - Tue Jan 25 15:07:54 + export OMP_NUM_THREADS=4
+zahir020 - Tue Jan 25 15:07:54 + export OMP_SCHEDULE=STATIC
+zahir020 - Tue Jan 25 15:07:54 + ./prod_mat
+
+
+   Temps elapsed             :  3.500E-01 sec.
+   Temps CPU de calcul       :  1.400E+00 sec.
+   Resultat partiel          :  1.716E+08  1.716E+08  ... -2.197E+08 -2.209E+08
+
+
+zahir020 - Tue Jan 25 15:07:54 + export OMP_NUM_THREADS=6
+zahir020 - Tue Jan 25 15:07:54 + export OMP_SCHEDULE=STATIC
+zahir020 - Tue Jan 25 15:07:54 + ./prod_mat
+
+
+   Temps elapsed             :  2.400E-01 sec.
+   Temps CPU de calcul       :  1.430E+00 sec.
+   Resultat partiel          :  1.716E+08  1.716E+08  ... -2.197E+08 -2.209E+08
+
+
+zahir020 - Tue Jan 25 15:07:54 + export OMP_NUM_THREADS=8
+zahir020 - Tue Jan 25 15:07:54 + export OMP_SCHEDULE=STATIC
+zahir020 - Tue Jan 25 15:07:54 + ./prod_mat
+
+
+   Temps elapsed             :  2.200E-01 sec.
+   Temps CPU de calcul       :  1.730E+00 sec.
+   Resultat partiel          :  1.716E+08  1.716E+08  ... -2.197E+08 -2.209E+08
+
+
+zahir020 - Tue Jan 25 15:07:54 + make clean
+	rm -f prod_mat prod_mat.o core
+
+
+
+|----------------|
+|# Th. | Speedup |
+|------|---------|
+|2 Th. |  1.69   |
+|4 Th. |  3.00   |
+|6 Th. |  4.37   |
+|8 Th. |  4.77   |
+------------------
+

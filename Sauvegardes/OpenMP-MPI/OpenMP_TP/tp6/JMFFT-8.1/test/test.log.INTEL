@@ -1,0 +1,4538 @@
+jmccfft 2 0 0 +1 2
+ jmccfft            2           0           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 3 0 0 -1 2
+ jmccfft            3           0          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 4 0 0 -1 2
+ jmccfft            4           0          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 5 0 0 -1 2
+ jmccfft            5           0          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 6 0 0 +1 2
+ jmccfft            6           0           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 8 0 0 -1 2
+ jmccfft            8           0          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 9 0 0 +1 4
+ jmccfft            9           0           1   4.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 10 0 0 +1 4
+ jmccfft           10           0           1   4.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 12 0 0 -1 2
+ jmccfft           12           0          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 15 0 0 -1 2
+ jmccfft           15           0          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 16 0 0 +1 2
+ jmccfft           16           0           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 18 0 0 +1 2
+ jmccfft           18           0           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 20 0 0 +1 2
+ jmccfft           20           0           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 25 0 0 -1 5
+ jmccfft           25           0          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 27 0 0 -1 5
+ jmccfft           27           0          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 30 0 0 +1 3
+ jmccfft           30           0           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 32 0 0 +1 3
+ jmccfft           32           0           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 36 0 0 -1 6
+ jmccfft           36           0          -1   6.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 60 0 0 -1 6
+ jmccfft           60           0          -1   6.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 72 0 0 +1 7
+ jmccfft           72           0           1   7.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 90 0 0 +1 7
+ jmccfft           90           0           1   7.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 108 0 0 -1 8
+ jmccfft          108           0          -1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 7 0 0 -1 8
+ jmccfft            7           0          -1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 11 0 0 +1 2
+ jmccfft           11           0           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 13 0 0 -1 2
+ jmccfft           13           0          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 49 0 0 +1 8
+ jmccfft           49           0           1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 343 0 0 -1 8
+ jmccfft          343           0          -1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 14 0 0 +1 8
+ jmccfft           14           0           1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 42 0 0 -1 8
+ jmccfft           42           0          -1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 210 0 0 +1 8
+ jmccfft          210           0           1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 98 0 0 -1 8
+ jmccfft           98           0          -1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 294 0 0 +1 8
+ jmccfft          294           0           1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft 1470 0 0 -1 8
+ jmccfft         1470           0          -1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 16 8 0 +1 4
+ jmccfftm           16           8           1   4.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 8 16 0 -1 3
+ jmccfftm            8          16          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 16 8 0 +1 4
+ jmccfftm           16           8           1   4.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 16 16 0 -1 5
+ jmccfftm           16          16          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 30 8 0 +1 2
+ jmccfftm           30           8           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 30 16 0 -1 3
+ jmccfftm           30          16          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 9 9 0 +1 6
+ jmccfftm            9           9           1   6.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 27 9 0 -1 7
+ jmccfftm           27           9          -1   7.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 9 27 0 +1 8
+ jmccfftm            9          27           1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 27 27 0 -1 9
+ jmccfftm           27          27          -1   9.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 36 36 0 +1 8
+ jmccfftm           36          36           1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 36 72 0 -1 7
+ jmccfftm           36          72          -1   7.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 72 36 0 +1 6
+ jmccfftm           72          36           1   6.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 72 72 0 -1 5
+ jmccfftm           72          72          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 75 36 0 +1 6
+ jmccfftm           75          36           1   6.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 75 72 0 -1 5
+ jmccfftm           75          72          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 30 7 0 -1 5
+ jmccfftm           30           7          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 7 30 0 +1 5
+ jmccfftm            7          30           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 30 49 0 -1 5
+ jmccfftm           30          49          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 49 30 0 +1 5
+ jmccfftm           49          30           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 42 49 0 -1 5
+ jmccfftm           42          49          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 49 42 0 +1 5
+ jmccfftm           49          42           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 42 98 0 -1 5
+ jmccfftm           42          98          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfftm 98 42 0 +1 5
+ jmccfftm           98          42           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 5 8 0 +1 2
+ jmccfft2d            5           8           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 5 16 0 -1 3
+ jmccfft2d            5          16          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 8 8 0 +1 2
+ jmccfft2d            8           8           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 8 16 0 -1 3
+ jmccfft2d            8          16          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 16 8 0 +1 4
+ jmccfft2d           16           8           1   4.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 16 16 0 -1 5
+ jmccfft2d           16          16          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 9 9 0 +1 6
+ jmccfft2d            9           9           1   6.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 27 9 0 -1 7
+ jmccfft2d           27           9          -1   7.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 30 9 0 -1 7
+ jmccfft2d           30           9          -1   7.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 9 30 0 -1 7
+ jmccfft2d            9          30          -1   7.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 9 27 0 +1 8
+ jmccfft2d            9          27           1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 27 27 0 -1 9
+ jmccfft2d           27          27          -1   9.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 36 36 0 +1 8
+ jmccfft2d           36          36           1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 36 72 0 -1 7
+ jmccfft2d           36          72          -1   7.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 72 36 0 +1 6
+ jmccfft2d           72          36           1   6.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 72 72 0 -1 5
+ jmccfft2d           72          72          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 60 50 0 +1 5
+ jmccfft2d           60          50           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 30 7 0 -1 5
+ jmccfft2d           30           7          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 7 30 0 +1 5
+ jmccfft2d            7          30           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 30 49 0 -1 5
+ jmccfft2d           30          49          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 49 30 0 +1 5
+ jmccfft2d           49          30           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 42 49 0 -1 5
+ jmccfft2d           42          49          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 49 42 0 +1 5
+ jmccfft2d           49          42           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 42 98 0 -1 5
+ jmccfft2d           42          98          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft2d 98 42 0 +1 5
+ jmccfft2d           98          42           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 4 1 1 +1 4
+ jmccfft3d            4           1           1           1
+   4.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 1 4 1 +1 4
+ jmccfft3d            1           4           1           1
+   4.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 1 1 4 +1 4
+ jmccfft3d            1           1           4           1
+   4.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 4 4 1 +1 4
+ jmccfft3d            4           4           1           1
+   4.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 4 1 4 +1 4
+ jmccfft3d            4           1           4           1
+   4.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 1 4 4 +1 4
+ jmccfft3d            1           4           4           1
+   4.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 4 4 4 +1 4
+ jmccfft3d            4           4           4           1
+   4.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 8 4 4 +1 2
+ jmccfft3d            8           4           4           1
+   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 4 8 4 +1 2
+ jmccfft3d            4           8           4           1
+   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 4 4 8 +1 2
+ jmccfft3d            4           4           8           1
+   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 4 8 8 +1 2
+ jmccfft3d            4           8           8           1
+   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 8 4 8 +1 2
+ jmccfft3d            8           4           8           1
+   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 8 8 4 +1 2
+ jmccfft3d            8           8           4           1
+   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 8 8 8 +1 2
+ jmccfft3d            8           8           8           1
+   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 16 8 4 +1 2
+ jmccfft3d           16           8           4           1
+   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 8 9 36 -1 3
+ jmccfft3d            8           9          36          -1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 12 36 8 +1 4
+ jmccfft3d           12          36           8           1
+   4.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 24 12 12 -1 5
+ jmccfft3d           24          12          12          -1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 30 10 6 -1 5
+ jmccfft3d           30          10           6          -1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 10 9 15 -1 5
+ jmccfft3d           10           9          15          -1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 9 10 15 -1 5
+ jmccfft3d            9          10          15          -1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 9 15 10 -1 5
+ jmccfft3d            9          15          10          -1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 30 7 7 -1 5
+ jmccfft3d           30           7           7          -1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 7 30 7 +1 5
+ jmccfft3d            7          30           7           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 30 49 7 -1 5
+ jmccfft3d           30          49           7          -1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 49 30 7 +1 5
+ jmccfft3d           49          30           7           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 42 49 7 -1 5
+ jmccfft3d           42          49           7          -1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 49 42 7 +1 5
+ jmccfft3d           49          42           7           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 42 98 7 -1 5
+ jmccfft3d           42          98           7          -1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 98 42 7 +1 5
+ jmccfft3d           98          42           7           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmccfft3d 14 42 49 +1 5
+ jmccfft3d           14          42          49           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft 2 0 0 +1 3
+ jmscfft            2           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft 4 0 0 +1 3
+ jmscfft            4           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft 6 0 0 +1 3
+ jmscfft            6           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft 8 0 0 +1 3
+ jmscfft            8           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft 12 0 0 +1 3
+ jmscfft           12           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft 16 0 0 +1 3
+ jmscfft           16           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft 18 0 0 +1 3
+ jmscfft           18           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft 24 0 0 +1 3
+ jmscfft           24           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft 30 0 0 +1 3
+ jmscfft           30           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft 14 0 0 -1 8
+ jmscfft           14          -1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft 22 0 0 +1 2
+ jmscfft           22           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft 26 0 0 -1 2
+ jmscfft           26          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft 98 0 0 +1 8
+ jmscfft           98           1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft 686 0 0 -1 8
+ jmscfft          686          -1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft 42 0 0 -1 8
+ jmscfft           42          -1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft 210 0 0 +1 8
+ jmscfft          210           1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft 98 0 0 -1 8
+ jmscfft           98          -1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft 294 0 0 +1 8
+ jmscfft          294           1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft 1470 0 0 -1 8
+ jmscfft         1470          -1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 2 1 0 +1 3
+ jmscfftm            2           1           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 2 3 0 +1 3
+ jmscfftm            2           3           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 2 2 0 +1 3
+ jmscfftm            2           2           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 8 8 0 +1 3
+ jmscfftm            8           8           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 8 16 0 -1 3
+ jmscfftm            8          16          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 16 8 0 +1 3
+ jmscfftm           16           8           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 8 6 0 +1 3
+ jmscfftm            8           6           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 8 12 0 -1 3
+ jmscfftm            8          12          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 16 18 0 +1 3
+ jmscfftm           16          18           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 3 16 0 +1 3
+ jmscfftm            3          16           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 9 16 0 +1 3
+ jmscfftm            9          16           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 27 16 0 +1 3
+ jmscfftm           27          16           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 4 1 0 +1 3
+ jmscfftm            4           1           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 8 3 0 -1 2
+ jmscfftm            8           3          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 16 5 0 +1 1
+ jmscfftm           16           5           1   1.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 30 30 0 +1 1
+ jmscfftm           30          30           1   1.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 30 7 0 -1 5
+ jmscfftm           30           7          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 7 30 0 +1 5
+ jmscfftm            7          30           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 30 49 0 -1 5
+ jmscfftm           30          49          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 49 30 0 +1 5
+ jmscfftm           49          30           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 42 49 0 -1 5
+ jmscfftm           42          49          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 49 42 0 +1 5
+ jmscfftm           49          42           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 42 98 0 -1 5
+ jmscfftm           42          98          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfftm 98 42 0 +1 5
+ jmscfftm           98          42           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 2 1 0 +1 3
+ jmscfft2d            2           1           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 1 2 0 -1 3
+ jmscfft2d            1           2          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 2 2 0 +1 3
+ jmscfft2d            2           2           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 3 2 0 +1 3
+ jmscfft2d            3           2           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 3 4 0 +1 3
+ jmscfft2d            3           4           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 30 20 0 +1 3
+ jmscfft2d           30          20           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 2 3 0 +1 3
+ jmscfft2d            2           3           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 3 4 0 +1 3
+ jmscfft2d            3           4           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 4 3 0 +1 3
+ jmscfft2d            4           3           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 4 4 0 -1 3
+ jmscfft2d            4           4          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 4 8 0 +1 3
+ jmscfft2d            4           8           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 8 4 0 -1 3
+ jmscfft2d            8           4          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 8 8 0 +1 3
+ jmscfft2d            8           8           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 8 16 0 -1 3
+ jmscfft2d            8          16          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 16 8 0 +1 3
+ jmscfft2d           16           8           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 30 30 0 -1 3
+ jmscfft2d           30          30          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 27 20 0 -1 3
+ jmscfft2d           27          20          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 20 27 0 +1 3
+ jmscfft2d           20          27           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 27 20 0 +1 3
+ jmscfft2d           27          20           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 20 27 0 -1 3
+ jmscfft2d           20          27          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 30 7 0 -1 5
+ jmscfft2d           30           7          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 7 30 0 +1 5
+ jmscfft2d            7          30           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 30 49 0 -1 5
+ jmscfft2d           30          49          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 49 30 0 +1 5
+ jmscfft2d           49          30           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 42 49 0 -1 5
+ jmscfft2d           42          49          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 49 42 0 +1 5
+ jmscfft2d           49          42           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 42 98 0 -1 5
+ jmscfft2d           42          98          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft2d 98 42 0 +1 5
+ jmscfft2d           98          42           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 8 8 8 +1 3
+ jmscfft3d            8           8           8           1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 9 8 8 -1 3
+ jmscfft3d            9           8           8          -1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 8 9 8 +1 3
+ jmscfft3d            8           9           8           1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 8 8 9 -1 3
+ jmscfft3d            8           8           9          -1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 8 9 9 +1 3
+ jmscfft3d            8           9           9           1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 9 8 9 -1 3
+ jmscfft3d            9           8           9          -1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 9 9 8 +1 3
+ jmscfft3d            9           9           8           1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 16 8 8 -1 3
+ jmscfft3d           16           8           8          -1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 8 16 8 +1 3
+ jmscfft3d            8          16           8           1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 8 8 16 -1 3
+ jmscfft3d            8           8          16          -1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 16 16 8 +1 3
+ jmscfft3d           16          16           8           1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 16 8 16 -1 3
+ jmscfft3d           16           8          16          -1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 8 16 16 +1 3
+ jmscfft3d            8          16          16           1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 30 10 6 +1 3
+ jmscfft3d           30          10           6           1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 30 7 7 -1 5
+ jmscfft3d           30           7           7          -1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 7 30 7 +1 5
+ jmscfft3d            7          30           7           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 30 49 7 -1 5
+ jmscfft3d           30          49           7          -1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 49 30 7 +1 5
+ jmscfft3d           49          30           7           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 42 49 7 -1 5
+ jmscfft3d           42          49           7          -1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 49 42 7 +1 5
+ jmscfft3d           49          42           7           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 42 98 7 -1 5
+ jmscfft3d           42          98           7          -1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 98 42 7 +1 5
+ jmscfft3d           98          42           7           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmscfft3d 14 42 49 +1 5
+ jmscfft3d           14          42          49           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft 2 0 0 -1 3
+ jmcsfft            2          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft 4 0 0 +1 2
+ jmcsfft            4           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft 8 0 0 -1 2
+ jmcsfft            8          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft 16 0 0 -1 2
+ jmcsfft           16          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft 32 0 0 -1 2
+ jmcsfft           32          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft 6 0 0 -1 2
+ jmcsfft            6          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft 12 0 0 +1 2
+ jmcsfft           12           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft 18 0 0 +1 2
+ jmcsfft           18           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft 30 0 0 +1 2
+ jmcsfft           30           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft 14 0 0 +1 8
+ jmcsfft           14           1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft 42 0 0 -1 8
+ jmcsfft           42          -1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft 210 0 0 +1 8
+ jmcsfft          210           1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft 98 0 0 -1 8
+ jmcsfft           98          -1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft 294 0 0 +1 8
+ jmcsfft          294           1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft 1470 0 0 -1 8
+ jmcsfft         1470          -1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft-safe 2 0 0 -1 3
+ jmcsfft            2          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft-safe 4 0 0 +1 2
+ jmcsfft            4           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft-safe 8 0 0 -1 2
+ jmcsfft            8          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft-safe 16 0 0 -1 2
+ jmcsfft           16          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft-safe 32 0 0 -1 2
+ jmcsfft           32          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft-safe 6 0 0 -1 2
+ jmcsfft            6          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft-safe 12 0 0 +1 2
+ jmcsfft           12           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft-safe 18 0 0 +1 2
+ jmcsfft           18           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft-safe 30 0 0 +1 2
+ jmcsfft           30           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft-safe 14 0 0 +1 8
+ jmcsfft           14           1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft-safe 42 0 0 -1 8
+ jmcsfft           42          -1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft-safe 210 0 0 +1 8
+ jmcsfft          210           1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft-safe 98 0 0 -1 8
+ jmcsfft           98          -1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft-safe 294 0 0 +1 8
+ jmcsfft          294           1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft-safe 1470 0 0 -1 8
+ jmcsfft         1470          -1   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 48 1 0 +1 3
+ jmcsfftm           48           1           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 2 1 0 +1 3
+ jmcsfftm            2           1           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 4 1 0 -1 5
+ jmcsfftm            4           1          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 6 1 0 +1 3
+ jmcsfftm            6           1           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 8 1 0 +1 3
+ jmcsfftm            8           1           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 18 1 0 +1 3
+ jmcsfftm           18           1           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 16 1 0 +1 3
+ jmcsfftm           16           1           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 32 1 0 +1 3
+ jmcsfftm           32           1           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 2 2 0 -1 3
+ jmcsfftm            2           2          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 3 4 0 +1 2
+ jmcsfftm            3           4           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 4 8 0 -1 2
+ jmcsfftm            4           8          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 6 16 0 +1 2
+ jmcsfftm            6          16           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 12 8 0 -1 2
+ jmcsfftm           12           8          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 18 10 0 +1 2
+ jmcsfftm           18          10           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 16 8 0 -1 2
+ jmcsfftm           16           8          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 27 8 0 +1 2
+ jmcsfftm           27           8           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 30 30 0 +1 2
+ jmcsfftm           30          30           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 30 7 0 -1 5
+ jmcsfftm           30           7          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 7 30 0 +1 5
+ jmcsfftm            7          30           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 30 49 0 -1 5
+ jmcsfftm           30          49          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 49 30 0 +1 5
+ jmcsfftm           49          30           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 42 49 0 -1 5
+ jmcsfftm           42          49          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 49 42 0 +1 5
+ jmcsfftm           49          42           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 42 98 0 -1 5
+ jmcsfftm           42          98          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm 98 42 0 +1 5
+ jmcsfftm           98          42           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 48 1 0 +1 3
+ jmcsfftm           48           1           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 2 1 0 +1 3
+ jmcsfftm            2           1           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 4 1 0 -1 5
+ jmcsfftm            4           1          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 6 1 0 +1 3
+ jmcsfftm            6           1           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 8 1 0 +1 3
+ jmcsfftm            8           1           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 18 1 0 +1 3
+ jmcsfftm           18           1           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 16 1 0 +1 3
+ jmcsfftm           16           1           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 32 1 0 +1 3
+ jmcsfftm           32           1           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 2 2 0 -1 3
+ jmcsfftm            2           2          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 3 4 0 +1 2
+ jmcsfftm            3           4           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 4 8 0 -1 2
+ jmcsfftm            4           8          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 6 16 0 +1 2
+ jmcsfftm            6          16           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 12 8 0 -1 2
+ jmcsfftm           12           8          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 18 10 0 +1 2
+ jmcsfftm           18          10           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 16 8 0 -1 2
+ jmcsfftm           16           8          -1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 27 8 0 +1 2
+ jmcsfftm           27           8           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 30 30 0 +1 2
+ jmcsfftm           30          30           1   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 30 7 0 -1 5
+ jmcsfftm           30           7          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 7 30 0 +1 5
+ jmcsfftm            7          30           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 30 49 0 -1 5
+ jmcsfftm           30          49          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 49 30 0 +1 5
+ jmcsfftm           49          30           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 42 49 0 -1 5
+ jmcsfftm           42          49          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 49 42 0 +1 5
+ jmcsfftm           49          42           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 42 98 0 -1 5
+ jmcsfftm           42          98          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfftm-safe 98 42 0 +1 5
+ jmcsfftm           98          42           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 2 2 0 +1 3
+ jmcsfft2d            2           2           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 2 3 0 -1 3
+ jmcsfft2d            2           3          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 3 2 0 +1 3
+ jmcsfft2d            3           2           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 4 4 0 -1 3
+ jmcsfft2d            4           4          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 6 4 0 +1 3
+ jmcsfft2d            6           4           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 6 6 0 -1 3
+ jmcsfft2d            6           6          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 8 8 0 +1 3
+ jmcsfft2d            8           8           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 12 8 0 -1 3
+ jmcsfft2d           12           8          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 8 12 0 +1 3
+ jmcsfft2d            8          12           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 12 12 0 -1 3
+ jmcsfft2d           12          12          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 30 30 0 -1 3
+ jmcsfft2d           30          30          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 20 27 0 -1 3
+ jmcsfft2d           20          27          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 27 20 0 +1 3
+ jmcsfft2d           27          20           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 20 27 0 +1 3
+ jmcsfft2d           20          27           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 27 20 0 -1 3
+ jmcsfft2d           27          20          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 30 7 0 -1 5
+ jmcsfft2d           30           7          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 7 30 0 +1 5
+ jmcsfft2d            7          30           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 30 49 0 -1 5
+ jmcsfft2d           30          49          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 49 30 0 +1 5
+ jmcsfft2d           49          30           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 42 49 0 -1 5
+ jmcsfft2d           42          49          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 49 42 0 +1 5
+ jmcsfft2d           49          42           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 42 98 0 -1 5
+ jmcsfft2d           42          98          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d 98 42 0 +1 5
+ jmcsfft2d           98          42           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 2 2 0 +1 3
+ jmcsfft2d            2           2           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 2 3 0 -1 3
+ jmcsfft2d            2           3          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 3 2 0 +1 3
+ jmcsfft2d            3           2           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 4 4 0 -1 3
+ jmcsfft2d            4           4          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 6 4 0 +1 3
+ jmcsfft2d            6           4           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 6 6 0 -1 3
+ jmcsfft2d            6           6          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 8 8 0 +1 3
+ jmcsfft2d            8           8           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 12 8 0 -1 3
+ jmcsfft2d           12           8          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 8 12 0 +1 3
+ jmcsfft2d            8          12           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 12 12 0 -1 3
+ jmcsfft2d           12          12          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 30 30 0 -1 3
+ jmcsfft2d           30          30          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 20 27 0 -1 3
+ jmcsfft2d           20          27          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 27 20 0 +1 3
+ jmcsfft2d           27          20           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 20 27 0 +1 3
+ jmcsfft2d           20          27           1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 27 20 0 -1 3
+ jmcsfft2d           27          20          -1   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 30 7 0 -1 5
+ jmcsfft2d           30           7          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 7 30 0 +1 5
+ jmcsfft2d            7          30           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 30 49 0 -1 5
+ jmcsfft2d           30          49          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 49 30 0 +1 5
+ jmcsfft2d           49          30           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 42 49 0 -1 5
+ jmcsfft2d           42          49          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 49 42 0 +1 5
+ jmcsfft2d           49          42           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 42 98 0 -1 5
+ jmcsfft2d           42          98          -1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft2d-safe 98 42 0 +1 5
+ jmcsfft2d           98          42           1   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 2 2 2 +1 3
+ jmcsfft3d            2           2           2           1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 2 3 2 -1 2
+ jmcsfft3d            2           3           2          -1
+   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 3 2 2 -1 1
+ jmcsfft3d            3           2           2          -1
+   1.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 2 2 3 +1 1
+ jmcsfft3d            2           2           3           1
+   1.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 4 4 4 -1 2
+ jmcsfft3d            4           4           4          -1
+   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 6 4 4 +1 3
+ jmcsfft3d            6           4           4           1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 4 6 4 -1 4
+ jmcsfft3d            4           6           4          -1
+   4.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 4 4 6 +1 5
+ jmcsfft3d            4           4           6           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 6 6 4 -1 6
+ jmcsfft3d            6           6           4          -1
+   6.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 6 4 6 +1 7
+ jmcsfft3d            6           4           6           1
+   7.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 4 6 6 -1 8
+ jmcsfft3d            4           6           6          -1
+   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 6 9 9 +1 3
+ jmcsfft3d            6           9           9           1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 9 6 9 -1 9
+ jmcsfft3d            9           6           9          -1
+   9.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 9 9 6 +1 5
+ jmcsfft3d            9           9           6           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 6 6 9 -1 6
+ jmcsfft3d            6           6           9          -1
+   6.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 6 9 6 +1 7
+ jmcsfft3d            6           9           6           1
+   7.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 9 6 6 -1 8
+ jmcsfft3d            9           6           6          -1
+   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 6 6 6 +1 9
+ jmcsfft3d            6           6           6           1
+   9.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 12 12 18 -1 8
+ jmcsfft3d           12          12          18          -1
+   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 12 18 12 +1 7
+ jmcsfft3d           12          18          12           1
+   7.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 18 12 12 -1 6
+ jmcsfft3d           18          12          12          -1
+   6.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 12 18 18 +1 5
+ jmcsfft3d           12          18          18           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 18 18 12 -1 4
+ jmcsfft3d           18          18          12          -1
+   4.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 18 18 12 +1 3
+ jmcsfft3d           18          18          12           1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 18 18 18 -1 2
+ jmcsfft3d           18          18          18          -1
+   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 30 10 6 -1 2
+ jmcsfft3d           30          10           6          -1
+   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 30 7 7 -1 5
+ jmcsfft3d           30           7           7          -1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 7 30 7 +1 5
+ jmcsfft3d            7          30           7           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 30 49 7 -1 5
+ jmcsfft3d           30          49           7          -1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 49 30 7 +1 5
+ jmcsfft3d           49          30           7           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 42 49 7 -1 5
+ jmcsfft3d           42          49           7          -1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 49 42 7 +1 5
+ jmcsfft3d           49          42           7           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 42 98 7 -1 5
+ jmcsfft3d           42          98           7          -1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 98 42 7 +1 5
+ jmcsfft3d           98          42           7           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d 14 42 49 +1 5
+ jmcsfft3d           14          42          49           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 2 2 2 +1 3
+ jmcsfft3d            2           2           2           1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 2 3 2 -1 2
+ jmcsfft3d            2           3           2          -1
+   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 3 2 2 -1 1
+ jmcsfft3d            3           2           2          -1
+   1.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 2 2 3 +1 1
+ jmcsfft3d            2           2           3           1
+   1.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 4 4 4 -1 2
+ jmcsfft3d            4           4           4          -1
+   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 6 4 4 +1 3
+ jmcsfft3d            6           4           4           1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 4 6 4 -1 4
+ jmcsfft3d            4           6           4          -1
+   4.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 4 4 6 +1 5
+ jmcsfft3d            4           4           6           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 6 6 4 -1 6
+ jmcsfft3d            6           6           4          -1
+   6.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 6 4 6 +1 7
+ jmcsfft3d            6           4           6           1
+   7.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 4 6 6 -1 8
+ jmcsfft3d            4           6           6          -1
+   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 6 9 9 +1 3
+ jmcsfft3d            6           9           9           1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 9 6 9 -1 9
+ jmcsfft3d            9           6           9          -1
+   9.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 9 9 6 +1 5
+ jmcsfft3d            9           9           6           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 6 6 9 -1 6
+ jmcsfft3d            6           6           9          -1
+   6.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 6 9 6 +1 7
+ jmcsfft3d            6           9           6           1
+   7.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 9 6 6 -1 8
+ jmcsfft3d            9           6           6          -1
+   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 6 6 6 +1 9
+ jmcsfft3d            6           6           6           1
+   9.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 12 12 18 -1 8
+ jmcsfft3d           12          12          18          -1
+   8.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 12 18 12 +1 7
+ jmcsfft3d           12          18          12           1
+   7.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 18 12 12 -1 6
+ jmcsfft3d           18          12          12          -1
+   6.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 12 18 18 +1 5
+ jmcsfft3d           12          18          18           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 18 18 12 -1 4
+ jmcsfft3d           18          18          12          -1
+   4.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 18 18 12 +1 3
+ jmcsfft3d           18          18          12           1
+   3.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 18 18 18 -1 2
+ jmcsfft3d           18          18          18          -1
+   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 30 10 6 -1 2
+ jmcsfft3d           30          10           6          -1
+   2.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 30 7 7 -1 5
+ jmcsfft3d           30           7           7          -1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 7 30 7 +1 5
+ jmcsfft3d            7          30           7           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 30 49 7 -1 5
+ jmcsfft3d           30          49           7          -1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 49 30 7 +1 5
+ jmcsfft3d           49          30           7           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 42 49 7 -1 5
+ jmcsfft3d           42          49           7          -1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 49 42 7 +1 5
+ jmcsfft3d           49          42           7           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 42 98 7 -1 5
+ jmcsfft3d           42          98           7          -1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 98 42 7 +1 5
+ jmcsfft3d           98          42           7           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcsfft3d-safe 14 42 49 +1 5
+ jmcsfft3d           14          42          49           1
+   5.00000000000000     
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmrfftmlt1 4 2 0 +1 1
+ jmrfftmlt            4           2           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmrfftmlt1 10 20 0 +1 1
+ jmrfftmlt           10          20           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmrfftmlt1 20 20 0 +1 1
+ jmrfftmlt           20          20           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmrfftmlt1 30 7 0 -1 5
+ jmrfftmlt           30           7           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmrfftmlt1 42 98 0 -1 5
+ jmrfftmlt           42          98           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmrfftmlt1 98 42 0 +1 5
+ jmrfftmlt           98          42           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmrfftmlt1-safe 4 2 0 +1 1
+ jmrfftmlt            4           2           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmrfftmlt1-safe 10 20 0 +1 1
+ jmrfftmlt           10          20           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmrfftmlt1-safe 20 20 0 +1 1
+ jmrfftmlt           20          20           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmrfftmlt1-safe 30 7 0 -1 5
+ jmrfftmlt           30           7           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmrfftmlt1-safe 42 98 0 -1 5
+ jmrfftmlt           42          98           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmrfftmlt1-safe 98 42 0 +1 5
+ jmrfftmlt           98          42           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmrfftmlt2 4 2 0 -1 1
+ jmrfftmlt            4           2          -1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmrfftmlt2 10 20 0 -1 1
+ jmrfftmlt           10          20          -1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmrfftmlt2 20 10 0 -1 1
+ jmrfftmlt           20          10          -1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmrfftmlt2 30 10 0 -1 1
+ jmrfftmlt           30          10          -1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmrfftmlt2 42 98 0 -1 5
+ jmrfftmlt           42          98          -1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmrfftmlt2 98 42 0 +1 5
+ jmrfftmlt           98          42          -1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 10 20 0 +1 1
+ jmcfftmlt           10          20           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 10 40 0 -1 1
+ jmcfftmlt           10          40          -1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 10 30 0 +1 1
+ jmcfftmlt           10          30           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 20 20 0 -1 1
+ jmcfftmlt           20          20          -1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 20 40 0 +1 1
+ jmcfftmlt           20          40           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 20 30 0 -1 1
+ jmcfftmlt           20          30          -1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 4 2 0 +1 1
+ jmcfftmlt            4           2           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 3 2 0 -1 1
+ jmcfftmlt            3           2          -1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 15 40 0 +1 1
+ jmcfftmlt           15          40           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 15 30 0 -1 1
+ jmcfftmlt           15          30          -1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 25 20 0 +1 1
+ jmcfftmlt           25          20           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 25 40 0 -1 1
+ jmcfftmlt           25          40          -1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 25 30 0 +1 1
+ jmcfftmlt           25          30           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 20 15 0 -1 1
+ jmcfftmlt           20          15          -1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 20 45 0 +1 1
+ jmcfftmlt           20          45           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 20 25 0 -1 1
+ jmcfftmlt           20          25          -1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 20 75 0 +1 1
+ jmcfftmlt           20          75           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 30 7 0 -1 5
+ jmcfftmlt           30           7          -1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 7 30 0 +1 5
+ jmcfftmlt            7          30           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 30 49 0 -1 5
+ jmcfftmlt           30          49          -1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 49 30 0 +1 5
+ jmcfftmlt           49          30           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 42 49 0 -1 5
+ jmcfftmlt           42          49          -1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 49 42 0 +1 5
+ jmcfftmlt           49          42           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 42 98 0 -1 5
+ jmcfftmlt           42          98          -1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmcfftmlt 98 42 0 +1 5
+ jmcfftmlt           98          42           1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 10 20 0 +1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 10 40 0 -1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 10 30 0 +1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 20 20 0 -1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 20 40 0 +1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 20 30 0 -1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 4 2 0 +1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 3 2 0 -1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 15 40 0 +1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 15 30 0 -1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 25 20 0 +1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 25 40 0 -1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 25 30 0 +1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 20 15 0 -1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 20 45 0 +1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 20 25 0 -1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 20 75 0 +1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 30 7 0 -1 5
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 7 30 0 +1 5
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 30 49 0 -1 5
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 49 30 0 +1 5
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 42 49 0 -1 5
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 49 42 0 +1 5
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 42 98 0 -1 5
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 98 42 0 +1 5
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 10 20 0 +1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 10 40 0 -1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 10 30 0 +1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 20 20 0 -1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 20 40 0 +1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 20 30 0 -1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 4 2 0 +1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 3 2 0 -1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 15 40 0 +1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 15 30 0 -1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 25 20 0 +1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 25 40 0 -1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 25 30 0 +1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 20 15 0 -1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 20 45 0 +1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 20 25 0 -1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 20 75 0 +1 1
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 30 7 0 -1 5
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 7 30 0 +1 5
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 30 49 0 -1 5
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 49 30 0 +1 5
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 42 49 0 -1 5
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 49 42 0 +1 5
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 42 98 0 -1 5
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK
+jmsinfftmlt 98 42 0 +1 5
+  
+ ************************************************************
+ *       Portable Fourier transforms by JMFFTLIB            *
+ * Author : Jean-Marie Teuler, CNRS, teuler@lcp.u-psud.fr   *
+ ************************************************************
+  
+Test OK

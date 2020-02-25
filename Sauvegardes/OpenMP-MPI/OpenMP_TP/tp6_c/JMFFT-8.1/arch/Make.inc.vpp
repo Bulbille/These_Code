@@ -1,0 +1,17 @@
+############################ -*- Mode: Makefile -*- ###########################
+## Make.inc.VPP --- Makefile dependant de la plate-forme VPP de Fujitsu
+## 
+## Auteur          : Jean-Marie Teuler <Jean-Marie.Teuler@idris.fr>
+## Créé le         : Fri Jul 30 12:48:12 1999
+## Dern. mod. par  : Jeremie Gaidamour (CNRS/IDRIS) <gaidamou@idris.fr>
+## Dern. mod. le   : Wed Jun 12 11:20:14 2013
+###############################################################################
+
+FC 	= frt
+FFLAGS 	= -Of -Ad -Wv,-te -Am -X9 -Free
+LD	= frt
+LDFLAGS	=
+AR 	= ar
+ARFLAGS = rv
+RM      = rm
+RMFLAGS = -f

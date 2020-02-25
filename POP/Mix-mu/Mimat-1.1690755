@@ -1,0 +1,16 @@
+#############################
+User: pgersberg
+Date: Thu Nov 7 15:36:02 CET 2019
+Host: n116
+Directory: /gpfs/home/pgersberg/POP/Mixed
+SLURM_JOBID: 1690755
+SLURM_SUBMIT_DIR: /gpfs/home/pgersberg/POP/Mixed
+SLURM_JOB_NODELIST: n116
+SLURM_NAME: Mimat-1
+#############################
+(standard_in) 1: syntax error
+-t 1 -prefix /gpfs/home/pgersberg/POP/Mixed/autremat -f 1
+
+real	7m47.693s
+user	0m0.021s
+sys	0m0.018s

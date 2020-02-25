@@ -1,0 +1,14 @@
+############################ -*- Mode: Makefile -*- ###########################
+## make_tp_inc --- 
+## 
+## Auteur          : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Créé le         : Wed Sep 20 11:21:49 2006
+## Dern. mod. par  : Pierre-François LAVALLEE (CNRS/IDRIS) <lavallee@idris.fr>
+## Dern. mod. le   : Tue Jun 21 16:28:28 2011
+###############################################################################
+
+CMD	= reduction_tab
+SRC     = reduction_tab.f90
+OBJ     = reduction_tab.o
+FFLAGS += 
+

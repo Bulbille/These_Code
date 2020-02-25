@@ -1,0 +1,5 @@
+#!/bin/bash
+exec_prefix="."
+g++ -std=c++11 -o $exec_prefix/stargate $exec_prefix/main.cpp  $exec_prefix/math.cpp $exec_prefix/dynamique.cpp -O2 -s
+
+
