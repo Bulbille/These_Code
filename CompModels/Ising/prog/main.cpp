@@ -132,6 +132,7 @@ void parametres(int argc, char* argv[]){
 void generation(int grille[][TAILLE_Y],int LX,int LY){
     for(int x=0;x<LX;x++){
         for(int y=0;y<LY;y++)
-            grille[x][y] = (y<TAILLE_Y/2) ? -1 : 1;
+            //grille[x][y] = (y<TAILLE_Y/2) ? -1 : 1;
+            grille[x][y] = (y<=2) ? -1 : 1;
     }
 }

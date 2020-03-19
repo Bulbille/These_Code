@@ -19,17 +19,17 @@ using namespace std;
 /* Intensité du champ magnétique */
 /* */
 const double T_C = 2./log(1+sqrt(2));
-const int Tn = 4;
-const double Tmin = 0*T_C, Tmax = 5*T_C;
+const int Tn = 8;
+const double Tmin = 0.4*T_C, Tmax = 1*T_C;
 const double J = 1.;
 
 // Paramètres de la grille
-const int bitLX = 4, TAILLE_X = 2<<bitLX;
-const int TAILLE_Y = 21;
+const int bitLX = 6, TAILLE_X = 2<<bitLX;
+const int TAILLE_Y = 51;
 const int N = TAILLE_X*TAILLE_Y;
 //Au bout de 100 étapes de Monte Carlo environ, on a la décorrélation a`peu près maximale
 //On va donc prendre les données uniquement tous les 100
-const double T_EQ = 1e4, T_MAX = 1e5;
+const double T_EQ = 1e5, T_MAX = 1e5;
 
 extern double BETA;
 extern double ttc;

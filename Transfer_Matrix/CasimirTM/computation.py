@@ -105,7 +105,8 @@ def asymptot(ly,beta,h,j,numero):
 
 ############################
 # Déclaration matrices
-J = 1 ; TC = 2/np.log(1.+np.power(2,0.5)) ; BETA = 3/TC;
+J = 1 ; TC = 2/np.log(1.+np.power(2,0.5)) ; BETA = 1/TC;
+print(TC,BETA)
 LX = 70
 model = 'C'
 
@@ -138,13 +139,13 @@ for nb,Hmax in enumerate(Hspace):
     
         try :
             popw,pcov = curve_fit(fitpow,FreTM[:Nmax,0],FreTM[:Nmax,1],p0=[2,1,1])
-            print popw
+            print(popw)
             plt.plot(FreTM[:Nmax,0],fitpow(FreTM[:Nmax,0],*popw),'o',color=colors[nb%nb_col])
         except:
             pass
         try :
             popw,pcov = curve_fit(fitpowexp,FreTM[:Nmax,0],FreTM[:Nmax,1],p0=[5,0,1,1])
-            print popw
+            print(popw)
             plt.plot(FreTM[:Nmax,0],fitpowexp(FreTM[:Nmax,0],*popw),'x',color=colors[nb%nb_col])
         except :
             pass
@@ -154,7 +155,7 @@ for nb,Hmax in enumerate(Hspace):
         FreTM[:,1] = FreTM[:,1]-FreTM[-1,1]
         FreTM[:,1] *= -1
         popw,pcov = curve_fit(fitpow,FreTM[:,0],FreTM[:,1],p0=[2,0.1,0])
-        print popw
+        print(popw)
         plt.plot(FreTM[:-1,0],FreTM[:-1,1],label='$H = '+str(Hmax)+'$',color=colors[nb%nb_col])
         plt.plot(FreTM[:-1,0],fitpow(FreTM[:-1,0],*popw),'x',color=colors[nb%nb_col])
 
