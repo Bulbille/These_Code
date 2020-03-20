@@ -17,8 +17,8 @@
 //Modules diagonalisation de matrices
 using namespace std;
 const double T_C    = 2./log(1.+sqrt(2)), J = 1;
-const double Tmin = 0, Tmax = 1*T_C;
-const int Tn = 60;
+const double Tmin = 0, Tmax = 1;
+const int Tn = 39;
 double  ttc = 1 ,Beta = 1/(ttc*T_C);
 string prefix = "./", suffix = "",algo;
 //Propriétés de la grille
@@ -26,7 +26,7 @@ const int       bitLX = 7, LX = 2<<bitLX;
 const int LY = 25;
 int N; // nombre total de particules
 //LX doit être une puissance de 2, 2<<0 = 2, 2<<n = 2^(n+1)
-const long int T_EQ = 1e6, T_MAX = 1e7;
+const long int T_EQ = 1e6, T_MAX = 5e6;
 // Taux de diffusion des particules A et B
 
 #include "./prng.h"

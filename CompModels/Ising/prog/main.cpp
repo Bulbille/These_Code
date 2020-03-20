@@ -40,7 +40,7 @@ int main(int argc, char *argv[]){
         energies[cmpt] = 0;
         double T =  normspace(k,Tmin,Tmax,Tn);
         BETA = 1./(ttc*T);
-        cout << k <<  " " << T << " " << BETA << endl;
+        cout << k << endl;
         /** Équilibrage **/
         for(long int t = 0; t<=T_EQ*N ; t++){
             int x = rand_lx(generator);
@@ -59,6 +59,7 @@ int main(int argc, char *argv[]){
             ene += grille[x][TAILLE_Y-1]*grille[modulo(x+1,TAILLE_X)][TAILLE_Y-1];
         }
         /****** DYNAMIQUE DE GLAUBER ***************/
+        cout << "Début simu " << k << endl;
         for(long int t = 0; t<=T_MAX*N ; t++){
             int x = rand_lx(generator);
             int y = rand_ly(generator);
@@ -96,7 +97,7 @@ int main(int argc, char *argv[]){
         str = prefix+"/dataIsing";
         ofstream fmag(str.c_str(),std::ofstream::out);
         for(int i=0;i<Tn;i++)
-            fmag << i << " " << normspace(i,Tmin,Tmax,Tn)<< "\t" << valTot[i] << "\t\t" << J*eneTot[i]<<  "\n";
+            fmag << normspace(i,Tmin,Tmax,Tn)<< "\t" << valTot[i] << "\t\t" << -J*eneTot[i]<<  "\n";
         fmag.close();
     }
     MPI_Finalize();
@@ -131,8 +132,10 @@ void parametres(int argc, char* argv[]){
 }
 void generation(int grille[][TAILLE_Y],int LX,int LY){
     for(int x=0;x<LX;x++){
+//        grille[x][0] = 1;
+//        grille[x][LY-1] = -1;
         for(int y=0;y<LY;y++)
-            //grille[x][y] = (y<TAILLE_Y/2) ? -1 : 1;
-            grille[x][y] = (y<=2) ? -1 : 1;
+//            grille[x][y] = rand_01(generator);
+            grille[x][y] = (y<TAILLE_Y/2) ? -1 : 1;
     }
 }

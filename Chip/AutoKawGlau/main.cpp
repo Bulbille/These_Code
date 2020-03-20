@@ -234,7 +234,6 @@ int main(int argc,char* argv[]){
 
 
 
-        cout << "yo" << endl;
         double* correl = new double[static_cast<int>(T_MAX)];
         for(int t=0;t<T_MAX;t++){
             double a=0,b=0,c=0;
