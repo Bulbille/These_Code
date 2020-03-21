@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 fontsize= 12
 plt.rc("font",size=fontsize)
 plt.rc("font",family='serif')
-#plt.rc("text",usetex=True) #Latex
+plt.rc("text",usetex=True) #Latex
 import sys
 import os
 import re
@@ -16,13 +16,13 @@ import re
 # Affiche l'état d'un système de 
 # de taille N*M 
 #####################################
-LY  = 24
+LY  = 25.5
 J   = 1
 
 
 def translation(x):
     print(2*J*(2-LY)/LY)
-    return 2*J*(2-LY)/LY+2*x
+    return 2*J*(1-LY)/LY+2*x
 
 dossier="bon"
 try :
@@ -41,10 +41,10 @@ try :
 except :
     pass
 plt.legend()
-#plt.xlabel('$\\frac{T}{T_{C,2D}}$')
-#plt.ylabel('Énergie du système')
+plt.xlabel('$T$')
+plt.ylabel('$\langle \mathcal{H} \\rangle$')
 
-
+plt.savefig('comparaison-modeles.pdf')
 plt.show()
 plt.close()
 

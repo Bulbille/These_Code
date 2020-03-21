@@ -26,7 +26,8 @@ def TransPOP(kbt,champ,inter,L,mu):
     d=np.zeros((L+1,L+1))
     for y1,i in enumerate(d):
         for y2,j in enumerate(i):
-            d[y1][y2] = np.exp(-kbt*(-mu*(y1+y2)/2+ champ*(abs(y1)+abs(y2))/2 +inter*abs(y1-y2)+(mt.log(mt.factorial(y1))+mt.log(mt.factorial(y2)))/2 ))
+            d[y1][y2] = np.exp(-kbt*(-mu*(y1+y2)/2+ champ*(abs(y1)+abs(y2))/2
+                +inter*abs(y1-y2))+(mt.log(mt.factorial(y1))+mt.log(mt.factorial(y2)))/2 )
     return d
 ### Définition des matrices de magnetisation des différents modèles
 def Mat(L):
@@ -76,9 +77,9 @@ mubar = np.linspace(0,mumax,muN)
 hbar = np.empty(muN)
 fbar = np.empty(muN)
 cbar = np.empty(muN)
-for s,string in enumerate(['POP','SOS']):
+for s,string in enumerate(['POP']):
     for j,LY in enumerate(np.linspace(50,100,2).astype(int)) :
-        print LY
+        print(LY,mubar)
         for k,mu in enumerate(mubar) :
             res = intDiag(LY,BETA,0,J,string,mu)
             fbar[k] = res[0]

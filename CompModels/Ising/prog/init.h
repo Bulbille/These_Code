@@ -20,7 +20,7 @@ using namespace std;
 /* */
 const double T_C = 2./log(1+sqrt(2));
 const int Tn = 8;
-const double Tmin = 0, Tmax = 1;
+const double Tmin = T_C, Tmax = 5*T_C;
 const double J = 1.;
 
 // Paramètres de la grille

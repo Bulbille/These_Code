@@ -7,6 +7,7 @@
 import matplotlib.pyplot as plt
 fontsize=9
 labelsize=16
+plt.rc("text",usetex=True)
 plt.rc("font",size=fontsize)
 plt.rc("font",family='serif')
 
@@ -88,10 +89,10 @@ res = np.empty((nbmu,4))
 for nb,MU in enumerate(mubar):
     diag = intDiag(LY,BETA,J,MU)
     res[nb,0] = MU
+    print(MU)
     res[nb,1] = diag[0]
     res[nb,2] = diag[1]
     res[nb,3] = diag[3]
-    print MU
 
 hplot.plot(res[:,0],res[:,1],color='red')
 varplot.plot(res[:,0],res[:,2],color='blue',label="$<H^2>$")

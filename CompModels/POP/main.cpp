@@ -77,7 +77,27 @@ int main(int argc,char* argv[]){
         for(int n=0;n<N;n++)
             system[rand_lx(generator)]++;
 
-        //Déclaration du PRNG 
+        N = round(mean*LX);
+        int phi = 0;
+        int* syspos = new int[N];
+        for(int n=0;n<N;n++){
+            if(phi < N*taux_dyn)
+                syspos[n] = 2*rand_lx(generator);
+            else
+                syspos[n] = 2*rand_lx(generator)+1;
+            phi++;
+        }
+        //Mise en place du vecteur des positions
+            int* system = new int[2*LX];
+        std::vector< double> weight(N);
+        for(int x=0;x<2*LX;x++)
+            system[x]  = 0;
+        for(int n=0;n<N;n++){
+            system[syspos[n]]++;
+            weight[n] = Da*(syspos[n]%2  == 0)+Db*(syspos[n]%2 == 1);
+        }
+        std::discrete_distribution<> rand_pos(weight.begin(), weight.end());
+
 
         // Équilibrage
         int ajout,tirage;
