@@ -20,9 +20,7 @@ flags=" -g -O1 -Wall "
 
 
 mkdir -p $data_prefix
-mpic++ -std=c++11  $flags -c $exec_prefix/main.cpp -o $exec_prefix/main.o -lgsl -lm -lgslcblas -I ~/libeigen 
-if [ $? -ne 0 ] ; then exit 1 ; fi
-mpic++ -std=c++11 $flags -o $data_prefix/stargate  $exec_prefix/main.o -lm -lstdc++  -I/usr/include -I ~/libeigen
-if [ $? -ne 0 ] ; then exit 1 ; fi
+mpic++ -std=c++11  $flags -c $exec_prefix/main.cpp -o $exec_prefix/main.o 
+mpic++ -std=c++11 $flags -o $data_prefix/stargate  $exec_prefix/main.o 
 rm $exec_prefix/main.o
 cp $exec_prefix/main.cpp $data_prefix

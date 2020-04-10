@@ -1,10 +1,9 @@
 /******************************************************************/
 // Plan SemiInfini, dynamique de Kawasaki et de Glauber
 // Modèle Chipping, hamiltonien SOS
-// Parallélisé sur les cisaillements
 /******************************************************************/
 
-
+/*** Calcule l'énergie du systeme libre en fonction de la temperature T **/
 
 //Basic stuff
 #include <mpi.h>
@@ -16,33 +15,29 @@
 #include <fstream> //files
 
 //Modules diagonalisation de matrices
-#include <Eigen/Eigenvalues> 
-#include <Eigen/Dense>
-using namespace Eigen;
 using namespace std;
 const double T_C    = 2./log(1.+sqrt(2)), J = 1;
+const double Tmin = 0.5, Tmax = 10;
+const int Tn = 1;
 double  ttc = 1 ,Beta = 1/(ttc*T_C);
 string prefix = "./", suffix = "",algo;
 //Propriétés de la grille
-const int       bitLX = 7, LX = 2<<bitLX;
-const int LY = 100;
+const int       bitLX = 6, LX = 2<<bitLX;
+const int LY = 25;
 int N; // nombre total de particules
-//LX doit être une puissance de 2, 2<<0 = 2, 2<<n = 2^(n+1)
-const int  Hn = 50;
-const long int T_EQ = 1e4, T_MAX = 5e6;
-double mumax = 4;
+const int T_EQ = 1e4, T_MAX = 0e6;
+const double mu = -0;
 // Taux de diffusion des particules A et B
-const double Da = 1, Db = 1;
-//taux_dyn : pourcentage de particules A dans le total
-double taux_dyn =  0.5; 
-const double drive =0; 
 
 #include "./prng.h"
 #include "./utilitaires.h"
 /***********************************/
 /**** Définitions des fonctions ****/
-double getEquilibrium(int l,double chim);
-bool EsosKaw(int* array, int x, int sens, double kbeta,double f);
+bool EsosGlau(int array[], int x, int ajout,double kbeta,double Champ);
+double normspace(int step,double min,double max, double n){
+    return (n == 1) ? max : min+(max-min)/(n-1)*1.*step;
+}
+
 
 /***********************************/
 
@@ -53,199 +48,182 @@ int main(int argc,char* argv[]){
     MPI_Init(&argc, &argv);
     MPI_Comm_rank(MPI_COMM_WORLD,&rang);
     MPI_Comm_size(MPI_COMM_WORLD,&nbprocs);
-    ostringstream streamF,streamH,streamM;
     string str;
-    streamF << fixed << setprecision(2) << taux_dyn;
-    streamM << fixed << setprecision(2) << mumax;
 
-    int Nb_H = Hn/nbprocs;
-    double* valeurs = new double[Nb_H];
-    double* energies = new double[Nb_H];
-    double* ecartTyp = new double[Nb_H];
-    double* skew = new double[Nb_H];
-    double* valTot = new double[Hn];
-    double* eneTot = new double[Hn];
-    double* ecartTot = new double[Hn];
-    double* skewTot = new double[Hn];
+    int Nb_T = Tn/nbprocs;
+    double* valeurs = new double[Nb_T];
+    double* energies = new double[Nb_T];
+    double valTot[Tn] ;
+    double eneTot[Tn] ;
 
     /***** Parallélisation sur les champs magnétiques ****/
     int cmpt = 0;
-    for(int k = rang*Nb_H; k<(rang+1)*Nb_H ; k++){
-        valeurs[cmpt] = 0;
-        energies[cmpt] = 0;
-        ecartTyp[cmpt] = 0;
-        skew[cmpt] = 0;
-        double mu = static_cast<int>(k)*mumax/(Hn-1); //Le -1 est pour arriver à Hmax lorsque k = Nb_H au rang supérieur
-        double f = drive;
+    for(int k = rang*Nb_T; k<(rang+1)*Nb_T ; k++){
+        cout << k << endl;
+        double T =  normspace(k,Tmin,Tmax,Tn);
+        Beta = 1./(ttc*T);
         /******** Initialisation du systeme *****/
-        double mean = getEquilibrium(LY,mu);
-        N = round(mean*LX);
-        int phi = 0;
-        int* syspos = new int[N];
-        for(int n=0;n<N;n++){
-            if(phi < N*taux_dyn)
-                syspos[n] = 2*rand_lx(generator);
-            else
-                syspos[n] = 2*rand_lx(generator)+1;  
-            phi++;
-        }
-        //Mise en place du vecteur des positions
-        int* system = new int[2*LX]; 
-        std::vector< double> weight(N);
-        for(int x=0;x<2*LX;x++)
+        N = round(LY*LX/2); 
+        std::vector<int> syspos(N);
+        int system[LX];
+        for(int x=0;x<LX;x++)
             system[x]  = 0;
         for(int n=0;n<N;n++){
+            syspos[n] = rand_lx(generator);
             system[syspos[n]]++;
-            weight[n] = Da*(syspos[n]%2  == 0)+Db*(syspos[n]%2 == 1);
         }
-        //Déclaration du PRNG 
-        std::discrete_distribution<> rand_pos(weight.begin(), weight.end());
+        int ene = 0;
+        for(int x=0;x<LX;x++)
+            ene += abs(system[x]-system[modulo(x+1,LX)]);
 
         // Équilibrage
-        int sens,tirage,pos;
-        int hx,hn,hxp,hnp;
+        int eneq[T_EQ];
+        int ajout,tirage,pos;
+        int hx,hxm,hxp,hx2;
         for(long int t = 0; t<LX*T_EQ ; t++){
-            tirage = rand_pos(generator);
-            pos = syspos[tirage];
-            sens   = 2*r01int(generator)-1;
-            if(EsosKaw(system,pos,sens,Beta,f)){
-                syspos[tirage] = modulo(pos+2*sens,2*LX);
-                system[pos]--;
-                system[modulo(pos+2*sens,2*LX)]++;
+            ajout =2*r01int(generator)-1;
+            if(ajout > 0){ //création de particule
+                pos = rand_lx(generator);
+                if(EsosGlau(system,pos,ajout,Beta,mu)){
+                    hx  = system[pos];
+                    hxp = system[modulo(pos+1,LX)];
+                    hxm = system[modulo(pos-1,LX)];
+                    hx2 = hx+ajout;
+                    ene +=( abs(hx2-hxm) + abs(hx2-hxp) - (abs(hx - hxm)  +  abs(hx - hxp) ) );
+                    syspos.push_back(pos);
+                    system[pos]+=ajout;
+                    N+=ajout;
+                }
+            }
+            else{ //destruction de particule
+                if(N != 0){
+                    tirage = std::uniform_int_distribution<int>{0,N-1}(generator);
+                    pos = syspos[tirage];
+                    if(EsosGlau(system,pos,ajout,Beta,mu)){
+                        hx  = system[pos];
+                        hxp = system[modulo(pos+1,LX)];
+                        hxm = system[modulo(pos-1,LX)];
+                        hx2 = hx+ajout;
+                        ene +=( abs(hx2-hxm) + abs(hx2-hxp) - (abs(hx - hxm)  +  abs(hx - hxp) ) );
+                        syspos.erase(syspos.begin()+tirage);
+                        system[pos]+=ajout;
+                        N+=ajout;
+                    }
+                }
+            }
+            if(t%LX==0){
+                eneq[t/LX] = ene;
             }
         }
-        //Calcul des valeurs initiales        
-        double phi2 = 0,phi3 = 0, ene = 0;
-        for(int x=0;x<LX;x++){
-            hx  = system[2*x]+system[2*x+1];
-            hxp = system[modulo(2*x+2,2*LX)]+system[modulo(2*x+3,2*LX)];
-            phi2 += pow(hx,2);
-            ene += abs(hx-hxp);
-            phi3 += pow(hx-mean,3);
+
+        str = prefix+"/eq"+to_string(T);
+        ofstream feq(str.c_str(),std::ofstream::out);
+        for(int t=0;t<T_EQ;t++)
+            feq << t << " " << eneq[t] << endl;
+        feq.close();
+
+        valeurs[cmpt] = N;
+        energies[cmpt] = ;
+        for(long int t = 0; t<LX*T_EQ ; t++){
+            ajout =2*r01int(generator)-1;
+            if(ajout > 0){ //création de particule
+                pos = rand_lx(generator);
+                if(EsosGlau(system,pos,ajout,Beta,mu)){
+                    hx  = system[pos];
+                    hxp = system[modulo(pos+1,LX)];
+                    hxm = system[modulo(pos-1,LX)];
+                    hx2 = hx+ajout;
+                    ene +=( abs(hx2-hxm) + abs(hx2-hxp) - (abs(hx - hxm)  +  abs(hx - hxp) ) );
+                    syspos.push_back(pos);
+                    system[pos]+=ajout;
+                    N+=ajout;
+                }
+            }
+            else{ //destruction de particule
+                if(N != 0){
+                    tirage = std::uniform_int_distribution<int>{0,N-1}(generator);
+                    pos = syspos[tirage];
+                    if(EsosGlau(system,pos,ajout,Beta,mu)){
+                        hx  = system[pos];
+                        hxp = system[modulo(pos+1,LX)];
+                        hxm = system[modulo(pos-1,LX)];
+                        hx2 = hx+ajout;
+                        ene +=( abs(hx2-hxm) + abs(hx2-hxp) - (abs(hx - hxm)  +  abs(hx - hxp) ) );
+                        syspos.erase(syspos.begin()+tirage);
+                        system[pos]+=ajout;
+                        N+=ajout;
+                    }
+                }
+            }
+            if(t%LX==0){
+                eneq[t/LX] = ene;
+            }
         }
-        /****** Simulation MC ***/
+
+       
         for(long int t = 0; t<LX*T_MAX ; t++){
-            /***** Étape de Monte Carlo *******/
             tirage = rand_pos(generator);
-            pos = syspos[tirage];
-            sens   = 2*r01int(generator)-1;
-
-            if(EsosKaw(system,pos,sens,Beta,f)){
-                syspos[tirage] = modulo(pos+2*sens,2*LX);
-                if(pos%2==0){
-                    hn  = system[modulo(pos-2*sens,2*LX)]+ system[modulo(pos-2*sens+1,2*LX)];
-                    hx  = system[modulo(pos  ,2*LX)]+      system[modulo(pos+1  ,2*LX)];
-                    hxp = system[modulo(pos+2*sens,2*LX)]+ system[modulo(pos+2*sens+1,2*LX)];
-                    hnp = system[modulo(pos+4*sens,2*LX)]+ system[modulo(pos+4*sens+1,2*LX)];
+            ajout = 2*r01int(generator)-1;
+            if(EsosGlau(system,tirage,ajout,Beta,0)){
+                hx = system[tirage];
+                hn = system[modulo(tirage-1,LX)];
+                hp= system[modulo(tirage+1,LX)];
+                ene -= abs(hx-hn) + abs(hx-hp);
+                ene += abs(hx+ajout-hn) + abs(hx+ajout-hp);
+                //Détruire particule
+                if(ajout < 0 ){
+                    system[syspos[tirage]]--;
+                    syspos.erase(syspos.begin()+tirage);
+                    N--;
                 }
-                else{
-                    hn  = system[modulo(pos-2*sens,2*LX)]+ system[modulo(pos-2*sens-1,2*LX)];
-                    hx  = system[modulo(pos  ,2*LX)]+      system[modulo(pos-1 ,2*LX)];
-                    hxp = system[modulo(pos+2*sens,2*LX)]+ system[modulo(pos+2*sens-1,2*LX)];
-                    hnp = system[modulo(pos+4*sens,2*LX)]+ system[modulo(pos+4*sens-1,2*LX)];
+                //Création particule
+                if(ajout > 0){
+                    syspos.push_back(tirage);
+                    N++;
+                    system[syspos[tirage]]++;
                 }
-                ene -= abs(hx-hn) + abs(hx-hxp)+abs(hxp-hnp);
-                ene += abs(hx-1-hn) + abs(hx-hxp-2)+abs(hxp+1-hnp);
-                phi2 += 2*(hxp-hx)+2;
-                phi3 += 3*( hx*(1-hx)+hxp*(1+hxp) );
-
-                system[pos]--;
-                system[modulo(pos+2*sens,2*LX)]++;
+                std::discrete_distribution<> rand_pos(0,N);
             }
-            /***** Mesure du système *******/
+            valeurs[cmpt] += N;
             energies[cmpt] += ene;
-            ecartTyp[cmpt] += phi2;
-            skew[cmpt] += phi3;
         }
-        delete[] system;
-        delete[] syspos;
-        valeurs[cmpt] = mean;
+        valeurs[cmpt] /= static_cast<double>(LX*LX*T_MAX) ;
         energies[cmpt] /= static_cast<double>(LX*LX*T_MAX) ;
-        ecartTyp[cmpt] /= static_cast<double>(LX*LX*T_MAX) ;
-        skew[cmpt] /= static_cast<double>(LX*LX*T_MAX) ;
         cmpt++;
     }
 
     /*** Récupération des calculs parallélisés ****/
-    MPI_Gather(valeurs ,Nb_H,MPI_DOUBLE,valTot,Nb_H,MPI_DOUBLE,0,MPI_COMM_WORLD);
-    MPI_Gather(energies,Nb_H,MPI_DOUBLE,eneTot,Nb_H,MPI_DOUBLE,0,MPI_COMM_WORLD);
-    MPI_Gather(ecartTyp,Nb_H,MPI_DOUBLE,ecartTot,Nb_H,MPI_DOUBLE,0,MPI_COMM_WORLD);
-    MPI_Gather(skew,Nb_H,MPI_DOUBLE,skewTot,Nb_H,MPI_DOUBLE,0,MPI_COMM_WORLD);
+    MPI_Gather(valeurs ,Nb_T,MPI_DOUBLE,valTot,Nb_T,MPI_DOUBLE,0,MPI_COMM_WORLD);
+    MPI_Gather(energies,Nb_T,MPI_DOUBLE,eneTot,Nb_T,MPI_DOUBLE,0,MPI_COMM_WORLD);
 
-    /*** Écriture dans fichier ***/
-    if(rang == 0){
-        str = prefix+"/X"+to_string(LX)+"_mu"+streamM.str()+"_F"+streamF.str();
-        ofstream fmag(str.c_str(),std::ofstream::out);
-        for(int i=0;i<Hn;i++){
-            double val=0,ene=0,sigma=0,troisieme=0;
-            val= valTot[i];
-            ene= J*eneTot[i];
-            sigma=sqrt( ecartTot[i]-pow(valTot[i],2));
-            troisieme = (skewTot[i]-6*val)/pow(sigma,3);
-            fmag << i*mumax/(Hn-1) << "\t" << val <<  "\t\t"  <<  ecartTot[i] << "\t\t" << troisieme << "\t\t" << ene<<"\n";
-        }
-    }
+//    /*** Écriture dans fichier ***/
+//    if(rang == 0){
+//        str = prefix+"/dataSOS";
+//        ofstream fmag(str.c_str(),std::ofstream::app);
+//        for(int i=0;i<Tn;i++)
+//            fmag << normspace(i,Tmin,Tmax,Tn)<< "\t" << valTot[i] <<  "\t\t" <<  J*eneTot[i]<<  "\n";
+//        fmag.close();
+//    }
     MPI_Finalize();
-    delete[] valeurs;
-    delete[] energies;
-    delete[] ecartTyp;
-    delete[] skew;
-    delete[] valTot;
-    delete[] eneTot;
-    delete[] ecartTot;
-    delete[] skewTot;
+//    delete[] valeurs;
+//    delete[] energies;
+//    delete[] valTot;
+//    delete[] eneTot;
 return 0;
 }
 /********** Fin main ***********/
 
-// Diagonalisation de la matrice
-double getEquilibrium(int l,double chim){
-        EigenSolver<MatrixXd> es;
-        MatrixXd transfer(l,l);
-        MatrixXd diag(l,l);
-        for(int i=0;i<l;i++){
-                diag(i,i) = i;
-            for(int j=0;j<l;j++){
-                transfer(i,j) = exp(-Beta*( J*abs(i-j)- chim*(i+j)/2)- (lnfact(i)+lnfact(j))/2) ;
-                if(i!=j)
-                    diag(i,j) =0 ;
-            }
-        }
-        int imax = 0;
-        double max = 0;
-        es.compute(transfer,true);
-        VectorXcd a = es.eigenvalues();
-        for(int i=0;i<l;i++){
-            if(a(i).real()>max){
-                imax=i;
-                max=a(i).real();
-            }
-        }
-    VectorXcd Vmax = es.eigenvectors().col(imax);
-    complex<double> res = Vmax.transpose()*diag*Vmax;
-    return res.real();
-}
-
-// Dynamique de Kawasaki
-bool EsosKaw(int* array,int x, int sens, double kbeta,double f){ 
-    if(array[modulo(x,2*LX)] < 1) return false;
-    int hn,hx,hxp,hnp;
-    if(x%2==0){
-        hn  = array[modulo(x-2*sens,2*LX)]+array[modulo(x-2*sens+1,2*LX)];
-        hx  = array[modulo(x  ,2*LX)]+array[modulo(x+1  ,2*LX)];
-        hxp = array[modulo(x+2*sens,2*LX)]+array[modulo(x+2*sens+1,2*LX)];
-        hnp = array[modulo(x+4*sens,2*LX)]+array[modulo(x+4*sens+1,2*LX)];
+bool EsosGlau(int array[], int x, int ajout,double kbeta,double Champ){
+    int hx  = array[x],
+        hxp = array[modulo(x+1,LX)],
+        hxm = array[modulo(x-1,LX)],
+        hx2 = hx+ajout;
+    if(hx2<0 or hx2>2*LY){
+        return false;
     }
-    else{
-        hn  = array[modulo(x-2*sens,2*LX)]+array[modulo(x-2*sens-1,2*LX)];
-        hx  = array[modulo(x  ,2*LX)]+array[modulo(x-1 ,2*LX)];
-        hxp = array[modulo(x+2*sens,2*LX)]+array[modulo(x+2*sens-1,2*LX)];
-        hnp = array[modulo(x+4*sens,2*LX)]+array[modulo(x+4*sens-1,2*LX)];
-    }
-    int ene = abs(hx-1-hn) + abs(hx-hxp-2)+abs(hxp+1-hnp);
-    ene -= abs(hx-hn) + abs(hx-hxp)+abs(hxp-hnp);
-    double sos = J*ene + f*sens*(x%2==0);
+    double champ = Champ*(hx2-hx)/2;
+    double sos    = J*( abs(hx2-hxm) + abs(hx2-hxp) - (abs(hx - hxm)  +  abs(hx - hxp) ) );
 
-    double D_e = exp(-kbeta*sos);
+    double D_e   =  exp(-kbeta*(sos+champ));
     return (D_e > 1) ? true : (rand_01(generator) <  D_e );
 }

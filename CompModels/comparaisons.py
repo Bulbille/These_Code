@@ -18,6 +18,7 @@ import re
 #####################################
 LY  = 25.5
 J   = 1
+TC = 2/np.log(1+2**0.5)
 
 
 def translation(x):
@@ -27,7 +28,7 @@ def translation(x):
 dossier="bon"
 try :
     ising =np.loadtxt('Ising/'+dossier+'/dataIsing')
-    plt.plot(ising[:,0],ising[:,2],label="Ising")
+    plt.plot(ising[:,0]/TC,ising[:,2],label="Ising")
 except :
     pass
 try :
@@ -38,6 +39,11 @@ except :
 try :
     rsos =np.loadtxt('RSOS/'+dossier+'/dataRSOS')
     plt.plot(rsos[:,0],translation(rsos[:,3]),label="RSOS")
+except :
+    pass
+try :
+    pop =np.loadtxt('POP/'+dossier+'/dataPOP')
+    plt.plot(pop[:,0],translation(pop[:,2]),label="POP")
 except :
     pass
 plt.legend()
