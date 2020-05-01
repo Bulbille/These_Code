@@ -5,7 +5,6 @@
 ##################################################
 shopt -s extglob #pour permettre de passer de 0.23500000 à 0.235
 #module load mpi/intel/2019.3.199
-module load mpi/intel/2018.5.274
 #module load mpi/mvapich2/2.3.1
 #module add openmpi/2.1.6
 LC_ALL="en_US.UTF-8"
@@ -14,7 +13,7 @@ LC_ALL="en_US.UTF-8"
 prefix=$(pwd)
 exec_prefix=$prefix/
 #data_prefix=/scratch/pgersberg/symmetrique
-data_prefix=$prefix/drive
+data_prefix=$prefix/verif
 debut_nom=${PWD##*/} ; debut_nom=${debut_nom:0:2}${data_prefix: -3}
 
 flags=" -g -O1 -Wall "
@@ -24,9 +23,9 @@ flags=" -O3 -Wall "
 
 
 mkdir -p $data_prefix
-mpicc -std=c++11  $flags -c $exec_prefix/main.cpp -o $exec_prefix/main.o -lgsl -lm -lgslcblas -I ~/libeigen 
+mpic++ -std=c++11  $flags -c $exec_prefix/main.cpp -o $exec_prefix/main.o -lgsl -lm -lgslcblas 
 if [ $? -ne 0 ] ; then exit 1 ; fi
-mpicc -std=c++11 $flags -o $data_prefix/stargate  $exec_prefix/main.o -lm -lstdc++  -I/usr/include -I ~/libeigen
+mpic++ -std=c++11 $flags -o $data_prefix/stargate  $exec_prefix/main.o -lm -lstdc++  -I/usr/include
 if [ $? -ne 0 ] ; then exit 1 ; fi
 rm $exec_prefix/main.o
 cp $exec_prefix/main.cpp $data_prefix

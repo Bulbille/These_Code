@@ -104,20 +104,18 @@ LY = 30
 
 
 ####### Données #####
+hspace = np.linspace(0,1,10)
+
 for numero,model in enumerate(['A','C']) :
     try:
-        data = np.loadtxt('final/'+model+'-X'+str(LX)+'Y'+str(LY))
-        print LX,LY
-        #data = data[:30] #ne pas prendre toutes les valeurs
-        #### Calcul de la magnétisation via TM
-        magTM = np.empty(np.size(data[:,0]))
+        magTM = np.empty(hspace))
         matphi = Mat(LY,model)
-        for k,h in enumerate(data[:,0]) :
+        for k,h in enumerate(hspace) :
             tm = Trans(BETA,h,J,LY,model)
             w,v = LA.eigh(tm)
             magTM[k] = np.dot( np.dot(v[:,np.argmax(w)],matphi) , v[:,np.argmax(w)])
         ##### Calcul énergie libre via intégration de la magnétisation TM et Simu
-        mags = np.empty(np.size(data[:,0])/2)
+        mags = np.empty(np.size(hspace])/2)
         FreSim = np.zeros(np.size(mags))
         for k in np.arange(np.size(data[:,0])) :
             if k%2 != 0 or k==0:
@@ -131,8 +129,6 @@ for numero,model in enumerate(['A','C']) :
         FreTM[:] = intDiag(LX,LY,BETA,0,J,model)
         for nb,Hmax in enumerate(mags):
             FreTM[nb]  -= intDiag(LX,LY,BETA,Hmax,J,model)
-        print FreSim
-        print FreTM
         ### Plot de l'energie libre
         plt.subplot(211)
         plt.plot(mags,FreSim,label='Simulation '+model,color=colors[numero])

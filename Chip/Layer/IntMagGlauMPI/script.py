@@ -87,9 +87,9 @@ axfree = plt.subplot(313)
 axnoise = plt.subplot(312)
 axqual = axnoise.twinx()
 
-for numero,model in enumerate(['B','C']) :
+for numero,model in enumerate(['A','B','C']) :
     try:
-        data = np.loadtxt('bien/'+model+'-X'+str(LX)+'Y'+str(LY))
+        data = np.loadtxt('data/'+model+'-X'+str(LX)+'Y'+str(LY))
         data = data[:50]
         #### Calcul de la magnétisation via TM
         magTM = np.empty(np.size(data[:,0]))

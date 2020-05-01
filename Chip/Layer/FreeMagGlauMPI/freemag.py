@@ -125,7 +125,6 @@ for nb,Hmin in enumerate(Hspace):
         FreSim[numero] = [LY,-intMag(big_data[LY][:,1],Hmin,Hmax)]
 
         FreTM[numero] = [LY,intDiag(LX,LY,BETA,Hmin,J,Model)]
-    print FreSim
 
     if Model == 'C':
 #        FreSim[:,1] -= FreSim[:,0]*Hmax

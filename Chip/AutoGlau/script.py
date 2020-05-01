@@ -105,6 +105,7 @@ LY = 30
 
 ####### Données #####
 for numero,model in enumerate(['A','B','C']) :
+    print(model)
     try:
         data = np.loadtxt('test/'+model+'-X'+str(LX)+'Y'+str(LY))
         data = data[:30] #ne pas prendre toutes les valeurs

@@ -40,47 +40,39 @@ def intDiag(ly,beta,h,j):
     Z = np.sum(np.power(w,ly))
 
     matphi = mat(ly)
-
-    fonction = np.empty(ly)
-    for r in np.arange(ly):
-        gmat = matphi*LA.matrix_power(tm,r)*matphi
-        fun = 0
-        for i in np.arange(ly) :
-            fun += np.dot(np.dot(v[:,i],gmat),v[:,i])*np.power(w[i],ly-r)
-        fonction[r] = fun/Z
-
     correlthermo = -1/np.log(w[-2]/w[-1])
-
-    popt,pcov= curve_fit(fitexp,np.arange(ly),fonction,p0=[1,correlthermo])
-    print(correlthermo,popt[1])
-    return [correlthermo,popt[1]]
+    return [correlthermo]
 
 
 ############################
 # Déclaration matrices
 J = 1 ; TC = 2/np.log(1.+np.power(2,0.5)) ; BETA = 1/TC;
 
-lMin = 10; lMax = 30
-lSpace = np.arange(lMin,lMax)
+LY = 200
 
-tSpace = np.linspace(0.8,1,2)
-h = 0.1
-casimir = np.empty(len(lSpace))
+muSpace = np.logspace(-4,1,120)
+tSpace = np.linspace(0.4,2,3)
+casimir = np.empty(len(muSpace))
 
-def fitpow(x,n,a):
-    return a*np.power(x,n)
-def fitlin(x,n,a):
-    return a*x+n
+correl = np.empty((len(muSpace),1))
 
-correl = np.empty((len(lSpace),2))
+def fitexp(x,a,l):
+    return a*np.power(x,l)
 
 for i,t in enumerate(tSpace) :
-    for j,L1 in enumerate(lSpace):
-        f1 = intDiag(L1,1/(t*TC),h,J) 
+    for j,mu in enumerate(muSpace):
+        f1 = intDiag(LY,1/(t*TC),mu,J) 
         correl[j] = f1
-    plt.plot(lSpace,correl[:,0],label=str(t))
-    plt.plot(lSpace,correl[:,1],'+',label=str(t))
-    print(correl[:,1])
+    plt.plot(muSpace,correl[:,0],label='T='+str(t)[:3])
+    popt,pcov = curve_fit(fitexp,muSpace[40:80],correl[40:80,0],p0=[1,-1])
+    print(popt)
+#    plt.plot(muSpace,fitexp(muSpace,*popt))
+
+plt.xlabel('$\mu$')
+plt.ylabel('$\\xi=- \\frac{1}{- \ln(\\frac{\lambda_1}{\lambda_0})}$')
+plt.xscale('log')
+plt.yscale('log')
 plt.legend()
+plt.savefig('longueur-correl.pdf')
 plt.show()
 

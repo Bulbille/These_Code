@@ -29,10 +29,10 @@ def intDiag(ly,beta,h,j):
     lZ = 1*np.log(max(w))
     return -1/beta*lZ
 
-def equaDiag(ly,beta,j):
-    betexp = lambda beta : np.exp(-beta)
-    theta = lambda eig,h,r : 1/np.tan(h*eig) - r*np.sin(eig)/(1-r*np.cos(eig))
-    ret:
+#def equaDiag(ly,beta,j):
+#    betexp = lambda beta : np.exp(-beta)
+#    theta = lambda eig,h,r : 1/np.tan(h*eig) - r*np.sin(eig)/(1-r*np.cos(eig))
+#    ret:
 
 ############################
 # Déclaration matrices
@@ -45,7 +45,7 @@ def dean(j,ly):
 
 Jn = 30
 Jspace = np.round(np.linspace(0.3,3,Jn),2)
-for nl,LY in enumerate(np.linspace(10,70,4)):
+for nl,LY in enumerate(int(np.linspace(10,70,4))):
     FreTM = np.empty([np.size(Jspace),2])
     for nb,J in enumerate(Jspace):
         FreTM[nb] = [J,intDiag(LY,BETA,0,J)]
