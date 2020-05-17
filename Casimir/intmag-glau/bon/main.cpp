@@ -14,21 +14,21 @@
 #include <iomanip> // setprecision
 #include <fstream> //files
 
-#define MODEL "CHIM"
+#define MODEL "MAG"
 
 //Modules diagonalisation de matrices
 using namespace std;
 const double T_C    = 2./log(1.+sqrt(2)), J = 1;
 const double Hmin =0.01, Hmax = 1;
-const int Hn = 20;
+const int Hn = 4;
 double  Beta = 1, ttc;
 string prefix = "./", suffix = "",algo;
 //Propriétés de la grille
 const int       bitLX = 7, LX = 2<<bitLX;
-const int LY = 20;
+const int LY = 200;
 int N; // nombre total de particules
 //LX doit être une puissance de 2, 2<<0 = 2, 2<<n = 2^(n+1)
-const long int T_EQ = 1e4, T_MAX = 1e7;
+const long int T_EQ = 1e4, T_MAX = 5e6;
 // Taux de diffusion des particules A et B
 
 #include "./prng.h"
@@ -40,15 +40,14 @@ bool EsosGlau(int* array, int x, int ajout,double kbeta,double Champ){
         hxp = array[modulo(x+1,LX)],
         hxm = array[modulo(x-1,LX)],
         hx2 = hx+ajout;
-    if(hx2<0 or hx2>LY) return false;
-    double champ = -Champ*(abs(hx2-LY/2)-abs(hx-LY/2));
-//    double champ = Champ*(hx2-hx);
+    if(hx2<=0 or hx2>=LY) return false;
+//    double champ = -Champ*(abs(hx2-LY/2)-abs(hx-LY/2));
+    double champ = Champ*(hx2-hx);
     double sos    = J*( abs(hx2-hxm) + abs(hx2-hxp) - (abs(hx - hxm)  +  abs(hx - hxp) ) );
 
     double D_e   =  exp(-kbeta*(sos+champ));
     return (D_e > 1) ? true : (rand_01(generator) <  D_e );
 }
-
 double normspace(int step,double min,double max, double n){
     return (n == 1) ? max : min+(max-min)/(n-1)*1.*step;
 }
@@ -73,13 +72,13 @@ int main(int argc,char* argv[]){
     /***** Parallélisation sur les champs magnétiques ****/
     int cmpt = 0;
     for(int k = rang*Nb_H; k<(rang+1)*Nb_H ; k++){
-        cout << k << endl;
+        cout << k<< " " << Beta  << endl;
         valeurs[cmpt] = 0;
         double H =  normspace(k,Hmin,Hmax,Hn);
         /******** Initialisation du systeme *****/
         int* system = new int[LX]; 
         for(int x=0;x<LX;x++)
-            system[x]  = LY/2;
+            system[x]  = 2;
 
 
         // Équilibrage
@@ -93,8 +92,8 @@ int main(int argc,char* argv[]){
         //Calcul des valeurs initiales        
         int phi = 0;
         for(int x=0;x<LX;x++){
-            phi += abs(system[x]-LY/2);
-//            phi += system[x];            
+//            phi += abs(system[x]-LY/2);
+            phi += system[x];            
         }  
        
         for(long int t = 0; t<LX*T_MAX ; t++){
@@ -102,8 +101,8 @@ int main(int argc,char* argv[]){
             ajout   = 2*r01int(generator)-1;
 
             if(EsosGlau(system,tirage,ajout,Beta,H)){
-//                phi += ajout;
-                phi += abs(system[tirage]+ajout-LY/2)-abs(system[tirage]-LY/2);
+                phi += ajout;
+//                phi += abs(system[tirage]+ajout-LY/2)-abs(system[tirage]-LY/2);
                 system[tirage]+=ajout;
             }
             valeurs[cmpt] += phi;

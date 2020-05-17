@@ -15,7 +15,7 @@ nb_col = len(colors)
 ### Déclaration fonctions ########
 ##################################
 def linear(x,a,b):
-    return a*x+b
+    return a*np.power(x,-b)
 ### Définition des matrices de transfert des différents modèles
 def Trans(kbt,champ,inter,L):
     d=np.zeros((L+1,L+1))
@@ -33,7 +33,7 @@ def mat(L):
 def intDiag(ly,beta,h,j):
     tm = Trans(beta,h,j,ly)
     w,v = LA.eigh(tm) 
-    lZ = 1*np.log(np.sum(np.power(w,ly)))
+    lZ = 1*np.log(np.sum(np.power(w,400)))
     return -1/(ly*beta)*lZ
 
 
@@ -41,9 +41,9 @@ def intDiag(ly,beta,h,j):
 # Déclaration matrices
 J = 1 ; 
 
-lMin = 3; lMax = 60
+lMin = 3; lMax = 30
 lSpace = np.arange(lMin,lMax)
-tSpace = np.linspace(0.6,1.3,20)
+tSpace = np.linspace(0.6,1.3,10)
 
 h = 0.01
 
@@ -61,9 +61,13 @@ for i,t in enumerate(tSpace) :
 # Plot en fonction de la distance, à température constante
 # Ne pas montrer premier et dernier élément des dérivées, moins bonne qualité
 for i,t in enumerate(tSpace) :
-    if i % 4 != 0 :
-        continue
+#     if i % 4 != 0 :
+#         continue
     plt.plot(lSpace[1:-1],casimir[1:-1,i],label="T="+str(t)[:4])
+    popt,pcoc = curve_fit(linear,lSpace[1:-1],casimir[1:-1,i],p0=[-1,3])
+    print(popt)
+    plt.plot(lSpace[1:-1],linear(lSpace[1:-1],*popt),'+')
+
 
 plt.xlabel('$L$')
 plt.ylabel('$-\\frac{\partial \Omega(\\beta,L,h)}{\partial L}$')

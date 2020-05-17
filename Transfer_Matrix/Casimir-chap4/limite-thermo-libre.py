@@ -28,27 +28,30 @@ def mat(L):
         d[y][y] = abs(y)
     return d
 ### Fonction qui calcule directement l'énergie libre
-def intDiag(ly,beta,h,j):
+def intDiag(ly,beta,h,j,lx):
     tm = Trans(beta,h,j,ly)
     w,v = LA.eigh(tm) 
-    return max(w),-1/beta*np.log(max(w)), -1/(ly*beta)*np.log(np.sum(np.power(w,ly)))
+    return w[-1],w[-2],-1/beta*np.log(max(w)), -1/(lx*beta)*np.log(np.sum(np.power(w,lx)))
 
 J = 1 ; BETA = 1 ; 
+LY = 100
 
-LSpace = np.arange(5,350)
-partition = np.empty((len(LSpace),4))
+LSpace = np.arange(5,150)
+partition = np.empty((len(LSpace),5))
 for i,L in enumerate(LSpace):
     print(L)
-    res =  intDiag(L,BETA,0,J)
+    res =  intDiag(LY,BETA,0,J,L)
     partition[i][3] = L
     partition[i][0] = res[0]
-    partition[i][1] = res[1]
-    partition[i][2] = res[2]
+    partition[i][4] = res[1]
+    partition[i][1] = res[2]
+    partition[i][2] = res[3]
 
 plt.figure(1)
 freeEne = plt.subplot(111)
 
 freeEne.plot(partition[:,3],partition[:,0],label='$\lambda_{0}$')
+freeEne.plot(partition[:,3],partition[:,0],label='$\lambda_{1}$')
 freeEne.plot(partition[:,3],0*partition[:,3]+ np.sinh(BETA*J)/(np.cosh(BETA*J)-1),'-.',color="black",label="$\\frac{\sinh(\\beta J)}{\cosh(\\beta J) -1}$")
 freeEne.set_xlabel('$L$')
 
@@ -59,13 +62,13 @@ plt.show()
 plt.figure(2)
 thermo  = plt.subplot(111)
 
-thermo.plot(partition[:,3],partition[:,1],label="$-\\frac{1}{\\beta} \ln(\lambda_0)$")
-thermo.plot(partition[:,3],partition[:,2],label="$-\\frac{1}{L \\beta} \ln(\sum_\lambda \lambda^L)$")
+thermo.plot(partition[:,3],partition[:,1],label="$F(\infty)= -\\frac{1}{\\beta} \ln(\lambda_0)$")
+thermo.plot(partition[:,3],partition[:,2],label="$F(L') =-\\frac{1}{L\' \\beta} \ln(\sum_\lambda \lambda^{L\'})$")
 
 np.savetxt("data",partition)
 
-thermo.set_xlabel('$L$')
-thermo.set_ylabel('$F(L,\\beta)$')
+thermo.set_xlabel('$L\'$')
+thermo.set_ylabel('$F(L\',\\beta)$')
 
 plt.legend()
 plt.savefig('freeene-thermo-libre.pdf')

@@ -22,13 +22,13 @@ const double J = 1.;
 
 // Paramètres de la grille
 
-const int TAILLE_X =600;
-const int TAILLE_Y = 600;
+const int TAILLE_X =200;
+const int TAILLE_Y = 100;
 const int N = TAILLE_X*TAILLE_Y;
 //Au bout de 100 étapes de Monte Carlo environ, on a la décorrélation a`peu près maximale
 //On va donc prendre les données uniquement tous les 100
-const int T_PHOTO = 1.0e1*N;
-const double NB_PHOTO = 100;
+const int T_PHOTO = 1.0e4*N;
+const double NB_PHOTO = 1;
 const double T_MAX = 1.*T_PHOTO*NB_PHOTO;
 
 extern double BETA;

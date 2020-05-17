@@ -14,13 +14,12 @@ import re
 #####################################
 fig, ax = plt.subplots(nrows=2, ncols=2)
 
-ttc = "1.00"
-temps = [0,10,40,100]
-
+ttc = "0.70"
+temps = [1]
 i = 0
 for row in ax:
     for col in row:
-        S=np.loadtxt('glau-mag/snap'+ttc+'_time'+str(temps[i]))
+        S=np.loadtxt('glau-interface/snap'+ttc+'_time'+str(temps[i]))
         M=int(S[-1][1])+1
         N=int(S[-1][0])+1
         s=np.zeros((M,N))

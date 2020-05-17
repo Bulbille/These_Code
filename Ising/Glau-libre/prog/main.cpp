@@ -15,7 +15,7 @@ std::uniform_real_distribution<double> rand_01(0.0,1.0);
 //0 → L-1 : périodique
 //1 → L-2 : fixe
 std::uniform_int_distribution<int> rand_lx(0,TAILLE_X-1);
-std::uniform_int_distribution<int> rand_ly(0,TAILLE_Y-1);
+std::uniform_int_distribution<int> rand_ly(1,TAILLE_Y-2);
 
 /****************** Main ******************/
 int main(int argc, char *argv[]){
@@ -92,6 +92,7 @@ void parametres(int argc, char* argv[], int grille[][TAILLE_Y]){
 void generation(int grille[][TAILLE_Y],int LX,int LY){
     for(int x=0;x<LX;x++){
         for(int y=0;y<LY;y++)
-            grille[x][y] = (rand_01(generator) < 0.5 ) ? grille[x][y] = 1 : grille[x][y] = -1 ;
+            //grille[x][y] = (rand_01(generator) < 0.5 ) ? grille[x][y] = 1 : grille[x][y] = -1 ;
+            grille[x][y] = (y < LY/2)? 1 : -1;
     }
 }

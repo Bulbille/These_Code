@@ -34,7 +34,6 @@ int main(int argc, char *argv[]){
 
     int cmpt = 0;
     for(int k = rang*Nb_T; k<(rang+1)*Nb_T ; k++){
-        str = prefix+"/data"+to_string(k);
         generation(grille,TAILLE_X,TAILLE_Y);
         valeurs[cmpt] = 0;
         energies[cmpt] = 0;
@@ -78,14 +77,6 @@ int main(int argc, char *argv[]){
         valeurs[cmpt] /= static_cast<double>(N*N*T_MAX) ;
         energies[cmpt] /= static_cast<double>(N*N*T_MAX) ;
         cmpt++;
-
-        ofstream fmag(str.c_str(),std::ofstream::out);
-        for(int x=0;x<TAILLE_X;x++){
-            for(int y=0;y<TAILLE_Y;y++){
-                fmag << x << " " << y << " " << grille[x][y] << endl;
-            }
-        }
-        fmag.close();
     }
 
     /*** Récupération des calculs parallélisés ****/

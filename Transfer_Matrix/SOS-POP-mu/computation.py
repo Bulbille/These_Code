@@ -24,10 +24,7 @@ def TransSOS(kbt,champ,inter,L):
             d[y1][y2] = np.exp(-kbt*( champ*(y1+y2)/2 +inter*abs(y1-y2)) )
     return d
 def lnfact(n):
-    if(n<25):
-        return mt.log(mt.factorial(n))
-    else:
-        return n*mt.log(n)-n
+    return mt.log(mt.factorial(n))
 
 def TransPOP(kbt,mu,inter,L):
     d=np.zeros((L+1,L+1))
@@ -59,10 +56,10 @@ def intDiag(ly,beta,h,j,mod):
 
 ############################
 # Déclaration matrices
-J = 1 ; TC = 2/np.log(1.+np.power(2,0.5)) ; BETA = 1/TC;
+J = 1 ; TC = 2/np.log(1.+np.power(2,0.5)) ; BETA = 1;
 
-Bn = 103
-Bspace = np.logspace(-0.2,1.5,Bn)
+Bn = 60
+Bspace = np.logspace(-1,0.77,Bn)
 ####### Données #####
 #### Calcul de la magnétisation via TM
 
@@ -76,7 +73,7 @@ def exp(x,a,l):
     return a*np.exp(-x/l)
 
 for s,string in enumerate(['POP']):
-    for l,LY in enumerate([50,100,150,200][::-1]) :
+    for l,LY in enumerate([25,75,200][::-1]) :
         print(s,LY)
         for i,Bmax in enumerate(Bspace) :
             res = intDiag(LY,BETA,Bmax,J,string)
@@ -84,7 +81,7 @@ for s,string in enumerate(['POP']):
             cbar[i] = res[1]
             fbar[i] = res[2]
 
-        hauteur.plot(Bspace,hbar,color=colors[l],label="N="+str(LY))
+        hauteur.plot(Bspace,hbar,color=colors[l],label="L="+str(LY))
 
 hauteur.plot(Bspace[:80],np.exp(BETA*Bspace[:80]),'+',color="black",label="$e^{\\beta \mu}$")
 
@@ -92,7 +89,7 @@ hauteur.legend()
 hauteur.set_xlabel('$\mu$')
 hauteur.set_xscale('log')
 hauteur.set_yscale('log')
-hauteur.set_ylabel('$\langle H \\rangle $')
+hauteur.set_ylabel('$\langle h \\rangle $')
 
 plt.savefig('hauteur-tm-pop.pdf')
 plt.show()

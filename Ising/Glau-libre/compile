@@ -9,7 +9,7 @@ LC_ALL="en_US.UTF-8"
 
 prefix=$(pwd)
 exec_prefix=$prefix/prog
-data_prefix=$prefix/glau-mag
+data_prefix=$prefix/glau-interface
 
 mkdir -p $data_prefix
 g++ -std=c++11 -o $data_prefix/stargate $exec_prefix/main.cpp  $exec_prefix/math.cpp  -O3 -s

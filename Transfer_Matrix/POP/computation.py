@@ -61,7 +61,7 @@ def intDiag(ly,beta,h,j,mod,mu):
 
 ############################
 # Déclaration matrices
-J = 1 ; TC = 2/np.log(1.+np.power(2,0.5)) ; BETA = 1/TC;
+J = 1 ; TC = 2/np.log(1.+np.power(2,0.5)) ; BETA = 1;
 
 mumax = 5
 muN = 10

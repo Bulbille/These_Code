@@ -21,7 +21,7 @@ def Trans(kbt,champ,inter,L):
     d=np.zeros((L+1,L+1))
     for y1,i in enumerate(d):
         for y2,j in enumerate(i):
-            d[y1][y2] = np.exp(-kbt*( champ*(y1+y2)/2 +inter*abs(y1-y2)) )
+            d[y1][y2] = np.exp(-kbt*( champ*(y1+y2)/2 +inter*pow(y1-y2,2)) )
     return d
 ### Définition des matrices de magnetisation des différents modèles
 def mat(L):
@@ -41,7 +41,7 @@ def intDiag(ly,beta,h,j):
 # Déclaration matrices
 J = 1 ; 
 
-lMin = 3; lMax = 60
+lMin = 3; lMax = 40
 lSpace = np.arange(lMin,lMax)
 tSpace = np.linspace(0.6,1.3,20)
 
@@ -63,7 +63,7 @@ for i,t in enumerate(tSpace) :
 for i,t in enumerate(tSpace) :
     if i % 4 != 0 :
         continue
-    plt.plot(lSpace[1:-1],casimir[1:-1,i],label="T="+str(t)[:4])
+    plt.plot(lSpace[1:-1],energies[1:-1,i],label="T="+str(t)[:4])
 
 plt.xlabel('$L$')
 plt.ylabel('$-\\frac{\partial \Omega(\\beta,L,h)}{\partial L}$')
