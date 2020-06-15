@@ -10,7 +10,7 @@ LC_ALL="en_US.UTF-8"
 prefix=$(pwd)
 exec_prefix=$prefix/
 #data_prefix=/scratch/pgersberg/symmetrique
-data_prefix=$prefix/bon
+data_prefix=$prefix/moy-41
 debut_nom=${PWD##*/} ; debut_nom=${debut_nom:0:2}${data_prefix: -3}
 
 flags=""

@@ -18,16 +18,16 @@ nb_col = len(colors)
 ##################################
 ### Définition des matrices de transfert des différents modèles
 def TransSOS(kbt,champ,inter,L):
-    d=np.zeros((L+1,L+1))
+    d=np.zeros((L,L))
     for y1,i in enumerate(d):
         for y2,j in enumerate(i):
-            d[y1][y2] = np.exp(-kbt*( champ*(y1+y2)/2 +inter*abs(y1-y2)) )
+            d[y1][y2] = np.exp(-kbt*( -champ*(y1+y2)/2 +inter*abs(y1-y2)) )
     return d
 def lnfact(n):
     return mt.log(mt.factorial(n))
 
 def TransPOP(kbt,mu,inter,L):
-    d=np.zeros((L+1,L+1))
+    d=np.zeros((L,L))
     for y1,i in enumerate(d):
         for y2,j in enumerate(i):
             d[y1][y2]= np.exp(-kbt*(-mu*(y1+y2)/2+inter*abs(y1-y2))-(lnfact(y1)+lnfact(y2))/2)
@@ -35,7 +35,7 @@ def TransPOP(kbt,mu,inter,L):
 
 ### Définition des matrices de magnetisation des différents modèles
 def Mat(L):
-    d=np.zeros((L+1,L+1))
+    d=np.zeros((L,L))
     for y,i in enumerate(d):
         d[y][y] = abs(y)
     return d
@@ -59,7 +59,7 @@ def intDiag(ly,beta,h,j,mod):
 J = 1 ; TC = 2/np.log(1.+np.power(2,0.5)) ; BETA = 1;
 
 Bn = 60
-Bspace = np.logspace(-1,0.77,Bn)
+Bspace = np.logspace(-2,0.77,Bn)
 ####### Données #####
 #### Calcul de la magnétisation via TM
 
@@ -72,7 +72,11 @@ hauteur = plt.subplot(111)
 def exp(x,a,l):
     return a*np.exp(-x/l)
 
-for s,string in enumerate(['POP']):
+LY = 200
+print(intDiag(LY,0.001,0.0,1,'SOS'))
+exit()
+
+for s,string in enumerate(['SOS','POP']):
     for l,LY in enumerate([25,75,200][::-1]) :
         print(s,LY)
         for i,Bmax in enumerate(Bspace) :
@@ -81,15 +85,15 @@ for s,string in enumerate(['POP']):
             cbar[i] = res[1]
             fbar[i] = res[2]
 
-        hauteur.plot(Bspace,hbar,color=colors[l],label="L="+str(LY))
+        hauteur.plot(Bspace,hbar,label=string+", L="+str(LY))
 
 hauteur.plot(Bspace[:80],np.exp(BETA*Bspace[:80]),'+',color="black",label="$e^{\\beta \mu}$")
 
 hauteur.legend()
-hauteur.set_xlabel('$\mu$')
+hauteur.set_xlabel('$B$')
 hauteur.set_xscale('log')
 hauteur.set_yscale('log')
 hauteur.set_ylabel('$\langle h \\rangle $')
 
-plt.savefig('hauteur-tm-pop.pdf')
+plt.savefig('hauteur-tm-pop-sos.pdf')
 plt.show()

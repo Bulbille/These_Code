@@ -27,13 +27,16 @@ for j in np.arange(LY) :
             dessin.arrow(i,j,phi1,0,color="red",shape="full",length_includes_head=True,head_starts_at_zero=True,head_width=0.3,head_length=0.1)
         elif (i+j)%2 == 0 :
             dessin.arrow(i,j,phi1,0,color="blue",shape="full",length_includes_head=True,head_starts_at_zero=True,head_width=0.3,head_length=0.1)
+#        else :
 #            dessin.arrow(i,j,phi2,0,color="blue",shape="full",length_includes_head=True,head_starts_at_zero=True,head_width=0.3,head_length=0.1)
 #    dessin.scatter(0,j)
 #    dessin.scatter(phi1,j)
 
 #dessin.axes.get_xaxis().set_visible(False)
 #dessin.axes.get_yaxis().set_visible(False)
-dessin.set_xlabel('$\\vec{x}$')
+dessin.tick_params(axis='both',which='both',bottom=False,top=False,left=False,right=False)
+dessin.tick_params(axis='both',which='both',labelbottom=False,labeltop=False,labelleft=False,labelright=False)
+dessin.set_xlabel('${\\bf r}$')
 dessin.set_ylabel('$z$')
 dessin.set_xlim(0,LX)
 dessin.set_ylim(-0.2,LY-0.8)

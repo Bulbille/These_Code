@@ -17,7 +17,7 @@
 //Modules diagonalisation de matrices
 using namespace std;
 const double T_C    = 2./log(1.+sqrt(2)), J = 1;
-const double Tmin = -4, Tmax = 1;
+const double Tmin = 0.1, Tmax = 2;
 const int Tn = 40;
 double  ttc = 1 ,Beta = 1/(ttc*T_C);
 string prefix = "./", suffix = "",algo;
@@ -67,7 +67,7 @@ int main(int argc,char* argv[]){
         valeurs[cmpt] = 0;
         energies[cmpt] = 0;
         ecartTyp[cmpt] = 0;
-        double B =  logspace(k,Tmin,Tmax,Tn);
+        double B =  normspace(k,Tmin,Tmax,Tn);
         Beta = 1;
         cout << k << " " << Beta << endl;
         /******** Initialisation du systeme *****/
@@ -132,7 +132,7 @@ int main(int argc,char* argv[]){
         str = prefix+"/dataSOS"+to_string(LY);
         ofstream fmag(str.c_str(),std::ofstream::out);
         for(int i=0;i<Tn;i++)
-            fmag << logspace(i,Tmin,Tmax,Tn)<< "\t" << valTot[i] <<  "\t\t" <<  ecartTot[i] << "\t\t" << J*eneTot[i]<<  "\n";
+            fmag << normspace(i,Tmin,Tmax,Tn)<< "\t" << valTot[i] <<  "\t\t" <<  ecartTot[i] << "\t\t" << J*eneTot[i]<<  "\n";
         fmag.close();
     }
     MPI_Finalize();

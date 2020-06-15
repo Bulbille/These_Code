@@ -15,81 +15,51 @@ nb_col = len(colors)
 ### Déclaration fonctions ########
 ##################################
 ### Définition des matrices de transfert des différents modèles
+def V(y) :
+    if y==0 :
+        return 1e8
+    return y
+
 def Trans(kbt,champ,inter,L):
-    d=np.zeros((L+1,L+1))
+    d=np.zeros((L,L))
     for y1,i in enumerate(d):
         for y2,j in enumerate(i):
-            d[y1][y2] = np.exp(-kbt*( champ*(y1+y2)/2 +inter*abs(y1-y2)) )
+            d[y1][y2] = np.exp(-kbt*( champ*(V(y1)+V(y2))/2 +inter*abs(y1-y2)) )
     return d
 ### Définition des matrices de magnetisation des différents modèles
 def Mat(L):
-    d=np.zeros((L+1,L+1))
+    d=np.zeros((L,L))
     for y,i in enumerate(d):
         d[y][y] = abs(y)
     return d
 ### Fonction qui calcule directement l'énergie libre
-def intDiag(ly,beta,h,j):
+def p(ly,beta,h,j):
     matphi = Mat(LY)
-    matphi2 = np.square(matphi)
     tm = Trans(beta,h,j,ly)
     w,v = LA.eigh(tm) 
+    return np.dot(np.dot(v[:,-1],matphi),v[:,-1])
+    return np.power(v[:,-1],2)
 
-    deb = np.dot(np.dot(v[:,-1],matphi),v[:,-2])*np.dot(np.dot(v[:,-1],matphi),v[:,-2])
-    r = np.arange(512)
-    r = deb*np.power(w[-2]/w[-1],r)
-    chi = 0
-    for i,c in enumerate(r):
-        if i == 0 or i == len(r)-1:
-            chi += c/r[0]
-        elif i%2 == 0 :
-            chi += 2*c/r[0]
-        else :
-            chi += 4*c/r[0]
-    chi /=3
-    return [-np.log(max(w))/beta , np.dot(np.dot(v[:,-1],matphi),v[:,-1]),np.dot(np.dot(v[:,-1],matphi2),v[:,-1]), chi] 
+import scipy.special as sp
+alpha =sp.ai_zeros(1)[0][0]
+print(alpha)
+def hmoy(sig,beta,mu) :
+    return 2/3*alpha/np.power(2*sig*beta**2*mu,1/3)
+
+
 
 ############################
 # Déclaration matrices
-J = 1 ; TC = 2/np.log(1.+np.power(2,0.5)) ; BETA = 1/TC;
+J = 1 ; BETA = 1;
+LY = 100
+bs = np.linspace(0.01,1,10)
+ana = np.empty(len(bs))
+gsos = np.empty(len(bs))
 
-Bn = 50
-Bspace = np.logspace(-6,1,Bn)
-####### Données #####
-#### Calcul de la magnétisation via TM
-
-hbar = np.empty(np.size(Bspace))
-fbar = np.empty(np.size(Bspace))
-cbar = np.empty(np.size(Bspace))
-
-hauteur = plt.subplot(111)
-#correlation = plt.subplot(312)
-#energie = plt.subplot(313)
-
-def exp(x,a,l):
-    return a*np.exp(-x/l)
-
-for l,LY in enumerate([50,100,150,200]) :
-    for i,Bmax in enumerate(Bspace) :
-        res = intDiag(LY,BETA,Bmax,J)
-        fbar[i] = res[0]
-        hbar[i] = res[1]
-        cbar[i] = (res[2]-hbar[i]**2)**0.5
-
-    hauteur.plot(Bspace,hbar,color=colors[l],label="N="+str(LY))
-
-    
-#correlation.legend()
-#correlation.set_xlabel('$\mu$')
-#correlation.set_ylabel('Correlation length')
-
-hauteur.legend()
-hauteur.set_xlabel('$-\mu$')
-hauteur.set_xscale('log')
-hauteur.set_ylabel('$\langle H \\rangle $')
-
-#energie.legend()
-#energie.set_xlabel('$\mu$')
-#energie.set_ylabel('$E=\sum |h_i-h_{i+1}|$')
-
-plt.savefig('semiinf.pdf')
+for i,B in enumerate(bs) :
+    gsos[i] = p(LY,BETA,B,J)
+    ana[i] = hmoy(J/2,BETA,B)
+plt.plot(bs,-ana,label="Ana")
+plt.plot(bs,gsos,label="GSOS")
+plt.legend()
 plt.show()

@@ -13,7 +13,7 @@ LC_ALL="en_US.UTF-8"
 prefix=$(pwd)
 exec_prefix=$prefix/
 #data_prefix=/scratch/pgersberg/symmetrique
-data_prefix=$prefix/verif
+data_prefix=$prefix/integration
 debut_nom=${PWD##*/} ; debut_nom=${debut_nom:0:2}${data_prefix: -3}
 
 flags=" -g -O1 -Wall "

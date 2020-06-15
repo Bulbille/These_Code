@@ -65,7 +65,7 @@ derivene = energie.twinx()
 mm = 10
 
 for nb,B in enumerate(hspace):
-    print "**************" ,nb,B
+    print("**************" ,nb,B)
     fspace = big_data[B][:,0]
     donne  = np.where(fspace<6)
     fspace = fspace[donne]
@@ -85,13 +85,10 @@ for nb,B in enumerate(hspace):
         if taux > 0 :
             popt,pcov = curve_fit(linear,fspace[:mm],totmag[:mm],p0=[1,1,2])
             drive.plot(fspace[:mm],linear(fspace[:mm],*popt),'+',color=colors[nb])
-            print "Mag", B,popt
         popt,pcov = curve_fit(linear,fspace[:mm],totvar[:mm]**2/totmag[:mm]**2,p0=[1,1,2])
         variance.plot(fspace[:mm],linear(fspace[:mm],*popt),'+',color=colors[nb])
-        print "Var", B,popt
         popt,pcov = curve_fit(linear,fspace[:mm],totene[:mm]/totene[0],p0=[1,1,2])
         energie.plot(fspace[:mm],linear[:mm](fspace,*popt),'+',color=colors[nb])
-        print "Ene", B, popt
     except :
         pass
 

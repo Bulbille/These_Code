@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf8
 import matplotlib.pyplot as plt
-fsize=10
+fsize=16
 plt.rc("font",size=fsize)
 plt.rc("font",family='serif')
 
@@ -16,18 +16,17 @@ nb_col = len(colors)
 ### Déclaration fonctions ########
 ##################################
 ### Définition des matrices de transfert des différents modèles
-def Trans(kbt,champ,inter,L):
-    d=np.zeros((2*L+1,2*L+1))
+def Trans(kbt,inter,L):
+    d=np.zeros((L,L))
     for y1,i in enumerate(d):
         for y2,j in enumerate(i):
             d[y1][y2] = np.exp(-kbt*inter*abs(y1-y2))
     return d
 ### Fonction qui calcule directement l'énergie libre
-def intDiag(ly,beta,h,j):
-    tm = Trans(beta,h,j,ly)
-    w,v = LA.eigh(tm) ; 
-    lZ = 1*np.log(max(w))
-    return -1/beta*lZ
+def intDiag(ly,beta,j):
+    tm = Trans(beta,j,ly)
+    w,v = LA.eigh(tm) ;
+    return w[-1],w[-2]
 
 #def equaDiag(ly,beta,j):
 #    betexp = lambda beta : np.exp(-beta)
@@ -36,30 +35,32 @@ def intDiag(ly,beta,h,j):
 
 ############################
 # Déclaration matrices
-TC = 2/np.log(1.+np.power(2,0.5)) ; BETA = 1;
+J = 1
+BETA = 1
 
-axfree = plt.subplot(111)
+def dean(j,ly,n):
+    return np.sinh(j)/(np.cosh(j)-np.cos(n*np.pi/ly))
 
-def dean(j,ly):
-    return - np.log(np.sinh(j)/(np.cosh(j)-np.cos(np.pi/(2*ly+2))))
+ls = np.arange(100)+3
+l0 = np.empty(len(ls))
+l1 = np.empty(len(ls))
 
-Jn = 30
-Jspace = np.round(np.linspace(0.3,3,Jn),2)
-for nl,LY in enumerate(int(np.linspace(10,70,4))):
-    FreTM = np.empty([np.size(Jspace),2])
-    for nb,J in enumerate(Jspace):
-        FreTM[nb] = [J,intDiag(LY,BETA,0,J)]
+for i,LY in enumerate(ls) :
+    res = intDiag(LY,BETA,J)
+    l0[i] = res[0]
+    l1[i] = res[1]
 
-    if nl == 0 :
-        axfree.plot(FreTM[:,0],FreTM[:,1],color=colors[nl%nb_col],label="Numerical : $LY="+str(LY)+'$')
-        axfree.plot(FreTM[:,0],dean(FreTM[:,0],LY),'+',color=colors[nl%nb_col],label="Analytic approximation")
-    else :
-        axfree.plot(FreTM[:,0],FreTM[:,1],color=colors[nl%nb_col],label="$LY="+str(LY)+'$')
-        axfree.plot(FreTM[:,0],dean(FreTM[:,0],LY),'+',color=colors[nl%nb_col])
+plt.plot(ls,l0,label='$\lambda_0$')
+plt.plot(ls,dean(BETA*J,ls,1),label='$\\frac{\sinh(\\beta J) }{\cosh(\\beta J)-\cos(\pi/L)}$')
+plt.plot(ls,l1,label='$\lambda_1$')
+plt.plot(ls,dean(BETA*J,ls,2),label='$\\frac{\sinh(\\beta J) }{\cosh(\\beta J)-\cos(2 \pi/L)}$')
+#plt.plot(ls[::5],dean(BETA*J,ls[::5],0),'+-',color="black",label='$\lambda_0(L\\to \infty)$')
 
-axfree.legend(loc='upper right')
-axfree.set_xlabel('$J$')
-axfree.set_ylabel('$F(L_Y,J)$')
+
+plt.legend()
+plt.xlabel('$L$')
+plt.ylabel('$\lambda$')
+plt.tight_layout()
 
 plt.savefig('null_deanJ.pdf')
 plt.show()

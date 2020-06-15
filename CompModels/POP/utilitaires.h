@@ -38,7 +38,7 @@ double fact(int n) {
         return n*fact(n-1);
 }
 double lnfact(int n){
-    if(n<25) 
+    if(n<50) 
         return log(fact(n));
     else 
         return n*log(n)-n;

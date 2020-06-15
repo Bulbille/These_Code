@@ -103,7 +103,6 @@ derivvar = variance.twinx()
 
 for nb,taux in enumerate(tauxspace):
 
-    print "** Nb particules ",taux
     tauxspace = big_data[taux][:,0]
     donne  = np.where(tauxspace<18)
     tauxspace = tauxspace[donne]

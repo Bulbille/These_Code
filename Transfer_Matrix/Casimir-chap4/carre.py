@@ -21,7 +21,8 @@ def Trans(kbt,champ,inter,L):
     d=np.zeros((L+1,L+1))
     for y1,i in enumerate(d):
         for y2,j in enumerate(i):
-            d[y1][y2] = np.exp(-kbt*( champ*(y1+y2)/2 +inter*abs(y1-y2)) )
+#            d[y1][y2] = np.exp(-kbt*( champ*(y1+y2)/2 +inter*abs(y1-y2)) )
+            d[y1][y2] = np.exp(-kbt*( champ*(y1+y2)/2 +inter*pow(y1-y2,2)) )
     return d
 ### Définition des matrices de magnetisation des différents modèles
 def mat(L):
@@ -33,40 +34,41 @@ def mat(L):
 def intDiag(ly,beta,h,j):
     tm = Trans(beta,h,j,ly)
     w,v = LA.eigh(tm) 
-    lZ = 1*np.log(np.sum(np.power(w,400)))
-    return -1/(ly*beta)*lZ
+    plt.plot(np.arange(ly),v[:,-1])
+    return -np.log(w[-1])/beta
 
 
 ############################
 # Déclaration matrices
 J = 1 ; 
 
-lMin = 3; lMax = 30
+lMin = 10; lMax = 30
 lSpace = np.arange(lMin,lMax)
-tSpace = np.linspace(0.6,1.3,10)
+tSpace = np.linspace(3.6,5.3,1)
 
-h = 0.01
+h = 0.0
 
 energies = np.empty((len(lSpace),len(tSpace)))
 casimir = np.empty((len(lSpace),len(tSpace)))
 
 for i,t in enumerate(tSpace) :
     for j,L1 in enumerate(lSpace):
-        print(i,j)
         energies[j][i] = intDiag(L1,1/t,h,J) 
+        plt.scatter(t**2,energies[j][i])
 
-for i,t in enumerate(tSpace) :
-    casimir[:,i] = -np.gradient(energies[:,i])
-
+#for i,t in enumerate(tSpace) :
+#    casimir[:,i] = -np.gradient(energies[:,i])
+#    casimir[:,i] = energies[:,i]
+#
 # Plot en fonction de la distance, à température constante
 # Ne pas montrer premier et dernier élément des dérivées, moins bonne qualité
-for i,t in enumerate(tSpace) :
-#     if i % 4 != 0 :
-#         continue
-    plt.plot(lSpace[1:-1],casimir[1:-1,i],label="T="+str(t)[:4])
-    popt,pcoc = curve_fit(linear,lSpace[1:-1],casimir[1:-1,i],p0=[-1,3])
-    print(popt)
-    plt.plot(lSpace[1:-1],linear(lSpace[1:-1],*popt),'+')
+#for i,t in enumerate(tSpace) :
+##     if i % 4 != 0 :
+##         continue
+#    plt.plot(lSpace[1:-1],casimir[1:-1,i],label="T="+str(t)[:4])
+#    popt,pcoc = curve_fit(linear,lSpace[1:-1],casimir[1:-1,i],p0=[-1,3])
+#    print(popt)
+#    plt.plot(lSpace[1:-1],linear(lSpace[1:-1],*popt),'+')
 
 
 plt.xlabel('$L$')
@@ -75,6 +77,7 @@ plt.legend()
 plt.tight_layout()
 plt.savefig('casimir-distance-mu'+str(h)+'.pdf')
 plt.show()
+exit()
 
 # Plot en fonction de la température, à distance constante
 for i,L in enumerate(lSpace) :
