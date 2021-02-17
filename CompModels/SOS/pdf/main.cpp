@@ -75,7 +75,7 @@ int main(int argc,char* argv[]){
         //Mise en place du vecteur des positions
         int* system = new int[LX]; 
         for(int x=0;x<LX;x++)
-            system[x]  = LY/2;
+            system[x]  = LY;
 
         //Déclaration du PRNG 
 

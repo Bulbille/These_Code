@@ -18,14 +18,14 @@
 using namespace std;
 const double T_C    = 2./log(1.+sqrt(2)), J = 1;
 const double Tmin = 0.1, Tmax = 2;
-const int Tn = 100;
+const int Tn = 1;
 double  ttc = 1 ,Beta = 1/(ttc*T_C);
 string prefix = "./", suffix = "",algo;
 //Propriétés de la grille
-const int       bitLX = 7, LX = 2<<bitLX;
-const int LY = 200;
+const int       bitLX = 8, LX = 2<<bitLX;
+const int LY = 2000;
 //LX doit être une puissance de 2, 2<<0 = 2, 2<<n = 2^(n+1)
-const long int T_EQ = 1e4, T_MAX = 5e7;
+const long int T_EQ = 1e6, T_MAX = 0e7;
 // Taux de diffusion des particules A et B
 
 #include "./prng.h"
@@ -69,13 +69,14 @@ int main(int argc,char* argv[]){
         ecartTyp[cmpt] = 0;
         double B =  normspace(k,Tmin,Tmax,Tn);
         Beta = 1;
+        B = 0.001;
         cout << k << " " << Beta << endl;
         /******** Initialisation du systeme *****/
         int phi = 0;
         //Mise en place du vecteur des positions
         int* system = new int[LX]; 
         for(int x=0;x<LX;x++)
-            system[x]  = 2;
+            system[x]  = 60;
 
         //Déclaration du PRNG 
 
@@ -88,6 +89,13 @@ int main(int argc,char* argv[]){
             if(EsosGlau(system,tirage,ajout,Beta,B))
                 system[tirage]+=ajout;
         }
+        str = prefix+"/snap";
+        ofstream fsn(str.c_str(),std::ofstream::out);
+        for(int x=0;x<LX;x++){
+            cout << x << " " << system[x] << "\n" << x+0.99 << " " << system[x] << "\n";
+            fsn << x << " " << system[x] << "\n" << x+0.99 << " " << system[x] << "\n";
+        }
+        fsn.close();
         //Calcul des valeurs initiales        
         double phi2 = 0,ene = 0;
         phi = 0;

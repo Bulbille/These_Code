@@ -31,6 +31,8 @@ plt.axis("image")
 plt.axis("off")
 
 #plt.savefig('t-'+str(temp)+'.pdf', bbox_inches='tight')
+plt.tight_layout()
+plt.savefig('ising.pdf')
 plt.show()
 plt.close()
 

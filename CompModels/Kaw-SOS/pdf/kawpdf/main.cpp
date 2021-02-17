@@ -25,7 +25,7 @@ string prefix = "./", suffix = "",algo;
 const int       bitLX = 6, LX = 2<<bitLX;
 const int LY = 20;
 //LX doit être une puissance de 2, 2<<0 = 2, 2<<n = 2^(n+1)
-const long int T_EQ = 1e6, T_MAX = 5e8;
+const long int T_EQ = 1e6, T_MAX = 5e7;
 // Taux de diffusion des particules A et B
 
 #include "./prng.h"
@@ -151,31 +151,4 @@ bool EsosKaw(int* array, int x, int s, double kbeta,double Champ){
 
     double D_e = exp(-kbeta*sos);
     return (D_e > 1) ? true : (rand_01(generator) <  D_e );
-}
-double LongCorrel(double** val,int lx, int lstep, int nbstep){
-    double tau = 0;
-    double* correl = new double[lx/lstep];
-    for(int l=0;l<lx/lstep;l++)
-        correl[l] = 0;
-
-    for(int i = 0;i<nbstep;i++){
-        for(int l=0;l<lx;l+=lstep){
-            double a=0,b=0,c=0;
-            for(int lp=0;lp<lx-l;lp++){
-                a += val[i][lp]*val[i][lp+l] ;
-                b += val[i][lp];
-                c += val[i][lp+l];
-            }
-            correl[lx/lstep] += a / static_cast<double>(lx-l) - b * c / static_cast<double>(pow(lx-l,2)) ;
-        }
-    }   
-    for(int l=0;l<lx/lstep;l+=1){
-        if(l == 0 or l == lx-1)
-            tau += correl[l]/correl[0];
-        else if(l % 2 == 0)
-            tau += 2*correl[l]/correl[0];
-        else
-            tau += 4*correl[l]/correl[0];
-    }   
-    return tau/3;
 }

@@ -37,16 +37,20 @@ def intDiag(ly,beta,h,j):
     tm = TransA(beta,h,j,ly)
     matphi = matA(ly)
     w,v = LA.eigh(tm) 
-    return np.power(v[:,-1],2)
+#    ph = np.dot(np.dot(matphi,v[:,-1]),np.transpose(np.dot(matphi,v[:,-1])))
+    ph = np.power(v[:,-1],2)
+    return ph
 ############################
 # Déclaration matrices
 BETA = 1; J = 1; 
 
-for LY in [10,80] :
+for LY in [40] :
     plt.plot(np.arange(LY),intDiag(LY,BETA,0,J),label="Transfer matrix, $L="+str(LY)+'$')
 
 data=np.loadtxt(sys.argv[1])
-plt.plot(data[:,0],data[:,1]/np.sum(data[:,1]),label="Kawasaki, $L=10$")
+plt.plot(data[:,0],data[:,1]/np.sum(data[:,1]),'+',label="Kawasaki, $L=10$")
+data=np.loadtxt(sys.argv[1])
+plt.plot(data[:,0],data[:,1]/np.sum(data[:,1]),label="Glauber, $L=10$")
 #data=np.loadtxt(sys.argv[2])
 #plt.plot(data[:,0],data[:,1]/np.sum(data[:,1]),label="Kawasaki, $L=10$")
 

@@ -25,15 +25,14 @@ string prefix = "./", suffix = "",algo;
 const int       bitLX = 6, LX = 2<<bitLX;
 const int LY = 200;
 int N; // nombre total de particules
-const long int T_EQ = 0e5, T_MAX = 2e6;
-const double mu = -0;
+const long int T_EQ = 1e5, T_MAX = 2e6;
 // Taux de diffusion des particules A et B
 
 #include "./prng.h"
 #include "./utilitaires.h"
 /***********************************/
 /**** Définitions des fonctions ****/
-bool EsosGlau(int array[], int x, int ajout,double kbeta,double Champ);
+bool EsosGlau(int array[], int x, int ajout,double kbeta,double Champ,int N);
 double normspace(int step,double min,double max, double n){
     return (n == 1) ? max : min+(max-min)/(n-1)*1.*step;
 }
@@ -65,9 +64,10 @@ int main(int argc,char* argv[]){
     for(int k = rang*Nb_T; k<(rang+1)*Nb_T ; k++){
         cout << k << endl;
         double mu =  -logspace(k,Tmin,Tmax,Tn);
-        Beta = 0.01;
+        Beta = 1;
+        mu = 0;
         /******** Initialisation du systeme *****/
-        N = round(1*LX); 
+        N = static_cast<int>(1*LX); 
         std::vector<int> syspos(N);
         int system[LX];
         for(int x=0;x<LX;x++)
@@ -84,14 +84,13 @@ int main(int argc,char* argv[]){
         int ajout,tirage,pos;
         int hx,hxm,hxp,hx2;
         for(long int t = 0; t<LX*T_EQ ; t++){
-            continue;
-            if(syspos.size()!= 0)
+           if(syspos.size()!= 0)
                 ajout =2*r01int(generator)-1;
             else 
                 ajout = 1;
             if(ajout > 0){ //création de particule
                 pos = rand_lx(generator);
-                if(EsosGlau(system,pos,ajout,Beta,mu)){
+                if(EsosGlau(system,pos,ajout,Beta,mu,N)){
                     hx  = system[pos];
                     hxp = system[modulo(pos+1,LX)];
                     hxm = system[modulo(pos-1,LX)];
@@ -99,12 +98,13 @@ int main(int argc,char* argv[]){
                     ene +=( abs(hx2-hxm) + abs(hx2-hxp) - (abs(hx - hxm)  +  abs(hx - hxp) ) );
                     syspos.push_back(pos);
                     system[pos]++;
+                    N++;
                 }
             }
             else{ //destruction de particule
                 tirage = std::uniform_int_distribution<int>{0,syspos.size()-1}(generator);
                 pos = syspos[tirage];
-                if(EsosGlau(system,pos,ajout,Beta,mu)){
+                if(EsosGlau(system,pos,ajout,Beta,mu,N)){
                     hx  = system[pos];
                     hxp = system[modulo(pos+1,LX)];
                     hxm = system[modulo(pos-1,LX)];
@@ -112,16 +112,14 @@ int main(int argc,char* argv[]){
                     ene +=( abs(hx2-hxm) + abs(hx2-hxp) - (abs(hx - hxm)  +  abs(hx - hxp) ) );
                     syspos.erase(syspos.begin()+tirage);
                     system[pos]--;
+                    N--;
                 }
             }
         }
 
         valeurs[cmpt] = syspos.size();
         energies[cmpt] = ene ;
-        int plus =0,moins = 0;
-        int plusv =0,moinsv = 0;
-        N = 0; for(int x=0;x<LX;x++) N+=system[x]; 
-        mu = 0.001;
+        mu = 0.00;
         for(long int t = 0; t<LX*T_MAX ; t++){
 //            tirage = rand_lx(generator);
 //            ajout   = 2*r01int(generator)-1;
@@ -137,7 +135,7 @@ int main(int argc,char* argv[]){
                 ajout = 1;
             if(ajout == 1){ //création de particule
                 pos = rand_lx(generator);
-                if(EsosGlau(system,pos,ajout,Beta,mu)){
+                if(EsosGlau(system,pos,ajout,Beta,mu,N)){
 //                    hx  = system[pos];
 //                    hxp = system[modulo(pos+1,LX)];
 //                    hxm = system[modulo(pos-1,LX)];
@@ -151,7 +149,7 @@ int main(int argc,char* argv[]){
             else if(ajout == -1){ //destruction de particule
                 tirage = std::uniform_int_distribution<int>{0,syspos.size()-1}(generator);
                 pos = syspos[tirage];
-                if(EsosGlau(system,pos,ajout,Beta,mu)){
+                if(EsosGlau(system,pos,ajout,Beta,mu,N)){
                     system[pos]--;
                     syspos.erase(syspos.begin()+tirage);
                     N--;
@@ -161,8 +159,8 @@ int main(int argc,char* argv[]){
             energies[cmpt] += ene;
         }
         valeurs[cmpt] /= static_cast<double>(LX*LX*T_MAX) ;
-        cout <<  valeurs[cmpt] << " | " << plus << "  " << moins << " | " << plusv << " " << moinsv <<  " " << plusv-moinsv << endl;
         energies[cmpt] /= static_cast<double>(LX*LX*T_MAX) ;
+        cout <<  Beta << " " << mu << " " << valeurs[cmpt] << " " << energies[cmpt] <<  endl;
         cmpt++;
     }
 
@@ -184,7 +182,7 @@ int main(int argc,char* argv[]){
 return 0;
 }
 /********** Fin main ***********/
-bool EsosGlau(int* array, int x, int ajout,double kbeta,double Champ){
+bool EsosGlau(int* array, int x, int ajout,double kbeta,double Champ,int N){
     int hx  = array[x],
     hxp = array[modulo(x+1,LX)],
     hxm = array[modulo(x-1,LX)],
@@ -194,7 +192,9 @@ bool EsosGlau(int* array, int x, int ajout,double kbeta,double Champ){
     //double champ = Champ*(abs(hx2)-abs(hx));
     double sos    = J*( abs(hx2-hxm) + abs(hx2-hxp) - (abs(hx - hxm)  +  abs(hx - hxp) ) );
 
-    double D_e   =  exp(-kbeta*(sos+champ)-0*(lnfact(hx2)-lnfact(hx)));
+//    cout <<ajout << " " <<  N << " | " << hx << " " << hxm << " " << hxp << " |  " ;
+    double D_e   = (ajout == 1 ? 1.*(hx+1)*LX/N : 1.*N/((hx-1)*LX))*  exp(-kbeta*(sos+champ));
+//    cout << 1.*(hx+1)*LX/N << " " << sos << " " <<  D_e << endl; 
     return (D_e > 1) ? true : (rand_01(generator) <  D_e );
 }
 
