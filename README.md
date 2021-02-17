@@ -7,7 +7,7 @@ July 16th 2020
 
 This git records all codes I have developped for my thesis in C++, Python and Bash.
 
-    * Abstract [Thesis](https://www.theses.fr/2020BORD0084)
+  * Abstract [Thesis](https://www.theses.fr/2020BORD0084)
 
 This thesis examines the properties of the interface between two phases in phase separated systems. We are interested in how finite size effects modify the statistical properties of these interfaces, in particular how the dependence of the free energy on the system size gives rise to long range critical Casimir forces close to the critical point. Often the interfaces in phase separated systems are described by simplified or coarse grained models whose only degrees of freedom are the interface height. We review how the statics and dynamics of these interface models can be derived from microscopic spin models and statistical field theories. We then examine finite size effects for continuous interface models such as the Edwards Wilkinson model and discrete models such as the Solid-On-Solid model and discuss their relevance to the critical Casimir effect.
 In the second part of the thesis we examine models of driven interfaces which have nonequilibrium steady states. We develop a model C type model of an interface which shows a nonequlibrium steady state even with constant driving. The resulting nonequlibrium steady state shows properties seen in experiments on sheared colloidal systems, notably the suppression of height fluctuations but an increase in the fluctuations’ correlation length. Finally we propose a new model for one dimensional interfaces which is a modification of the solid-on-solid model and containing an extra entropic term, whose correspondance with physical systems is yet to be found.
