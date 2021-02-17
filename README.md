@@ -44,8 +44,7 @@ In each directory, if there is a subdirectory 'prog/', all the sources will be f
 ###   Miscellanous C++ things
   * pRNG/           : a [fast implementation of pseudo-Random Number Generators in C++](https://martin.ankerl.com/2018/12/08/fast-random-bool/)
   * libeingen/      : [Libeigen C++ library](https://gitlab.com/libeigen/eigen)
-  * Sauvegardes/    : - source files from the [previous PhD](https://www.theses.fr/2015ENSL1025)
-                      - codes and example of how to use OpenMP and MPI from a formation
+  * Sauvegardes/    : source files from the [previous PhD](https://www.theses.fr/2015ENSL1025), codes and example of how to use OpenMP and MPI from a formation
 
 ###   Python image video processing and finite elements for the miscellanous physics projects
   * IPT/            : some Python simulations made for the [French Physicist's Tournament](https://france.iptnet.info/)
