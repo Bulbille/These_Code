@@ -56,7 +56,7 @@ In each directory, if there is a subdirectory 'prog/', all the sources will be f
 The code has been developped for the scientific cluster [Mésocentre de Calcul Intensif d'Aquitaine](https://www.mcia.fr/projects/cluster-curta/wiki)
 in a Linux environnement and a Slurm scheduler. All bash scripts and flags have been carefully chosen to match the cluster's configurations, and you might need to adapt them to yours.
 
-## Compiling Stockfish yourself from the sources
+## Compiling yourself from the sources
 
 Compilation might be tricky because of the MCIA's configuration, which made linking to libraries a bit hard. For the g++ flags, always refer to compile and Daedalus files.
 
